@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "ReportSection",
-  "displayName": "General",
+  "displayName": "General Portada",
   "displayOption": "FitToPage",
   "height": 950,
   "width": 1320,

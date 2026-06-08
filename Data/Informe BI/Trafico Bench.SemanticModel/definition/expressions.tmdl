@@ -125,10 +125,10 @@ expression 'Bench acumulado' =
 		    #"Se expandió Contenido" = Table.ExpandTableColumn(#"Filas agrupadas", "Contenido", {"Fecha de carga", "Campaña", "Canal", "% Recorrido", "% Contactabilidad", "Efec. Bruta", "Efect Neta", "Vueltas", "Periodo"}, {"Fecha de carga.1", "Campaña", "Canal", "% Recorrido", "% Contactabilidad", "Efec. Bruta", "Efect Neta", "Vueltas", "Periodo.1"}),
 		    #"Personalizada agregada6" = Table.AddColumn(#"Se expandió Contenido", "Verdadero", each [Fecha de carga]=[Fecha de carga.1]),
 		    #"Filas filtradas" = Table.SelectRows(#"Personalizada agregada6", each ([Verdadero] = true)),
-		    #"Columnas quitadas1" = Table.RemoveColumns(#"Filas filtradas",{"Verdadero", "Periodo.1", "Fecha de carga", "Fecha de carga.1"}),
-		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Columnas quitadas1",{{"Periodo", "Fecha de carga"}}),
-		    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas con nombre cambiado3",{"Campaña", "Canal", "% Recorrido", "% Contactabilidad", "Efec. Bruta", "Efect Neta", "Vueltas", "Fecha de carga"}),
-		    #"Personalizada agregada3" = Table.AddColumn(#"Columnas reordenadas", "Dia bench", each Date.Day([Fecha de carga])),
+		    #"Columnas quitadas1" = Table.RemoveColumns(#"Filas filtradas",{"Verdadero", "Periodo.1", "Fecha de carga.1", "Fecha de carga"}),
+		    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas quitadas1",{"Campaña", "Canal", "% Recorrido", "% Contactabilidad", "Efec. Bruta", "Efect Neta", "Vueltas"}),
+		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Columnas reordenadas",{{"Periodo", "Fecha de carga"}}),
+		    #"Personalizada agregada3" = Table.AddColumn(#"Columnas con nombre cambiado3", "Dia bench", each Date.Day([Fecha de carga])),
 		    #"Personalizada agregada4" = Table.AddColumn(#"Personalizada agregada3", "Mes bench", each Date.Month([Fecha de carga])),
 		    #"Personalizada agregada5" = Table.AddColumn(#"Personalizada agregada4", "Año bench", each Date.Year([Fecha de carga]))
 		in

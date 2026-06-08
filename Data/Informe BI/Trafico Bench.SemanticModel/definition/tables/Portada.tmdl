@@ -133,7 +133,7 @@ table Portada
 		annotation SummarizationSetBy = Automatic
 
 	column 'Efec Bruta' = LOOKUPVALUE(Bench[Efec. Bruta],Bench[Llave bench],Portada[llave portada])
-		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		formatString: 0
 		lineageTag: df56ddcd-a56e-4b7a-93b3-4e448244ef67
 		summarizeBy: sum
 
@@ -228,13 +228,16 @@ table Portada
 				let
 				    Origen = Csv.Document(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Data\Consolidado\Portada.csv"),[Delimiter=";", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Campaña", type text}, {"Canal", type text}, {"Total Cargado", Int64.Type}, {"Recorrido", Int64.Type}, {"Contactado", Int64.Type}, {"Intentos", Int64.Type}, {"Vuelta", Int64.Type}, {"% Recorrido", Percentage.Type}, {"% Contactabilidad", Percentage.Type}, {"mes", Int64.Type}, {"año", Int64.Type}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Encabezados promovidos",",",".",Replacer.ReplaceText,{"Vuelta"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado",",",".",Replacer.ReplaceText,{"% Recorrido"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1",",",".",Replacer.ReplaceText,{"% Contactabilidad"}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Valor reemplazado2",{{"Campaña", type text}, {"Canal", type text}, {"Total Cargado", Int64.Type}, {"Recorrido", Int64.Type}, {"Contactado", Int64.Type}, {"Intentos", Int64.Type}, {"Vuelta", type number}, {"% Recorrido", Percentage.Type}, {"% Contactabilidad", type number}, {"mes", Int64.Type}, {"año", Int64.Type}}),
 				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"mes", "Mes portada"}, {"año", "Año portada"}}),
 				    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado", "Dia portada", each 1),
 				    #"Columnas reordenadas" = Table.ReorderColumns(#"Personalizada agregada",{"Campaña", "Canal", "Total Cargado", "Recorrido", "Contactado", "Intentos", "Vuelta", "% Recorrido", "% Contactabilidad", "Dia portada", "Mes portada", "Año portada"}),
 				    #"Columnas combinadas" = Table.CombineColumns(Table.TransformColumnTypes(#"Columnas reordenadas", {{"Dia portada", type text}, {"Mes portada", type text}, {"Año portada", type text}}, "es-CO"),{"Dia portada", "Mes portada", "Año portada"},Combiner.CombineTextByDelimiter("/", QuoteStyle.None),"Combinada"),
 				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas combinadas",{{"Combinada", "Fecha de carga"}}),
-				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado1",{{"Fecha de carga", type date}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado1",{{"Fecha de carga", type date}, {"% Recorrido", type number}}),
 				    #"Personalizada agregada1" = Table.AddColumn(#"Tipo cambiado1", "Dia portada", each Date.Day([Fecha de carga])),
 				    #"Personalizada agregada2" = Table.AddColumn(#"Personalizada agregada1", "Mes portada", each Date.Month([Fecha de carga])),
 				    #"Personalizada agregada3" = Table.AddColumn(#"Personalizada agregada2", "Año portada", each Date.Year([Fecha de carga])),

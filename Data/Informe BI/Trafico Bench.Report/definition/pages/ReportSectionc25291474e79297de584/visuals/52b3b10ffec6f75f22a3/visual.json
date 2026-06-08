@@ -4,7 +4,7 @@
   "position": {
     "x": 20,
     "y": 1.4285714285714286,
-    "z": 0,
+    "z": 1000,
     "height": 40,
     "width": 597.14285714285722,
     "tabOrder": 1000
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "HISTORICO - BECH",
+                    "value": "COMPARATIVO AÑO- PORTADA",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "18pt",

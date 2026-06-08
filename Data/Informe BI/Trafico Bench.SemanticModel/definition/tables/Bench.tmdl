@@ -174,7 +174,8 @@ table Bench
 				let
 				    Origen = Csv.Document(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Data\Consolidado\Bench.csv"),[Delimiter=";", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Campaña", type text}, {"Canal", type text}, {"% Recorrido", Percentage.Type}, {"% Contactabilidad", Percentage.Type}, {"Efec. Bruta", Percentage.Type}, {"Efect Neta", Percentage.Type}, {"Vueltas", type number}, {"MES", Int64.Type}, {"AÑO", Int64.Type}}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Encabezados promovidos",",",".",Replacer.ReplaceText,{"Vueltas"}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Valor reemplazado1",{{"Campaña", type text}, {"Canal", type text}, {"% Recorrido", Percentage.Type}, {"% Contactabilidad", Percentage.Type}, {"Efec. Bruta", Percentage.Type}, {"Efect Neta", Percentage.Type}, {"Vueltas", type number}, {"MES", Int64.Type}, {"AÑO", Int64.Type}}),
 				    #"Errores reemplazados" = Table.ReplaceErrorValues(#"Tipo cambiado", {{"Efec. Bruta", 0}}),
 				    #"Errores reemplazados1" = Table.ReplaceErrorValues(#"Errores reemplazados", {{"Efect Neta", 0}}),
 				    #"Errores reemplazados2" = Table.ReplaceErrorValues(#"Errores reemplazados1", {{"% Contactabilidad", 0}}),

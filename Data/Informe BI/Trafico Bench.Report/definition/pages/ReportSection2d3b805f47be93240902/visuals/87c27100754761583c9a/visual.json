@@ -4,7 +4,7 @@
   "position": {
     "x": 29.05426382560529,
     "y": 1.5224358974358974,
-    "z": 0,
+    "z": 1000,
     "height": 59.790940766550527,
     "width": 596.37630662020911,
     "tabOrder": 1000
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "INFORME BENCH",
+                    "value": "GENERAL - BENCH",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "18pt",

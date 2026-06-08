@@ -12,7 +12,19 @@ cultureInfo es-ES
 			          "ConceptualProperty": "%Gestion2"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "%Gestion": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "portada_2.contact2": {
 			      "Definition": {
@@ -21,7 +33,19 @@ cultureInfo es-ES
 			          "ConceptualProperty": "%Contact2"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "%Contact": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "portada_2.cargado_bruta2": {
 			      "Definition": {
@@ -30,7 +54,19 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Cargado/Bruta2"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Efect/Base": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "portada_2.recorri_bruta2": {
 			      "Definition": {
@@ -39,7 +75,19 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Recorri/Bruta2"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Efect/Tram": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "portada_2.efect_bruta2": {
 			      "Definition": {
@@ -48,7 +96,29 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Efect/bruta2"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Efect/bruta": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Efect/Conta": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "portada.cargado_bruta": {
 			      "Definition": {
@@ -81,7 +151,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Efect/Tram": {
+			          "Efect/Trami": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -91,7 +161,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Efect/Trami": {
+			          "Efect/Tram": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -112,7 +182,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Efect/Conta": {
+			          "Efect/Cont": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -122,7 +192,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Efect/Cont": {
+			          "Efect/Conta": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -161,10 +231,145 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Año bench"
 			        }
 			      },
+			      "State": "Generated"
+			    },
+			    "bench.vueltas_reales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Bench",
+			          "ConceptualProperty": "Vueltas reales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Vueltas Base": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "portada_2.año_portada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada (2)",
+			          "ConceptualProperty": "Año portada"
+			        }
+			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
 			          "Año": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "portada_2.int_base2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada (2)",
+			          "ConceptualProperty": "Int/Base2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Int/Base": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "portada_2.int_record2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada (2)",
+			          "ConceptualProperty": "Int/Record2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Int/Record": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "portada_2.efect_neta2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada (2)",
+			          "ConceptualProperty": "Efect/Neta2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Efect/Neta": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "portada_2.mes_portada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada (2)",
+			          "ConceptualProperty": "Mes portada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bench_2.año_bench": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Bench (2)",
+			          "ConceptualProperty": "Año bench"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "AñO": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

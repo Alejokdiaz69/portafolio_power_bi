@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "5f5a821abdc4bae220bb",
   "position": {
-    "x": 948.47756410256409,
-    "y": 71.554487179487182,
+    "x": 727.7,
+    "y": 5.7,
     "z": 8000,
-    "height": 74.599358974358978,
-    "width": 351.68269230769232,
+    "height": 51.300000000000004,
+    "width": 571.9,
     "tabOrder": 12000
   },
   "visual": {
@@ -15,17 +15,17 @@
       "bookmarks": [
         {
           "properties": {
-            "selectedBookmark": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Bookmark7e2c40b477617dbc0003'"
-                }
-              }
-            },
             "bookmarkGroup": {
               "expr": {
                 "Literal": {
                   "Value": "'Bookmarkc01cca452908c99a572c'"
+                }
+              }
+            },
+            "selectedBookmark": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bookmark3de65c0003c0234b6060'"
                 }
               }
             }
@@ -39,6 +39,27 @@
               "expr": {
                 "Literal": {
                   "Value": "100L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "fill": [
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }
@@ -100,7 +121,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -120,7 +141,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -128,6 +149,41 @@
               "expr": {
                 "Literal": {
                   "Value": "'Center'"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "70L"
+                }
+              }
+            },
+            "shadowSpread": {
+              "expr": {
+                "Literal": {
+                  "Value": "3L"
+                }
+              }
+            },
+            "shadowBlur": {
+              "expr": {
+                "Literal": {
+                  "Value": "15L"
+                }
+              }
+            },
+            "angle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "shadowDistance": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
                 }
               }
             }
