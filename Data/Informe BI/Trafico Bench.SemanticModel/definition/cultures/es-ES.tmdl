@@ -99,16 +99,6 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Efect/bruta": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
 			          "Efect/Conta": {
 			            "State": "Suggested",
 			            "Source": {
@@ -261,19 +251,7 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Año portada"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Año": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "portada_2.int_base2": {
 			      "Definition": {
@@ -324,19 +302,7 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Efect/Neta2"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Efect/Neta": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "portada_2.mes_portada": {
 			      "Definition": {
@@ -345,19 +311,7 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Mes portada"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Mes": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "bench_2.año_bench": {
 			      "Definition": {
@@ -366,19 +320,7 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Año bench"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "AñO": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    }
 			  }
 			}

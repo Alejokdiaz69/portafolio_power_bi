@@ -6,7 +6,7 @@
     "y": 62.7,
     "z": 4000,
     "height": 60.800000000000004,
-    "width": 583.30000000000007,
+    "width": 579.5,
     "tabOrder": 14001
   },
   "visual": {
@@ -17,17 +17,28 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "Bench"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fecha"
+                            }
+                          },
+                          "Name": "Variación",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Jerarquía de fechas"
                     }
                   },
-                  "Property": "Mes bench"
+                  "Level": "Mes"
                 }
               },
-              "queryRef": "Bench.Mes bench",
-              "nativeQueryRef": "Mes bench",
+              "queryRef": "Fecha.Date.Variación.Jerarquía de fechas.Mes",
+              "nativeQueryRef": "Date Mes",
               "active": true
             }
           ]
