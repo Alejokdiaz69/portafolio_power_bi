@@ -1,0 +1,228 @@
+table 'Portada (2)'
+	lineageTag: 1de4d760-7950-4397-ae78-6a0263291e3b
+
+	measure Int/Base2 = DIVIDE(SUM( 'Portada (2)'[Intentos]),SUM('Portada (2)'[Total Cargado]))
+		lineageTag: 0414d5b3-6ca8-4389-a40a-0844f0714be2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Int/Record2 = DIVIDE(SUM('Portada (2)'[Intentos]),SUM('Portada (2)'[Recorrido]))
+		lineageTag: bc4ab919-bb15-4064-8b66-b8a8407732b9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Recorri/Bruta2 =
+			
+			DIVIDE(SUM('Portada (2)'[Ventas brutas]), SUM('Portada (2)'[Recorrido]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 44cf2023-4ac6-4012-b3da-909c4ec14ce7
+
+	measure Efect/Neta2 = DIVIDE(SUM('Portada (2)'[Ventas Neta]),SUM('Portada (2)'[Contactado]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 50a52a42-531c-436d-84f2-dbd90801894b
+
+	measure Efect/bruta2 = DIVIDE(SUM('Portada (2)'[Ventas brutas]),SUM('Portada (2)'[Contactado]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 2146bedc-d199-4f6a-9f31-8fbab34b82a7
+
+	measure Cargado/Bruta2 =
+			
+			DIVIDE(SUM('Portada (2)'[Ventas brutas]), SUM('Portada (2)'[Total Cargado]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 4e56d4ac-6890-4b85-a556-90392ccc45ad
+
+	measure %Gestion2 = DIVIDE(SUM('Portada (2)'[Recorrido]),SUM('Portada (2)'[Total Cargado]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 896320eb-6f8c-470f-9895-0622dcb9d0ba
+
+	measure %Contact2 = DIVIDE(SUM('Portada (2)'[Contactado]),SUM('Portada (2)'[Recorrido]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: d2593934-6f93-4d21-8930-d0b799e7e70c
+
+	column 'Fecha de carga'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 3ec4c0e7-6937-45cd-8577-3bdbf3c55ca3
+		summarizeBy: none
+		sourceColumn: Fecha de carga
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Campaña
+		dataType: string
+		lineageTag: 3447ea9e-3ba2-4bdb-b39e-3836dadd45dd
+		summarizeBy: none
+		sourceColumn: Campaña
+
+		annotation SummarizationSetBy = Automatic
+
+	column Canal
+		dataType: string
+		lineageTag: 9d029e07-78d3-4e52-a6bc-c5b327b599bd
+		summarizeBy: none
+		sourceColumn: Canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Cargado'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 067678ae-f1ca-4928-a7ab-3fb2ed1e00d0
+		summarizeBy: sum
+		sourceColumn: Total Cargado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recorrido
+		dataType: int64
+		formatString: #,0
+		lineageTag: d9ca838e-31d0-42e2-ba30-8af354438ddb
+		summarizeBy: sum
+		sourceColumn: Recorrido
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contactado
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4a611089-b693-417a-a56e-90c4b0642f12
+		summarizeBy: sum
+		sourceColumn: Contactado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Intentos
+		dataType: int64
+		formatString: 0
+		lineageTag: 87e7f02e-8832-4e04-8f4e-986b7a20218c
+		summarizeBy: sum
+		sourceColumn: Intentos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vuelta
+		dataType: double
+		lineageTag: d921e73c-9279-4e57-8b3f-b54642c30356
+		summarizeBy: sum
+		sourceColumn: Vuelta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% Recorrido'
+		dataType: double
+		lineageTag: 0a9e6780-1cf8-4a7d-a389-01aefe377716
+		summarizeBy: sum
+		sourceColumn: % Recorrido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% Contactabilidad'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 3da55444-ef4c-4b73-b578-1ba825a2d6ac
+		summarizeBy: sum
+		sourceColumn: % Contactabilidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes portada'
+		dataType: string
+		lineageTag: c68f847b-2b72-4e52-b13b-f4480c28fb98
+		summarizeBy: none
+		sourceColumn: Mes portada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año portada'
+		dataType: string
+		lineageTag: f3cd0452-a957-42d2-8071-e71674a91d1f
+		summarizeBy: none
+		sourceColumn: Año portada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave portada' = 'Portada (2)'[Campaña]&'Portada (2)'[Canal]&'Portada (2)'[Dia portada]&'Portada (2)'[Mes portada]&'Portada (2)'[Año portada]
+		lineageTag: 48b1d22f-e1d1-4658-963b-0029e32f30fc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia portada'
+		dataType: string
+		lineageTag: cc091419-84ac-4d85-b346-c72ed0565ed9
+		summarizeBy: none
+		sourceColumn: Dia portada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Efec Bruta' = LOOKUPVALUE('Bench (2)'[Efec. Bruta],'Bench (2)'[Llave bench],'Portada (2)'[Llave portada])
+		lineageTag: 63a1a1e4-9500-4938-b139-ffb0a6f7dc28
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Efec Neta' = LOOKUPVALUE('Bench (2)'[Efect Neta],'Bench (2)'[Llave bench],'Portada (2)'[Llave portada])
+		lineageTag: d0c092e0-100b-4c65-8deb-51899ffd35f8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ventas brutas' = 'Portada (2)'[Contactado]*'Portada (2)'[Efec Bruta]
+		formatString: #,0
+		lineageTag: c699bf16-598b-4dfe-88cb-2ccf4008bfb1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Ventas Neta' = 'Portada (2)'[Contactado]*'Portada (2)'[Efec Neta]
+		formatString: #,0
+		lineageTag: 47ab1a5e-7db8-4c56-996c-95b2297d0a41
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'llave campaña' = 'Portada (2)'[Campaña]&'Portada (2)'[Canal]
+		lineageTag: 5637ac2d-4219-4f05-97da-0102823f6c1c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Portada (2)' = m
+		mode: import
+		source =
+				let
+				    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Data\Portada"),
+				    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+				    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (2)", each #"Transformar archivo (2)"([Content])),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+				    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo (2)"}),
+				    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo (2)", Table.ColumnNames(#"Transformar archivo (2)"(#"Archivo de ejemplo (2)"))),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columna de tabla expandida1",{{"Source.Name", type text}, {"Campaña", type text}, {"Canal", type text}, {"Total Cargado", Int64.Type}, {"Recorrido", Int64.Type}, {"Contactado", Int64.Type}, {"Intentos", Int64.Type}, {"Vuelta", type number}, {"% Recorrido", type number}, {"% Contactabilidad", type number}}),
+				    #"Dividir columna por delimitador" = Table.SplitColumn(#"Tipo cambiado", "Source.Name", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Source.Name.1", "Source.Name.2", "Source.Name.3", "Source.Name.4", "Source.Name.5", "Source.Name.6"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Dividir columna por delimitador",{{"Source.Name.1", type date}, {"Source.Name.2", type text}, {"Source.Name.3", type text}, {"Source.Name.4", type text}, {"Source.Name.5", type text}, {"Source.Name.6", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado1",{"Source.Name.2", "Source.Name.3", "Source.Name.4", "Source.Name.5", "Source.Name.6"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas",{{"Source.Name.1", "Fecha de carga"}}),
+				    #"Personalizada agregada2" = Table.AddColumn(#"Columnas con nombre cambiado", "Dia portada", each Date.Day([Fecha de carga])),
+				    #"Personalizada agregada" = Table.AddColumn(#"Personalizada agregada2", "Mes portada", each Date.Month([Fecha de carga])),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Personalizada agregada", "Año portada", each Date.Year([Fecha de carga])),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"Mes portada", type text}, {"Año portada", type text}, {"Dia portada", type text}}),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Tipo cambiado2",{{"% Recorrido", Percentage.Type}}),
+				    #"Errores reemplazados" = Table.ReplaceErrorValues(#"Tipo cambiado3", {{"% Recorrido", 0}}),
+				    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Errores reemplazados",{{"% Contactabilidad", Percentage.Type}})
+				in
+				    #"Tipo cambiado4"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

@@ -1,0 +1,23 @@
+table Fecha
+	lineageTag: 629bbc16-3f03-4816-a152-19c4fd93fa31
+
+	column Date
+		formatString: Short Date
+		lineageTag: 4615f688-fa2f-42a7-83b8-3694bca3f4fd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variación
+			isDefault
+			relationship: 202cc0a1-ad58-4fc2-adef-8bc7e811110a
+			defaultHierarchy: LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fecha = calculated
+		mode: import
+		source = CALENDAR("01/01/2000","31/12/2030")
+
+	annotation PBI_Id = 315a373920b54b96888bbda8644285f0
+

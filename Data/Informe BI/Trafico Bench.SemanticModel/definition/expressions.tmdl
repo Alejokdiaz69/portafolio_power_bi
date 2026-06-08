@@ -1,0 +1,182 @@
+expression 'Archivo de ejemplo (2)' =
+		let
+		    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Data\Portada"),
+		    Navegación1 = Origen{0}[Content]
+		in
+		    Navegación1
+	lineageTag: 64e03b50-41bc-4e60-a1aa-a5cc788f74e2
+	queryGroup: 'Transformar archivo de Portada (2)\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = Navegación
+
+expression Parámetro2 = #"Archivo de ejemplo (2)" meta [IsParameterQuery=true, BinaryIdentifier=#"Archivo de ejemplo (2)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 33fe8e21-37ca-4c1b-940e-8871a10660ab
+	queryGroup: 'Transformar archivo de Portada (2)\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo de ejemplo (2)' =
+		let
+		    Origen = Csv.Document(Parámetro2,[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+	lineageTag: 25b8d09f-bdc3-4dce-828e-1785d7b703e1
+	queryGroup: 'Transformar archivo de Portada (2)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar archivo (2)' =
+		let
+		    Origen = (Parámetro2 as binary) => let
+		    Origen = Csv.Document(Parámetro2,[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+		in
+		    Origen
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo (2)""}" ]
+	lineageTag: a40b16f7-1f79-4be9-a256-6f9b37e6d9e3
+	queryGroup: 'Transformar archivo de Portada (2)\Consultas auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Archivo de ejemplo (3)' =
+		let
+		    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Data\Bench"),
+		    Navegación1 = Origen{0}[Content]
+		in
+		    Navegación1
+	lineageTag: 11dd752d-5bf8-401a-b2ea-8a341d23355f
+	queryGroup: 'Transformar archivo de Bench (2)\Consultas auxiliares'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Binary
+
+expression Parámetro3 = #"Archivo de ejemplo (3)" meta [IsParameterQuery=true, BinaryIdentifier=#"Archivo de ejemplo (3)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 95ef96ba-09b8-4930-b3b7-99ea3c7b3190
+	queryGroup: 'Transformar archivo de Bench (2)\Consultas auxiliares'
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegación
+
+expression 'Transformar archivo de ejemplo (3)' =
+		let
+		    Origen = Csv.Document(Parámetro3,[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Campaña", type text}, {"Canal", type text}, {"% Recorrido", type text}, {"% Contactabilidad", type text}, {"Efec. Bruta", type text}, {"Efect Neta", type text}, {"Vueltas", type text}})
+		in
+		    #"Tipo cambiado"
+	lineageTag: 45249598-c685-4336-8868-2e24ea96b199
+	queryGroup: 'Transformar archivo de Bench (2)'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar archivo (3)' =
+		let
+		    Origen = (Parámetro3 as binary) => let
+		    Origen = Csv.Document(Parámetro3,[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Campaña", type text}, {"Canal", type text}, {"% Recorrido", type text}, {"% Contactabilidad", type text}, {"Efec. Bruta", type text}, {"Efect Neta", type text}, {"Vueltas", type text}})
+		in
+		    #"Tipo cambiado"
+		in
+		    Origen
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo (3)""}" ]
+	lineageTag: 714a0fd2-7666-4c14-8d39-614ea527b48a
+	queryGroup: 'Transformar archivo de Bench (2)\Consultas auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Bench acumulado' =
+		let
+		    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Data\Bench"),
+		    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+		    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (3)", each #"Transformar archivo (3)"([Content])),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+		    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo (3)"}),
+		    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo (3)", Table.ColumnNames(#"Transformar archivo (3)"(#"Archivo de ejemplo (3)"))),
+		    #"Dividir columna por delimitador" = Table.SplitColumn(#"Columna de tabla expandida1", "Source.Name", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Source.Name.1", "Source.Name.2", "Source.Name.3", "Source.Name.4", "Source.Name.5", "Source.Name.6", "Source.Name.7"}),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Dividir columna por delimitador",{{"Source.Name.1", type date}, {"Source.Name.2", type text}, {"Source.Name.3", type text}, {"Source.Name.4", type text}, {"Source.Name.5", type text}, {"Source.Name.6", type text}, {"Source.Name.7", type text}}),
+		    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Source.Name.2", "Source.Name.3", "Source.Name.4", "Source.Name.5", "Source.Name.6", "Source.Name.7"}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas",{{"Source.Name.1", "Fecha de carga"}}),
+		    #"Personalizada agregada2" = Table.AddColumn(#"Columnas con nombre cambiado", "Dia bench", each 1),
+		    #"Personalizada agregada" = Table.AddColumn(#"Personalizada agregada2", "Mes bench", each Date.Month ([Fecha de carga])),
+		    #"Personalizada agregada1" = Table.AddColumn(#"Personalizada agregada", "Año bench", each Date.Year([Fecha de carga])),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"Año bench", type text}, {"Mes bench", type text}, {"Dia bench", type text}, {"Vueltas", type text}, {"Efec. Bruta", Percentage.Type}, {"Efect Neta", Percentage.Type}}),
+		    #"Errores reemplazados2" = Table.ReplaceErrorValues(#"Tipo cambiado1", {{"Efect Neta", 0}}),
+		    #"Errores reemplazados1" = Table.ReplaceErrorValues(#"Errores reemplazados2", {{"Efec. Bruta", 0}}),
+		    #"Errores reemplazados" = Table.ReplaceErrorValues(#"Errores reemplazados1", {{"Vueltas", 0}}),
+		    #"Valor reemplazado" = Table.ReplaceValue(#"Errores reemplazados",null,"0",Replacer.ReplaceValue,{"Vueltas"}),
+		    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","-","0",Replacer.ReplaceText,{"Vueltas"}),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Valor reemplazado1",{{"% Contactabilidad", Percentage.Type}, {"% Recorrido", Percentage.Type}}),
+		    #"Errores reemplazados3" = Table.ReplaceErrorValues(#"Tipo cambiado2", {{"% Contactabilidad", 0}}),
+		    #"Errores reemplazados4" = Table.ReplaceErrorValues(#"Errores reemplazados3", {{"% Recorrido", 0}}),
+		    #"Inicio del mes insertado" = Table.AddColumn(#"Errores reemplazados4", "Inicio del mes", each Date.StartOfMonth([Fecha de carga]), type date),
+		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Inicio del mes insertado",{{"Inicio del mes", "Periodo"}}),
+		    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Columnas con nombre cambiado2",{{"Fecha de carga", type date}}),
+		    #"Filas agrupadas" = Table.Group(#"Tipo cambiado3", {"Periodo"}, {{"Fecha de carga", each List.Max([Fecha de carga]), type nullable date}, {"Contenido", each _, type table [Fecha de carga=nullable date, Campaña=text, Canal=text, #"% Recorrido"=nullable number, #"% Contactabilidad"=nullable number, Efec. Bruta=nullable number, Efect Neta=nullable number, Vueltas=nullable text, Periodo=text]}}),
+		    #"Se expandió Contenido" = Table.ExpandTableColumn(#"Filas agrupadas", "Contenido", {"Fecha de carga", "Campaña", "Canal", "% Recorrido", "% Contactabilidad", "Efec. Bruta", "Efect Neta", "Vueltas", "Periodo"}, {"Fecha de carga.1", "Campaña", "Canal", "% Recorrido", "% Contactabilidad", "Efec. Bruta", "Efect Neta", "Vueltas", "Periodo.1"}),
+		    #"Personalizada agregada6" = Table.AddColumn(#"Se expandió Contenido", "Verdadero", each [Fecha de carga]=[Fecha de carga.1]),
+		    #"Filas filtradas" = Table.SelectRows(#"Personalizada agregada6", each ([Verdadero] = true)),
+		    #"Columnas quitadas1" = Table.RemoveColumns(#"Filas filtradas",{"Verdadero", "Periodo.1", "Fecha de carga", "Fecha de carga.1"}),
+		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Columnas quitadas1",{{"Periodo", "Fecha de carga"}}),
+		    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas con nombre cambiado3",{"Campaña", "Canal", "% Recorrido", "% Contactabilidad", "Efec. Bruta", "Efect Neta", "Vueltas", "Fecha de carga"}),
+		    #"Personalizada agregada3" = Table.AddColumn(#"Columnas reordenadas", "Dia bench", each Date.Day([Fecha de carga])),
+		    #"Personalizada agregada4" = Table.AddColumn(#"Personalizada agregada3", "Mes bench", each Date.Month([Fecha de carga])),
+		    #"Personalizada agregada5" = Table.AddColumn(#"Personalizada agregada4", "Año bench", each Date.Year([Fecha de carga]))
+		in
+		    #"Personalizada agregada5"
+	lineageTag: 9482eaed-a191-4457-819f-ee48b2ef686c
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 'Portada acumulado' =
+		let
+		    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Data\Portada"),
+		    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+		    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (2)", each #"Transformar archivo (2)"([Content])),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+		    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo (2)"}),
+		    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo (2)", Table.ColumnNames(#"Transformar archivo (2)"(#"Archivo de ejemplo (2)"))),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columna de tabla expandida1",{{"Source.Name", type text}, {"Campaña", type text}, {"Canal", type text}, {"Total Cargado", Int64.Type}, {"Recorrido", Int64.Type}, {"Contactado", Int64.Type}, {"Intentos", Int64.Type}, {"Vuelta", type number}, {"% Recorrido", type number}, {"% Contactabilidad", type number}}),
+		    #"Dividir columna por delimitador" = Table.SplitColumn(#"Tipo cambiado", "Source.Name", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Source.Name.1", "Source.Name.2", "Source.Name.3", "Source.Name.4", "Source.Name.5", "Source.Name.6"}),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Dividir columna por delimitador",{{"Source.Name.1", type date}, {"Source.Name.2", type text}, {"Source.Name.3", type text}, {"Source.Name.4", type text}, {"Source.Name.5", type text}, {"Source.Name.6", type text}}),
+		    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado1",{"Source.Name.2", "Source.Name.3", "Source.Name.4", "Source.Name.5", "Source.Name.6"}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas",{{"Source.Name.1", "Fecha de carga"}}),
+		    #"Personalizada agregada2" = Table.AddColumn(#"Columnas con nombre cambiado", "Dia portada", each 1),
+		    #"Personalizada agregada" = Table.AddColumn(#"Personalizada agregada2", "Mes portada", each Date.Month([Fecha de carga])),
+		    #"Personalizada agregada1" = Table.AddColumn(#"Personalizada agregada", "Año portada", each Date.Year([Fecha de carga])),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"Mes portada", type text}, {"Año portada", type text}, {"Dia portada", type text}}),
+		    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Tipo cambiado2",{{"% Recorrido", Percentage.Type}}),
+		    #"Errores reemplazados" = Table.ReplaceErrorValues(#"Tipo cambiado3", {{"% Recorrido", 0}}),
+		    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Errores reemplazados",{{"% Contactabilidad", Percentage.Type}}),
+		    #"Tipo cambiado5" = Table.TransformColumnTypes(#"Tipo cambiado4",{{"Fecha de carga", type date}}),
+		    #"Inicio del mes insertado" = Table.AddColumn(#"Tipo cambiado5", "Inicio del mes", each Date.StartOfMonth([Fecha de carga]), type date),
+		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Inicio del mes insertado",{{"Inicio del mes", "Periodo"}}),
+		    #"Filas agrupadas" = Table.Group(#"Columnas con nombre cambiado2", {"Periodo"}, {{"Fecha de carga", each List.Max([Fecha de carga]), type nullable date}, {"Contenido", each _, type table [Fecha de carga=nullable date, Campaña=nullable text, Canal=nullable text, Total Cargado=nullable number, Recorrido=nullable number, Contactado=nullable number, Intentos=nullable number, Vuelta=nullable number, #"% Recorrido"=nullable number, #"% Contactabilidad"=nullable number, Dia portada=nullable text, Mes portada=nullable text, Año portada=nullable text, Periodo=date]}}),
+		    #"Se expandió Contenido" = Table.ExpandTableColumn(#"Filas agrupadas", "Contenido", {"Fecha de carga", "Campaña", "Canal", "Total Cargado", "Recorrido", "Contactado", "Intentos", "Vuelta", "% Recorrido", "% Contactabilidad"}, {"Fecha de carga.1", "Campaña", "Canal", "Total Cargado", "Recorrido", "Contactado", "Intentos", "Vuelta", "% Recorrido", "% Contactabilidad"}),
+		    #"Personalizada agregada6" = Table.AddColumn(#"Se expandió Contenido", "Verdadero", each [Fecha de carga]=[Fecha de carga.1]),
+		    #"Filas filtradas" = Table.SelectRows(#"Personalizada agregada6", each ([Verdadero] = true)),
+		    #"Personalizada agregada3" = Table.AddColumn(#"Filas filtradas", "Dia portada", each Date.Day([Fecha de carga])),
+		    #"Personalizada agregada4" = Table.AddColumn(#"Personalizada agregada3", "Mes portada", each Date.Month([Fecha de carga])),
+		    #"Personalizada agregada5" = Table.AddColumn(#"Personalizada agregada4", "Año portada", each Date.Year([Fecha de carga])),
+		    #"Columnas quitadas1" = Table.RemoveColumns(#"Personalizada agregada5",{"Verdadero", "Fecha de carga.1", "Fecha de carga"}),
+		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Columnas quitadas1",{{"Periodo", "Fecha de carga"}}),
+		    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas con nombre cambiado3",{"Campaña", "Canal", "Total Cargado", "Recorrido", "Contactado", "Intentos", "Vuelta", "% Recorrido", "% Contactabilidad", "Fecha de carga", "Dia portada", "Mes portada", "Año portada"})
+		in
+		    #"Columnas reordenadas"
+	lineageTag: 25d837fa-4f16-4c4d-a2c1-289eed1731c2
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

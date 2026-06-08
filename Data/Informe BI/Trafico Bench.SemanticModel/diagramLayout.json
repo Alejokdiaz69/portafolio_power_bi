@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 196
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 476.11197916666765
+          },
+          "nodeIndex": "Fecha",
+          "nodeLineageTag": "629bbc16-3f03-4816-a152-19c4fd93fa31",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 424.25,
+            "y": 1035.1834077380959
+          },
+          "nodeIndex": "Bench",
+          "nodeLineageTag": "1965a1a5-5eed-4674-8647-27073be227c6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 374,
+            "y": 394.93340773809592
+          },
+          "nodeIndex": "Portada",
+          "nodeLineageTag": "2007b429-8175-4daa-bbef-707ce3927c8a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1124.666666666667,
+            "y": 624.5941220238102
+          },
+          "nodeIndex": "Prioridad",
+          "nodeLineageTag": "392b5138-b003-42e0-a479-dadefb887fcb",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1173.6666666666667,
+            "y": 129.81138392857184
+          },
+          "nodeIndex": "Bench (2)",
+          "nodeLineageTag": "bf242a94-860f-4f55-9015-ebe814ced39c",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 932.66666666666663,
+            "y": 1050.811383928572
+          },
+          "nodeIndex": "Portada (2)",
+          "nodeLineageTag": "1de4d760-7950-4397-ae78-6a0263291e3b",
+          "size": {
+            "height": 311.66666666666663,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 749.33333333333337,
+            "y": 367.33072916666697
+          },
+          "nodeIndex": "Campaña/Canal",
+          "nodeLineageTag": "d1c8401c-e53f-4624-b0ec-142b7864ceb3",
+          "size": {
+            "height": 169,
+            "width": 305.66666666666674
+          },
+          "zIndex": 8
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 50,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

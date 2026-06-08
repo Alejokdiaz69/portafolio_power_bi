@@ -1,0 +1,204 @@
+table Bench
+	lineageTag: 1965a1a5-5eed-4674-8647-27073be227c6
+
+	column Campaña
+		dataType: string
+		lineageTag: d5fe807d-f91b-43ac-a359-10e9e0145eb5
+		summarizeBy: none
+		sourceColumn: Campaña
+
+		annotation SummarizationSetBy = Automatic
+
+	column Canal
+		dataType: string
+		lineageTag: a1fd273c-cc89-4424-93b3-2b7817a689d0
+		summarizeBy: none
+		sourceColumn: Canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% Recorrido'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 7bb43a9c-c7ac-4710-840d-2ef83198806d
+		summarizeBy: sum
+		sourceColumn: % Recorrido
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% Contactabilidad'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 41521711-f5d5-4222-ba5e-90ac2f890f3e
+		summarizeBy: sum
+		sourceColumn: % Contactabilidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Efec. Bruta'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 2982ee6d-ecdf-4273-a947-baab11d3b08d
+		summarizeBy: sum
+		sourceColumn: Efec. Bruta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Efect Neta'
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: d474a700-74bb-4a4c-9eed-fa7d8d81cb39
+		summarizeBy: sum
+		sourceColumn: Efect Neta
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vueltas
+		dataType: string
+		lineageTag: a9f25492-c22c-4548-986a-bd3ded17803a
+		summarizeBy: none
+		sourceColumn: Vueltas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave bench' = Bench[Campaña]&Bench[Canal]&Bench[Mes bench]&Bench[Año bench]
+		lineageTag: ef2eec7f-9642-4194-9693-8dce86343264
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha = 1&"/"&Bench[Mes bench]&"/"&Bench[Año bench]
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 39184540-5035-4f1a-bdc4-b8419c4df0b7
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Prioridad = LOOKUPVALUE(Prioridad[prioridad],Prioridad[Campaña],Bench[Campaña])
+		lineageTag: d58ab695-5f0d-44b1-ac35-37e5710115a8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column contar = LEN(Bench[Vueltas])
+		formatString: 0
+		lineageTag: 9ac45c13-32ef-4b4b-833a-f6a70ebe698e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de carga'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 27d41b7a-d9da-4cca-a464-bb0d6cd8ad9b
+		summarizeBy: none
+		sourceColumn: Fecha de carga
+
+		variation Variación
+			isDefault
+			relationship: 0445747b-2f36-4db7-8612-a6283f41e1d6
+			defaultHierarchy: LocalDateTable_6807fec2-6172-4b2c-86f5-73f95c393831.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dia bench'
+		dataType: string
+		lineageTag: b023c851-f947-49b0-8738-412b5ef7af02
+		summarizeBy: none
+		sourceColumn: Dia bench
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes bench'
+		dataType: string
+		lineageTag: 69651654-95cc-4818-82b0-159aca8ae5e9
+		summarizeBy: none
+		sourceColumn: Mes bench
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año bench'
+		dataType: string
+		lineageTag: 7bcd5041-b1fd-408f-940e-7ba42c9423f0
+		summarizeBy: none
+		sourceColumn: Año bench
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'llave campaña' = ```
+			Bench[Campaña]&Bench[Canal] 
+			```
+		lineageTag: 4937b514-8bba-4027-9862-19fc90160587
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vueltas reales' = if(MID(Bench[Vueltas],2,1)=".",(LEFT(Bench[Vueltas],1)&","&MID(Bench[Vueltas],3,2))*1,if(MID(Bench[Vueltas],3,1)=".",(LEFT(Bench[Vueltas],2)&","&MID(Bench[Vueltas],4,2))*1,if('Bench'[Contar]<10,("0"&","&LEFT('Bench'[Vueltas],2))*1,IF('Bench'[Contar]=10,(LEFT('Bench'[Vueltas],1)&","&MID('Bench'[Vueltas],3,2))*1,IF('Bench'[Contar]>10,(LEFT('Bench'[Vueltas],2)&","&MID('Bench'[Vueltas],4,2))*1,1)))))
+		lineageTag: ae88c851-4dc9-4609-babf-cc5183bd8a1e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Columna = if(MID(Bench[Vueltas],2,1)=".",(LEFT(Bench[Vueltas],1)&","&MID(Bench[Vueltas],3,2))*1,if(MID(Bench[Vueltas],3,1)=".",(LEFT(Bench[Vueltas],2)&","&MID(Bench[Vueltas],4,2))*1,("0"&","&LEFT(Bench[Vueltas],2))*1))
+		lineageTag: 1e8450b3-bbf5-4bc1-a2ce-652cb105d726
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cfsddf = MID(Bench[Vueltas],2,1)
+		lineageTag: a55b9f9b-e895-430e-8a1f-223fa96d9654
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Columna 2' = if(MID(Bench[Vueltas],3,1)=".","Si","no")
+		lineageTag: 88b2228b-0697-4263-b04e-ddf87e9b9e4f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Bench = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Data\Consolidado\Bench.csv"),[Delimiter=";", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Campaña", type text}, {"Canal", type text}, {"% Recorrido", Percentage.Type}, {"% Contactabilidad", Percentage.Type}, {"Efec. Bruta", Percentage.Type}, {"Efect Neta", Percentage.Type}, {"Vueltas", type number}, {"MES", Int64.Type}, {"AÑO", Int64.Type}}),
+				    #"Errores reemplazados" = Table.ReplaceErrorValues(#"Tipo cambiado", {{"Efec. Bruta", 0}}),
+				    #"Errores reemplazados1" = Table.ReplaceErrorValues(#"Errores reemplazados", {{"Efect Neta", 0}}),
+				    #"Errores reemplazados2" = Table.ReplaceErrorValues(#"Errores reemplazados1", {{"% Contactabilidad", 0}}),
+				    #"Errores reemplazados3" = Table.ReplaceErrorValues(#"Errores reemplazados2", {{"% Recorrido", 0}}),
+				    #"Errores reemplazados4" = Table.ReplaceErrorValues(#"Errores reemplazados3", {{"Vueltas", 0}}),
+				    #"Poner En Mayúsculas Cada Palabra" = Table.TransformColumns(#"Errores reemplazados4",{{"Canal", Text.Proper, type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Poner En Mayúsculas Cada Palabra",{{"MES", "Mes bench"}, {"AÑO", "Año bench"}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado", "Dia bench", each 1),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Dia bench", Int64.Type}}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Tipo cambiado2",{"Campaña", "Canal", "% Recorrido", "% Contactabilidad", "Efec. Bruta", "Efect Neta", "Vueltas", "Dia bench", "Mes bench", "Año bench"}),
+				    #"Columnas combinadas" = Table.CombineColumns(Table.TransformColumnTypes(#"Columnas reordenadas", {{"Dia bench", type text}, {"Mes bench", type text}, {"Año bench", type text}}, "es-CO"),{"Dia bench", "Mes bench", "Año bench"},Combiner.CombineTextByDelimiter("/", QuoteStyle.None),"Combinada"),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas combinadas",{{"Combinada", "Fecha de carga"}}),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Columnas con nombre cambiado1",{{"Fecha de carga", type date}}),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Tipo cambiado3", "Dia bench", each Date.Day([Fecha de carga])),
+				    #"Personalizada agregada2" = Table.AddColumn(#"Personalizada agregada1", "Mes bench", each Date.Month([Fecha de carga])),
+				    #"Personalizada agregada3" = Table.AddColumn(#"Personalizada agregada2", "Año bench", each Date.Year([Fecha de carga])),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Personalizada agregada3",null,0,Replacer.ReplaceValue,{"Vueltas"}),
+				    #"Errores reemplazados5" = Table.ReplaceErrorValues(#"Valor reemplazado", {{"Vueltas", 0}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Errores reemplazados5",{{"Vueltas", type text}}),
+				    #"Consulta anexada" = Table.Combine({#"Tipo cambiado1", #"Bench acumulado"})
+				in
+				    #"Consulta anexada"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

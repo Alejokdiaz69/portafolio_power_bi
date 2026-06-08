@@ -1,0 +1,33 @@
+table Prioridad
+	lineageTag: 392b5138-b003-42e0-a479-dadefb887fcb
+
+	column Campaña
+		dataType: string
+		lineageTag: 996dc4a8-fccb-4406-b69a-a7c7687d3cac
+		summarizeBy: none
+		sourceColumn: Campaña
+
+		annotation SummarizationSetBy = Automatic
+
+	column prioridad
+		dataType: string
+		lineageTag: bc3a3c74-833e-49d1-b06e-9dacd54dfc14
+		summarizeBy: none
+		sourceColumn: prioridad
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Prioridad = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("hZNNasMwEIWvErxOFnV7AsvU0ErCCJGkhCBcmkVLs8viodN3ZNmO5YxqCIjwPc+8+TudCimhUMPAO/lSbIvu99YV520KnnKgzIFnB20hCV8vX9+Rv6IycAcSGe8EPRoJn31vIegHB2lTzQG6gnh3NaIyF4AeAUogVwWLGGOCR/uMvfCf96ewh7cwBD+7H6Z+HEOMR2zQGgrtEzT3fWzphZ5y8+ENtECTCkZvQlKEtfBD5znNWH2FNz4+tA8uOLa3+ZZQZgvYlZaRTILr3KCSVLYP/tYqXNqPcZ0nRDpLU+gXxGfirE74rs1fwVASfMtoRhiur0pTxOtxosyj5Kux/b2EA2SUBq7w0RdUsfXqGhk2bESG0kKr/thyPDZeRSlNZ7rcRWlBsWO6MR/5AoWd2tFS9eOSTOWbUm0aQ/k9747n9zNfNGWeVf+bzjVi4uc/", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Campaña = _t, prioridad = _t]),
+				    #"Poner En Mayúsculas Cada Palabra" = Table.TransformColumns(Origen,{{"prioridad", Text.Proper, type text}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Poner En Mayúsculas Cada Palabra",{{"Campaña", type text}, {"prioridad", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

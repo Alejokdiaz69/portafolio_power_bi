@@ -1,0 +1,181 @@
+cultureInfo es-ES
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "portada_2.gestion2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada (2)",
+			          "ConceptualProperty": "%Gestion2"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "portada_2.contact2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada (2)",
+			          "ConceptualProperty": "%Contact2"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "portada_2.cargado_bruta2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada (2)",
+			          "ConceptualProperty": "Cargado/Bruta2"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "portada_2.recorri_bruta2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada (2)",
+			          "ConceptualProperty": "Recorri/Bruta2"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "portada_2.efect_bruta2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada (2)",
+			          "ConceptualProperty": "Efect/bruta2"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "portada.cargado_bruta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada",
+			          "ConceptualProperty": "Cargado/Bruta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Efect/Base": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "portada.recorri_bruta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada",
+			          "ConceptualProperty": "Recorri/Bruta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Efect/Tram": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Efect/Trami": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "portada.efect_bruta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada",
+			          "ConceptualProperty": "Efect/bruta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Efect/Conta": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Efect/Cont": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "portada.año_portada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Portada",
+			          "ConceptualProperty": "Año portada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Año": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bench.año_bench": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Bench",
+			          "ConceptualProperty": "Año bench"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Año": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+
