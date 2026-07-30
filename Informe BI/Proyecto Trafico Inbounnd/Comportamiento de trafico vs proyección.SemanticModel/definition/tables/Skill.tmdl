@@ -1,0 +1,65 @@
+table Skill
+	lineageTag: 17a97cdc-5194-42e6-867f-bbb0e33d27ca
+
+	column skill
+		dataType: string
+		lineageTag: 0bee1136-f3fe-4c59-8daa-60dfdaeeb9c9
+		summarizeBy: none
+		sourceColumn: skill
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: 247141d0-d08d-4145-886c-a78281f6aef5
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'num skill'
+		dataType: string
+		lineageTag: 5c7ab3ee-d4ed-4d45-a8fa-f1bc90ec834e
+		summarizeBy: none
+		sourceColumn: num skill
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'nombre skill'
+		dataType: string
+		lineageTag: d8dbd426-1fb6-4075-9eac-198e235c7e66
+		summarizeBy: none
+		sourceColumn: nombre skill
+
+		annotation SummarizationSetBy = Automatic
+
+	column BPO
+		dataType: string
+		lineageTag: 5cf34cd9-bb36-4a5a-b3ff-0d5e336efbd9
+		summarizeBy: none
+		sourceColumn: BPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segmento
+		dataType: string
+		lineageTag: 9e195ea1-d40f-48d5-9629-6eebbfd832c2
+		summarizeBy: none
+		sourceColumn: Segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Skill = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Trafico Inbounnd\Data\Skill.csv"),[Delimiter=";", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"skill", type text}, {"nombre", type text}, {"num skill", type text}, {"nombre skill", type text}, {"BPO", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

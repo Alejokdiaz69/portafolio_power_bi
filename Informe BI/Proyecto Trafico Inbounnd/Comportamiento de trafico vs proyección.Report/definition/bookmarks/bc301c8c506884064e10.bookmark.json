@@ -1,0 +1,4403 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Semanal",
+  "name": "bc301c8c506884064e10",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "43e253b4091a6c66a019",
+      "babc64d3d9076ee092a0",
+      "b9b3d12b03bcee791098",
+      "725904a009900b55bb64",
+      "6f3345eb0c51eac064a6",
+      "c7ab30e70073100a3b83",
+      "1f4c1b188b4b4d006307",
+      "785fc252ceb40d732514",
+      "77ec5a7002c7ec00a455",
+      "b8ead4d8dccde0bb8c7e",
+      "72869e7ac9169d90cd0a",
+      "989bd750298b270031e0",
+      "1d38512fdaee9434a0ea",
+      "70eb9147da4baf197499",
+      "7bb3c016269438f54609",
+      "2645de3f6dd0499d29ca",
+      "5a2ded7aae673d32433c",
+      "44be63e6d8e9ccbe8680",
+      "48543c4787542428a332",
+      "eaf3e484a3c8d5ee34a5",
+      "f374a051bbb8a8ce3603",
+      "d82ae1741b00fb914223",
+      "a3f372b5cd04176e86ab",
+      "b8071db3786d59005bd5",
+      "be705d22a73acc129534",
+      "820954d9d1c40b040603",
+      "1b13022a020588766961",
+      "66aa9d269d0a54c2ae27"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection",
+    "filters": {
+      "byExpr": [
+        {
+          "name": "Filter41609ee4a02b7a3bd068",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "l"
+                            }
+                          },
+                          "Property": "Mes"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'enero'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'febrero'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'marzo'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'abril'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'mayo'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'junio'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "HierarchyLevel": {
+              "Expression": {
+                "Hierarchy": {
+                  "Expression": {
+                    "PropertyVariationSource": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Name": "Variación",
+                      "Property": "Date"
+                    }
+                  },
+                  "Hierarchy": "Jerarquía de fechas"
+                }
+              },
+              "Level": "Mes"
+            }
+          },
+          "howCreated": 1,
+          "cachedDisplayNames": [
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'enero'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "enero"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'febrero'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "febrero"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'marzo'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "marzo"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'abril'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "abril"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'mayo'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "mayo"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'junio'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "junio"
+            }
+          ]
+        },
+        {
+          "name": "Filter7d7e618dedb7d7c3e500",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "l"
+                            }
+                          },
+                          "Property": "Año"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "2025L"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "2026L"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "HierarchyLevel": {
+              "Expression": {
+                "Hierarchy": {
+                  "Expression": {
+                    "PropertyVariationSource": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Name": "Variación",
+                      "Property": "Date"
+                    }
+                  },
+                  "Hierarchy": "Jerarquía de fechas"
+                }
+              },
+              "Level": "Año"
+            }
+          },
+          "howCreated": 1,
+          "cachedDisplayNames": [
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5"
+                          }
+                        },
+                        "Property": "Año"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2025L"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "2025"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5"
+                          }
+                        },
+                        "Property": "Año"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2026L"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "2026"
+            }
+          ]
+        },
+        {
+          "name": "Filterd88bcea7248a54cea447",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Skill"
+                }
+              },
+              "Property": "Segmento"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSection": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "Filterf9c52d3c6195c690c90b",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "t",
+                    "Entity": "Trafico vs proyeccion",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "t"
+                                }
+                              },
+                              "Property": "Inicio Intervalo"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T08:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T08:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T08:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T08:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T09:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T09:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T09:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T09:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T10:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T10:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T10:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T10:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T11:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T11:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T11:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T11:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T12:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T12:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T12:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T12:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T13:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T13:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T13:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T13:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T14:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T14:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T14:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T14:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T15:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T15:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T15:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T15:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T16:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T16:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T16:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T16:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T17:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T17:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T17:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T17:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T18:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T18:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T18:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T18:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T19:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T19:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T19:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T19:45:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T20:00:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T20:15:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T20:30:00'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'1899-12-31T20:45:00'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Trafico vs proyeccion"
+                    }
+                  },
+                  "Property": "Inicio Intervalo"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {
+          "1b13022a020588766961": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "082107e60886934634cd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ac6cda0e790502ac5d62",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Proyección"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0580be0a25e9a4134530",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Llamadas Proyectadas +12%"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6011d2db23ee7cc88005",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "LLamadas Ofrecidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "55ce83be923892638037",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Atendidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "be673431adc50be63304",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Desviacion Ofrecida Vs Proyectadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8ee64d3870842baa3216",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ef3a6f604a7bcb95c797",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "TMO IN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "adf73f5a90da0650520a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "TPC IN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "efc5c2400a40457ccca0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "TPC OUT"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "2645de3f6dd0499d29ca": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "63af4ab0120c5036080e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono Mes Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d8bb097b50c84c6a45c3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c63934c6a24ecd163013",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "43e253b4091a6c66a019": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "af07b03f80a1034aa4a0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio Año Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2680798ed03ecc310b9b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e2b0fdc04a09413314bb",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "44be63e6d8e9ccbe8680": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "45476e1d815c3c0b092a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio Mes Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8c19815f031e010d582a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d61e394e3728c0eb4960",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "48543c4787542428a332": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4aac998ebd03073d9ae0",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "832be824453e9175376e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Atendidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f921f2dee0792be979de",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Trafico Mes Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "5a2ded7aae673d32433c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "299c8347173a9097d881",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atencion Mes Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ff01316ee75bd0ccbcd5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f6edf3ab703e04e6ddc9",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "61657a20068cbd1378ab": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "cdbe0e33ae62c4c0bdc9",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "f",
+                                "Entity": "Fecha",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "And": {
+                                    "Left": {
+                                      "Comparison": {
+                                        "ComparisonKind": 2,
+                                        "Left": {
+                                          "Column": {
+                                            "Expression": {
+                                              "SourceRef": {
+                                                "Source": "f"
+                                              }
+                                            },
+                                            "Property": "Date"
+                                          }
+                                        },
+                                        "Right": {
+                                          "Literal": {
+                                            "Value": "datetime'2026-02-23T00:00:00'"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Right": {
+                                      "Comparison": {
+                                        "ComparisonKind": 3,
+                                        "Left": {
+                                          "Column": {
+                                            "Expression": {
+                                              "SourceRef": {
+                                                "Source": "f"
+                                              }
+                                            },
+                                            "Property": "Date"
+                                          }
+                                        },
+                                        "Right": {
+                                          "Literal": {
+                                            "Value": "datetime'2026-04-30T00:00:00'"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "startDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2026-02-23T00:00:00'"
+                            }
+                          }
+                        },
+                        "endDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2026-04-29T00:00:00'"
+                            }
+                          }
+                        },
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "66aa9d269d0a54c2ae27": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9f549160174e1b5422aa",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c4a950ae02192676ceee",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Proyección"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b3b70a651370db80b0a5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Llamadas Proyectadas +12%"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "344da6b0618ae3bc9a52",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "LLamadas Ofrecidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c203fc005bc485200673",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Atendidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4c204de614d98e0a8930",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Llamadas umbral"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7df5efd88080841d8c6a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Abandonadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "696ba17a43ac0b8b6733",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46b83f535976e0da5c0a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a92972cccaba6623d05d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4ab0e8163bc03713bb00",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Desviacion Ofrecida Vs Proyectadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "babe4b1e905ebca60599",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "%Dispobinilidad"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7c7488f885e01b3c12a0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "TMO IN"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Abandonadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "70eb9147da4baf197499": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4636332a3c4980c8e51d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e8348b536d8369370e50",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Atendidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "768e6e4cc8d1c6334d03",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Trafico Dia Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "7bb3c016269438f54609": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2d888caa550e020cd001",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "af82e2130a6e1d725b49",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e520dad73680740e2001",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio Dia Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "820954d9d1c40b040603": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "383a720f30d00072928a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Segmento"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b4ac57f845ba18a93894",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "LLamadas Ofrecidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "LLamadas Ofrecidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Segmento"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a3f372b5cd04176e86ab": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "7b3c4a7780a25e00e0bd",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "57e3b31f9c7439bd0d51",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fd2a0a9a0685e779788a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Atendidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f86e87669693b94423b0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Proyección"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "577591226451c060cb89",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Trafico Año Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8e3c823f23ab1b003de7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Proyección Año Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "a4115207be002d611ce4": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter69612df0938080b02032",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "t",
+                        "Entity": "Trafico vs proyeccion",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "t"
+                                        }
+                                      },
+                                      "Property": "Segmento"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Segmento"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "96de9d2a4a087bc885aa",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Skill"
+                        }
+                      },
+                      "Property": "Segmento"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "162d1138dc0968a25334",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Skill"
+                        }
+                      },
+                      "Property": "nombre skill"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Skill"
+                        }
+                      },
+                      "Property": "Segmento"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Skill"
+                        }
+                      },
+                      "Property": "nombre skill"
+                    }
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Values"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "Skill.Segmento"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Skill"
+                              }
+                            },
+                            "Property": "Segmento"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "Skill.nombre skill"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": [],
+                    "children": [
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'EMPRESAS'"
+                            }
+                          }
+                        ],
+                        "isToggled": true
+                      },
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'MASIVOS'"
+                            }
+                          }
+                        ],
+                        "isToggled": true
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "aa3b29cd637de9d755b2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ce78248533ef339ed397",
+                  "type": "RelativeDate",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "f",
+                        "Entity": "Fecha",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Between": {
+                            "Expression": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "f"
+                                  }
+                                },
+                                "Property": "Date"
+                              }
+                            },
+                            "LowerBound": {
+                              "DateSpan": {
+                                "Expression": {
+                                  "DateAdd": {
+                                    "Expression": {
+                                      "DateAdd": {
+                                        "Expression": {
+                                          "Now": {}
+                                        },
+                                        "Amount": 1,
+                                        "TimeUnit": 0
+                                      }
+                                    },
+                                    "Amount": -2,
+                                    "TimeUnit": 2
+                                  }
+                                },
+                                "TimeUnit": 0
+                              }
+                            },
+                            "UpperBound": {
+                              "DateSpan": {
+                                "Expression": {
+                                  "Now": {}
+                                },
+                                "TimeUnit": 0
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "a24827872999e2ca0400",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "startDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2025-06-01T00:00:00'"
+                            }
+                          }
+                        },
+                        "endDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2025-06-13T00:00:00'"
+                            }
+                          }
+                        },
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Inicio Intervalo"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b8071db3786d59005bd5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "aacff033596c83a9129a",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b6686227448de0c40020",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d6aa3107b418e03520bb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e79386a60430481001a1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "408749d9941ce056c800",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atencion Año Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "478ef52a4eabb1e751b0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio Año Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "be705d22a73acc129534": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d52b5a129c3804590776",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "abd0af8a46bc64d08c72",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8a6d5fef1783e6a03090",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Proyección"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ae151c2b363105b5446d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Llamadas Proyectadas +12%"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a20d006c402d4dbd3a16",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "LLamadas Ofrecidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "40e53acdc10a034d1746",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Atendidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8bab0aa7480091009deb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Llamadas umbral"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5157ea8789ad00027bd4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Abandonadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "160d886bb447ccb969b1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bc029c202578354270c4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0bce07935db047627076",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2757ed1a3c0626060069",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Desviacion Ofrecida Vs Proyectadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e09087f0e96321599203",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "%Dispobinilidad"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7805704ed141d81d4301",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "TMO IN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9b55be3f151e1370c33e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "TPC IN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5854b5308644029e80dc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "TPC OUT"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "d82ae1741b00fb914223": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "72bc7e30e009bb860dc7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atencion Año Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3d97d3134e1494db9eb0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0d68d81892bd120aa749",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "dcb8d9c207aa85eca1d2": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          },
+          "e0403da7021be5293976": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "eaf3e484a3c8d5ee34a5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "db2a0cca8e3da7576a41",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "09ead2ce7e2ee4cebb62",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1688560ea190e865ce50",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio Mes Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "f374a051bbb8a8ce3603": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "3b37230941a90b466553",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono Año Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1fe2b8d9dba48452ee85",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "19c2f36ad1c7a0777e76",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "fa08e9323e4ddc5adf40": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "1d38512fdaee9434a0ea": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "347a8784700732d55560",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "102266de097c02d9a757",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cf56b3df0d9e7339055b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio Dia Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "989bd750298b270031e0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c502fcc9a2c0cd4a9992",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "87331746dd4cba75b6b4",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1e844d41868b735b3463",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atencion Dia Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "72869e7ac9169d90cd0a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8d7578eeb97b20cc897c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b1f98e3db7c07d025550",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9a3e9be7b7058acce540",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono Dia Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "6f3345eb0c51eac064a6": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "25719e9c954a300382a3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Atendidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ab40ea5871db337bb079",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e1fb25bba900aa7060e3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Trafico Semana Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Atendidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "c7ab30e70073100a3b83": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "dc0171db43ad04d32bda",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6aba2ff67891c38e5a32",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e99833d6d8d203730980",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio Semana Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b8ead4d8dccde0bb8c7e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ba5c8387151b4becae00",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Proyección"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0afa31b85130b9e1639c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Llamadas Proyectadas +12%"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c20947ddba110dc06401",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "LLamadas Ofrecidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ca55fcea1002581698ea",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Atendidas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7304cbbdb99c78ccbeac",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Llamadas umbral"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bfd30e9be2e2952113a3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Trafico vs proyeccion"
+                            }
+                          },
+                          "Property": "Llamadas Abandonadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "47200702053d0a639b68",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0bad271f9c6bcd0a21bb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "915a8ba5068e00ab1131",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2729dcb2449c55976870",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Desviacion Ofrecida Vs Proyectadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4bd20422ea07b8861620",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "%Dispobinilidad"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6b2f4ac4acc17c000821",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "TMO IN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e22b14cf1a1bede045b3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "725904a009900b55bb64": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0c4d5de25a3479ddc161",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b99c5dd5300c733445ee",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6d00566b84d739434122",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio Semana Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {}
+            }
+          },
+          "b9b3d12b03bcee791098": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f6b807113a6b90078956",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b59f58d139906070b04c",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "76592451560bc2e9c116",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atencion Semana Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {}
+            }
+          },
+          "babc64d3d9076ee092a0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d1948f35b14055149a90",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a9c67ce0d22d255580de",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "58fb111e6806e2924b1a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono Semana Anterior"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "kpi",
+              "objects": {}
+            }
+          },
+          "77ec5a7002c7ec00a455": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e51f2afee18149c7a075",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de servicio"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "gauge",
+              "objects": {}
+            }
+          },
+          "785fc252ceb40d732514": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "23fbf322003067b9e02e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Atención"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "gauge",
+              "objects": {}
+            }
+          },
+          "1f4c1b188b4b4d006307": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5cda7311e582e4d71b17",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Trafico vs proyeccion"
+                        }
+                      },
+                      "Property": "Nivel de Abandono"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "gauge",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

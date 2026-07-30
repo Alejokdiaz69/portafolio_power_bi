@@ -1,0 +1,25 @@
+table 'Estado pago'
+	excludeFromModelRefresh
+	lineageTag: 69d23f70-d44e-4d60-9a3f-64a03c84bdc4
+
+	column ESTADO_PAGO
+		dataType: string
+		lineageTag: b3660032-b040-4d73-b8e4-9cdeff36b03b
+		summarizeBy: none
+		sourceColumn: ESTADO_PAGO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Estado pago' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcnN0DgkNclQwUAhwDfYPVorViVYKcHR3dHEEM4M9/RSAXH+l2FgA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ESTADO_PAGO = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"ESTADO_PAGO", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

@@ -1,0 +1,1569 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Semana",
+  "name": "Bookmarke0d48ecfe0e0305cc0c0",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "c918102b030847670776",
+      "e1a5d57506470a7d0641",
+      "80b4686d2852a85a13a9",
+      "6ed10d04c75079272b01",
+      "784e56bf04884455473b",
+      "a36bc9ad0b8c35956d72",
+      "1a7dee751353a47d0320",
+      "8e5c4d7758a076de10d1",
+      "64700a4915c99c9c1a1b",
+      "edacd3d01c01969d0d63",
+      "70ed7812a2bc60ad095a"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection07b405e9d8ee5ec1d306",
+    "filters": {
+      "byName": {
+        "Filter73f64901e50d81457a72": {
+          "name": "Filter73f64901e50d81457a72",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "l"
+                            }
+                          },
+                          "Property": "Año"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "2025L"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Fecha"
+                }
+              },
+              "Property": "Date"
+            }
+          },
+          "howCreated": 1,
+          "cachedDisplayNames": [
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Año"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2025L"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "2025"
+            }
+          ]
+        }
+      },
+      "byExpr": [
+        {
+          "name": "Filter2faff8d6926543f09616",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "l"
+                            }
+                          },
+                          "Property": "Mes"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'febrero'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'marzo'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'abril'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'mayo'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'junio'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'julio'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'agosto'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'septiembre'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Fecha"
+                }
+              },
+              "Property": "Date"
+            }
+          },
+          "howCreated": 1,
+          "cachedDisplayNames": [
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'febrero'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "febrero"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'marzo'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "marzo"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'abril'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "abril"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'mayo'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "mayo"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'junio'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "junio"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'julio'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "julio"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'agosto'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "agosto"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'septiembre'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "septiembre"
+            }
+          ]
+        },
+        {
+          "name": "Filter0918cc05c738d4d24b77",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "s",
+                "Entity": "Supervisores",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "s"
+                                }
+                              },
+                              "Property": "Team Leader"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "null"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Supervisores"
+                }
+              },
+              "Property": "Team Leader"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSection07b405e9d8ee5ec1d306": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "Filtere28e828f0dd2895db396",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "e",
+                    "Entity": "Estados_Por_Camp_Y_Agent_Cls",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Not": {
+                        "Expression": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "e"
+                                    }
+                                  },
+                                  "Property": "Antiguedad"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                    }
+                  },
+                  "Property": "Antiguedad"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {
+          "0e4fe3000d088ec30c28": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "70ed7812a2bc60ad095a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6106edb13239da361348",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Cuartil"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a119290007dab546a520",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "SPH Activas 2"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "25c31d1b58c98d42e2ce",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "SPH cantadas 2"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Cuartil"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "22a7c2e921c0d4714990": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          },
+          "784e56bf04884455473b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c3eed67d4ae8a1c91335",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "e",
+                        "Entity": "Estados_Por_Camp_Y_Agent_Cls",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Aggregation": {
+                                    "Expression": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "e"
+                                          }
+                                        },
+                                        "Property": "Venta cantadas"
+                                      }
+                                    },
+                                    "Function": 0
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "5883cf7748237d200d10",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil mes"
+                        }
+                      },
+                      "Property": "Nombre completo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0c511426525ae9276409",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil mes"
+                        }
+                      },
+                      "Property": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8d51400a35b343530d46",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cuartil mes"
+                            }
+                          },
+                          "Property": "SPH 2"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dc0c4f7e1aeb64e79aa0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cuartil mes"
+                            }
+                          },
+                          "Property": "Cuartil"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Cuartil"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil mes"
+                        }
+                      },
+                      "Property": "Nombre completo"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil mes"
+                        }
+                      },
+                      "Property": "Mes"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "6ed10d04c75079272b01": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "953005244b0903cc97bb",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "e",
+                        "Entity": "Estados_Por_Camp_Y_Agent_Cls",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Aggregation": {
+                                    "Expression": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "e"
+                                          }
+                                        },
+                                        "Property": "Venta cantadas"
+                                      }
+                                    },
+                                    "Function": 0
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter7d3fe91a1d2a72632c4c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "172d66810635b9548409",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cuartil semana"
+                            }
+                          },
+                          "Property": "SPH 2"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f16ae4a147b07cba8292",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Nombre completo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7696e91e12e2e2325cb8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f675070a6dd1e0288840",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cuartil semana"
+                            }
+                          },
+                          "Property": "Cuartil"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fbe0ba931a5d4109e6c6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cuartil semana"
+                            }
+                          },
+                          "Property": "SPH 2"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Nombre completo"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Mes"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "80b4686d2852a85a13a9": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c9a18dd0b00bb6e5ed19",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter7d3fe91a1d2a72632c4c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "2cac67c20b90006cb082",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Cuartil"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "54b77ca738cd2092552a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cuartil semana"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "34421e4830040141eca0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Cuartil"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "e1a5d57506470a7d0641": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "885999a50b46c3e5713c",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "e",
+                        "Entity": "Estados_Por_Camp_Y_Agent_Cls",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Aggregation": {
+                                    "Expression": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "e"
+                                          }
+                                        },
+                                        "Property": "Venta cantadas"
+                                      }
+                                    },
+                                    "Function": 0
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter7d3fe91a1d2a72632c4c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "4ed977fe293486014346",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Cuartil"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "42ec071ecebe376018d6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cuartil semana"
+                            }
+                          },
+                          "Property": "SPH 2"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "501c980f58458d040eae",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Cuartil"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cuartil semana"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "c918102b030847670776": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bf753c50a5432206c28e",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "e",
+                        "Entity": "Estados_Por_Camp_Y_Agent_Cls",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Aggregation": {
+                                    "Expression": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "e"
+                                          }
+                                        },
+                                        "Property": "Venta cantadas"
+                                      }
+                                    },
+                                    "Function": 0
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "637d5190c911e95d159c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Nombre completo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8820e139498c3e0cac06",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3e5a3136600145839670",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Cuartil"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "29547566084da2e6a099",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Corte"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Cuartil"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Nombre completo"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Corte"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

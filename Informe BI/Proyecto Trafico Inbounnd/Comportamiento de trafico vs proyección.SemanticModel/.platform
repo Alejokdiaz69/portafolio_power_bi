@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Comportamiento de trafico vs proyección"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a570f2cb-15af-41fb-a5a6-8367ddd9eeb3"
+  }
+}

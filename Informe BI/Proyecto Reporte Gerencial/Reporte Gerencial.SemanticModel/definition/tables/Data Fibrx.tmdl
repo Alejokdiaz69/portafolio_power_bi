@@ -1,0 +1,341 @@
+table 'Data Fibrx'
+	lineageTag: a5a46ce6-1e59-43da-8716-cb20b091e95d
+
+	column 'MES CANTADA'
+		dataType: string
+		lineageTag: 6bdfa8a8-ca97-4d25-8db9-83ba78c7a7fd
+		summarizeBy: none
+		sourceColumn: MES CANTADA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DIA CANTADA'
+		dataType: int64
+		formatString: 0
+		lineageTag: 89fa345f-0f6b-4896-b4d0-7bdf51b61959
+		summarizeBy: sum
+		sourceColumn: DIA CANTADA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MES INSTALACION P'
+		dataType: string
+		lineageTag: bc2c8b3a-0edb-4ee8-99ec-b10ab92f80bb
+		summarizeBy: none
+		sourceColumn: MES INSTALACION P
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DIA INSTALACION P'
+		dataType: int64
+		formatString: 0
+		lineageTag: 99f06972-17a7-4134-b6c2-05b16121313a
+		summarizeBy: sum
+		sourceColumn: DIA INSTALACION P
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MES INSTALACION R'
+		dataType: string
+		lineageTag: dbc4c116-7c25-49e4-8833-166b9d019a5b
+		summarizeBy: none
+		sourceColumn: MES INSTALACION R
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DIA INSTALACION R'
+		dataType: int64
+		formatString: 0
+		lineageTag: a17f66be-c636-460f-9f37-b46b01d7b658
+		summarizeBy: sum
+		sourceColumn: DIA INSTALACION R
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MES INGRESO'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: af0aeecd-c1df-44b9-8b62-831163e637cc
+		summarizeBy: none
+		sourceColumn: MES INGRESO
+
+		variation Variación
+			isDefault
+			relationship: 687fb28e-910d-42d6-ad62-ed4e41ec574d
+			defaultHierarchy: LocalDateTable_e79d244a-dca6-4421-8534-9f8fa8d57a9a.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'NOMBRE AGENTE'
+		dataType: string
+		lineageTag: 9d9fa6d6-c127-4cbb-b0a1-ab34051d83f1
+		summarizeBy: none
+		sourceColumn: NOMBRE AGENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DOCUMENTO DE AGENTE'
+		dataType: string
+		lineageTag: ec2c638b-7800-41c5-8d3b-964e4dfd1f37
+		summarizeBy: none
+		sourceColumn: DOCUMENTO DE AGENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PLAN QUE SE LLEVA'
+		dataType: string
+		lineageTag: 3adf6cb6-f466-41f0-a963-11e8d8376bf2
+		summarizeBy: none
+		sourceColumn: PLAN QUE SE LLEVA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'INTERNET FIBRA'
+		dataType: string
+		lineageTag: ffd79403-cbc0-40f8-8720-a74daddea31f
+		summarizeBy: none
+		sourceColumn: INTERNET FIBRA
+
+		annotation SummarizationSetBy = Automatic
+
+	column comuna
+		dataType: string
+		lineageTag: a034ca24-616f-416c-964f-3c1cce753a91
+		summarizeBy: none
+		sourceColumn: comuna
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DIAS DE AGEDA'
+		dataType: int64
+		formatString: 0
+		lineageTag: b6184431-ff84-4f9c-899d-3b3d8ccf034a
+		summarizeBy: sum
+		sourceColumn: DIAS DE AGEDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OBS AGENDA'
+		dataType: int64
+		formatString: 0
+		lineageTag: f3cc1aca-f146-43b9-ac69-074173cd2d6f
+		summarizeBy: sum
+		sourceColumn: OBS AGENDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALERTA
+		dataType: string
+		lineageTag: 51753546-8c85-460e-a0cc-716639671187
+		summarizeBy: none
+		sourceColumn: ALERTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTADO
+		dataType: string
+		lineageTag: 2cd6cb48-73bd-4c9c-a91d-c4f536e7f92d
+		summarizeBy: none
+		sourceColumn: ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FECHA ESTADO'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: abc584a1-6880-433f-9a69-8e9fb77d22f2
+		summarizeBy: none
+		sourceColumn: FECHA ESTADO
+
+		variation Variación
+			isDefault
+			relationship: a20bad8b-0b4f-45c9-8905-0d370856b53c
+			defaultHierarchy: LocalDateTable_f6eb208b-af0b-4b54-8086-618ad10988a6.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'SUB ESTADO'
+		dataType: string
+		lineageTag: 902a7b4f-fe36-4357-9a10-9e5b3cf46a18
+		summarizeBy: none
+		sourceColumn: SUB ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes venta cantada' = FORMAT('Data Fibrx'[MES INGRESO],"M")
+		lineageTag: e27b1b09-0a6d-47d6-a213-7c8876c50cc0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave fibra' = 'Data Fibrx'[DOCUMENTO DE AGENTE]&'Data Fibrx'[Mes venta cantada]&'Data Fibrx'[Año venta cantada]
+		lineageTag: 906ea9e6-d604-42a2-af4b-2b0fd6b491a9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave fibra 2' = 'Data Fibrx'[nombre completo]&'Data Fibrx'[Mes venta cantada]&'Data Fibrx'[Año venta cantada]
+		lineageTag: 8ed14924-6238-486a-9adc-b3ef6b16bdd2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'nombre completo' = LOOKUPVALUE('planta activa'[NOMBRE COMPLETO],'planta activa'[Llave planta 3],'Data Fibrx'[Llave fibra])
+		lineageTag: fb1189c3-2732-48b9-9691-28977a5d43f1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supervisor = LOOKUPVALUE('planta activa'[JEFE DIRECTO],'planta activa'[llave planta 3],'Data Fibrx'[Llave fibra])
+		lineageTag: 713455b8-0e69-4ed7-9b43-1fed443dd90c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activo = IF('Data Fibrx'[ESTADO]="Activo",1,0)
+		formatString: 0
+		lineageTag: 5ab4e086-92cf-406c-92b6-7748b33c0d22
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pendiente = ```
+			IF('Data Fibrx'[ESTADO]="Pendiente",1,0) 
+			```
+		formatString: 0
+		lineageTag: 90b95ce5-0971-43f9-b816-4fa24f4646e3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cancelado = IF('Data Fibrx'[ESTADO]="Cancelado",1,0)
+		formatString: 0
+		lineageTag: edfef2b7-0d34-4e9e-abcc-1c40445b790b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes Estado actual' = FORMAT('Data Fibrx'[FECHA ESTADO],"M")
+		lineageTag: 169a5ea8-c5b8-4bb1-b720-893ceaace3ff
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activos mismo mes' = IF(AND('Data Fibrx'[Activo]=1,'Data Fibrx'[Mes Estado Actual]='Data Fibrx'[Mes venta cantada]),1,0)
+		formatString: 0
+		lineageTag: 666d9bc2-4dff-4828-b1e7-5339f35ceffe
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Arrastre = IF(AND('Data Fibrx'[Activo]=1,'Data Fibrx'[Mes Estado actual]<>'Data Fibrx'[Mes venta cantada]),1,0)
+		formatString: 0
+		lineageTag: 2b36867e-5485-4848-a8ae-7751cc3eca2f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Venta cantada' = 1
+		formatString: 0
+		lineageTag: e4be9f94-df97-4760-ac3c-0526087564b2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año venta cantada' = FORMAT('Data Fibrx'[MES INGRESO],"YYYY")
+		lineageTag: 26fea2c3-25e7-4eb7-8010-f721e35b9e07
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año Estado actual' = FORMAT('Data Fibrx'[FECHA ESTADO],"yyyy")
+		lineageTag: ffeb9955-ecde-46da-9bc5-3b83043528d5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agenda = 'Data Fibra'[fecha de instalación programada en new mat].[Date]-'Data Fibra'[MES INGRESO]
+		formatString: General Date
+		lineageTag: 6e6d15a1-aadd-43a5-8924-b983eeb52f07
+		summarizeBy: none
+
+		variation Variación
+			isDefault
+			relationship: b0b93418-b580-4f02-9fe8-ee7c3242bc6e
+			defaultHierarchy: LocalDateTable_1b2fa722-87af-4cfd-b8ce-e356c288cdf8.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Usuario = LOOKUPVALUE('planta activa'[USUARIO MAT],'planta activa'[llave planta 3],'Data Fibrx'[Llave fibra])
+		lineageTag: f5c45453-5899-459d-8d44-6d2d7ed2172a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave fibra 3' = 'Data Fibrx'[Usuario]&'Data Fibrx'[DIA CANTADA]&'Data Fibrx'[Mes venta cantada]&'Data Fibrx'[Año venta cantada]
+		lineageTag: 22652cda-c51b-4fad-8d8f-0a871a7bc2b4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column PUNTUACION
+		dataType: string
+		lineageTag: 16b18df2-716c-4809-8f70-94f169fa8cca
+		summarizeBy: none
+		sourceColumn: PUNTUACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'USUARIO CON QUE SE VENDIA'
+		dataType: string
+		lineageTag: 7b58235a-ff8f-464b-8b0f-db22d29fb033
+		summarizeBy: none
+		sourceColumn: USUARIO CON QUE SE VENDIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fecha de instalacion programada en new mat'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7512d28e-6e32-4c03-b00d-9e528d12c9c5
+		summarizeBy: none
+		sourceColumn: fecha de instalacion programada en new mat
+
+		variation Variación
+			isDefault
+			relationship: 462199b1-e9cf-4862-9c92-7e1a6bb8e7b7
+			defaultHierarchy: LocalDateTable_7bb42b9a-1cda-4cd0-bc51-edbc7198875e.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'hora de instalacion programada en new mat'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 5663ae17-e4ef-468c-bde9-38f8b4136d38
+		summarizeBy: none
+		sourceColumn: hora de instalacion programada en new mat
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition 'Data Fibrx' = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\DATA FIBRX.csv"),[Delimiter=";", Columns=22, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"MES CANTADA", type text}, {"DIA CANTADA", Int64.Type}, {"MES INSTALACION P", type text}, {"DIA INSTALACION P", Int64.Type}, {"MES INSTALACION R", type text}, {"DIA INSTALACION R", Int64.Type}, {"MES INGRESO", type date}, {"PUNTUACION", type text}, {"NOMBRE AGENTE", type text}, {"DOCUMENTO DE AGENTE", type text}, {"USUARIO CON QUE SE VENDIA", type text}, {"PLAN QUE SE LLEVA", type text}, {"INTERNET FIBRA", type text}, {"fecha de instalacion programada en new mat", type date}, {"hora de instalacion programada en new mat", type time}, {"comuna", type text}, {"DIAS DE AGEDA", Int64.Type}, {"OBS AGENDA", Int64.Type}, {"ALERTA", type text}, {"ESTADO", type text}, {"FECHA ESTADO", type date}, {"SUB ESTADO", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

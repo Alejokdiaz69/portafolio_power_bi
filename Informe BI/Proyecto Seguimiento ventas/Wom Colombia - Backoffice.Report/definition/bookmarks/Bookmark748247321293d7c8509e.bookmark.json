@@ -1,0 +1,1524 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Diario",
+  "name": "Bookmark748247321293d7c8509e",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "d2c2c88672418c658228",
+      "b1058bcdbb11029a4007",
+      "8812544217ae4d665b73",
+      "d13f0f9901b2c64e5884",
+      "3561213cdbac59374608",
+      "2dae6b786ccb97feb024",
+      "cfd3c4cf50ef164143e0",
+      "df76339a739f67666774",
+      "e8ef5f8e6ae150346276",
+      "6cdfad929dcb485d30da"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection00f830ade62a0cc2b4cc",
+    "filters": {
+      "byName": {
+        "Filter73f64901e50d81457a72": {
+          "name": "Filter73f64901e50d81457a72",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "l"
+                            }
+                          },
+                          "Property": "Año"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "2025L"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "HierarchyLevel": {
+              "Expression": {
+                "Hierarchy": {
+                  "Expression": {
+                    "PropertyVariationSource": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Name": "Variación",
+                      "Property": "Date"
+                    }
+                  },
+                  "Hierarchy": "Jerarquía de fechas"
+                }
+              },
+              "Level": "Año"
+            }
+          },
+          "howCreated": 1,
+          "cachedDisplayNames": [
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Año"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2025L"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "2025"
+            }
+          ]
+        }
+      },
+      "byExpr": [
+        {
+          "name": "Filter2faff8d6926543f09616",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "l"
+                            }
+                          },
+                          "Property": "Mes"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'febrero'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'marzo'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'abril'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'mayo'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'junio'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'julio'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "HierarchyLevel": {
+              "Expression": {
+                "Hierarchy": {
+                  "Expression": {
+                    "PropertyVariationSource": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Name": "Variación",
+                      "Property": "Date"
+                    }
+                  },
+                  "Hierarchy": "Jerarquía de fechas"
+                }
+              },
+              "Level": "Mes"
+            }
+          },
+          "howCreated": 1,
+          "cachedDisplayNames": [
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'febrero'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "febrero"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'marzo'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "marzo"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'abril'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "abril"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'mayo'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "mayo"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'junio'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "junio"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'julio'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "julio"
+            }
+          ]
+        },
+        {
+          "name": "Filter0918cc05c738d4d24b77",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "s",
+                "Entity": "Supervisores",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "s"
+                                }
+                              },
+                              "Property": "Team Leader"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "null"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Supervisores"
+                }
+              },
+              "Property": "Team Leader"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSection00f830ade62a0cc2b4cc": {
+        "visualContainers": {
+          "3e72a084faa479f1e869": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9d2d8e1082303679ee66",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "startDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2025-02-01T00:00:00'"
+                            }
+                          }
+                        },
+                        "endDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2025-07-31T00:00:00'"
+                            }
+                          }
+                        },
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "96b609ca45e1f1d692be": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3561213cdbac59374608": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "68f948e87e41c4600793",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ac8b4f45c8b6510a82a4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Arrastre"
+                            }
+                          },
+                          "Property": "Arrastre"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f449400b0161134052ab",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas mismo mes"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "90630a3e27bc6e6d481d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "%Conv N"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4dbb700d003b20010244",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c19a0934044427c90b40",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "%Conv N+1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8fa181a0c1190ec3ca98",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "% Conv Arrastre"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f9508704cb3261a9a8bb",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "db78d513301b66bba228",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Medida"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "d13f0f9901b2c64e5884": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "86ef7b2e9c014dd96557",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "%Conv N"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f030a603d3c91db6d617",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "%Conv N+1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "946b165999a0eb92b04c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "% Conv Arrastre"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "122abd0674e3441103b2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "planta_activa_mes"
+                        }
+                      },
+                      "Property": "Antiguedad"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "planta_activa_mes"
+                        }
+                      },
+                      "Property": "Antiguedad"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "8812544217ae4d665b73": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "252bdf33a221d5ab86c5",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "73921343e258a8082c88",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1198960ab014cc24a2a5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "%Conv N"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "be3a51d05d701e821814",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "%Conv N+1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bf81768b156e5e857a55",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "% Conv Arrastre"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "b1058bcdbb11029a4007": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bb13ebfccc137dcc0839",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "Clasificacion"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "80885e07317e3251ea85",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "Clasificacion"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d2c2c88672418c658228": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c5bcfd300ba10080ed52",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b247a8fc16ba6a1b6785",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Operador"
+                        }
+                      },
+                      "Property": "Homologacion"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "multiRowCard",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "199be5b8af51d282c1b5": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          },
+          "e8ef5f8e6ae150346276": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0486aee19c8cb0070c58",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c5e21cb10db015dd121d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Arrastre"
+                            }
+                          },
+                          "Property": "Arrastre"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "20cd79bb0c6bb948c24e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas mismo mes"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c31da17720bd564108da",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "%Conv N"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f193e9362caa68c6900e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "15189530996040eac02c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "%Conv N+1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "758eb45bea3e0e601321",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "% Conv Arrastre"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d7a096fbeda2664e6ca1",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a918404197bd51022c3e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Medida"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6cdfad929dcb485d30da": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0ae939e0d1b504ba2a02",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Tabla cruce"
+                            }
+                          },
+                          "Property": "Ventas cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "630772f45a4042e72b70",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "%Conv N"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "68e2e64360e21dba20e0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "%Conv N+1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a41706405ea7a231395e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "% Conv Arrastre"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "22baf2bd8436b365a245",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Día"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

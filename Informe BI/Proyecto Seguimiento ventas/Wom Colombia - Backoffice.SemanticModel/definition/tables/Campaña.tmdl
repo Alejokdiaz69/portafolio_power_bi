@@ -1,0 +1,23 @@
+table Campaña
+	excludeFromModelRefresh
+	lineageTag: 2080281c-568b-4307-b13d-dc7b5f1c40b4
+
+	column Campaña
+		dataType: string
+		lineageTag: 156edbda-c44d-4e7f-931d-df3bfb749426
+		summarizeBy: none
+		sourceColumn: Campaña
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Campaña = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8s1ML0pMzszPU4rViVYKyC8qSUzKzMlMSUxRio0FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Campaña = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Campaña", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

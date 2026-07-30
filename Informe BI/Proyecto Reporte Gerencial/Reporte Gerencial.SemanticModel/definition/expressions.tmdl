@@ -1,0 +1,184 @@
+expression 'Archivo de ejemplo (3)' =
+		let
+		    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Conexiones"),
+		    Navegación1 = Origen{0}[Content]
+		in
+		    Navegación1
+	lineageTag: 59930a84-b7f5-41ed-9b16-f4b0dfc9ba0b
+	queryGroup: 'Transformar archivo de Conexiones\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = Navegación
+
+expression Parámetro3 = #"Archivo de ejemplo (3)" meta [IsParameterQuery=true, BinaryIdentifier=#"Archivo de ejemplo (3)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 01504c6e-2873-45f0-84f2-f5f3bbd58b3a
+	queryGroup: 'Transformar archivo de Conexiones\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo de ejemplo (3)' =
+		let
+		    Origen = Csv.Document(Parámetro3,[Delimiter=";", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+	lineageTag: 94c32101-7ad0-4b39-a5a6-7866c2f9aaad
+	queryGroup: 'Transformar archivo de Conexiones'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar archivo (3)' =
+		let
+		    Origen = (Parámetro3 as binary) => let
+		    Origen = Csv.Document(Parámetro3,[Delimiter=";", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+		in
+		    Origen
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo (3)""}" ]
+	lineageTag: a2d8f940-4d9a-495b-a1da-e28e6c60fd08
+	queryGroup: 'Transformar archivo de Conexiones\Consultas auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Archivo de ejemplo (4)' =
+		let
+		    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Llamadas"),
+		    Navegación1 = Origen{0}[Content]
+		in
+		    Navegación1
+	lineageTag: e874ca4e-c679-45f5-8618-39ec02bf38f9
+	queryGroup: 'Transformar archivo de Llamadas\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = Navegación
+
+expression Parámetro4 = #"Archivo de ejemplo (4)" meta [IsParameterQuery=true, BinaryIdentifier=#"Archivo de ejemplo (4)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: ed5bf48d-5ac1-473b-915b-a1abfd94ac9c
+	queryGroup: 'Transformar archivo de Llamadas\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo de ejemplo (4)' =
+		let
+		    Origen = Csv.Document(Parámetro4,[Delimiter=";", Columns=40, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+	lineageTag: 71cfbaf6-19eb-41a2-ba96-8e74b211e38b
+	queryGroup: 'Transformar archivo de Llamadas'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar archivo (4)' =
+		let
+		    Origen = (Parámetro4 as binary) => let
+		    Origen = Csv.Document(Parámetro4,[Delimiter=";", Columns=40, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+		in
+		    Origen
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo (4)""}" ]
+	lineageTag: aea9fff1-c16e-4b08-a0a8-262a158c54a5
+	queryGroup: 'Transformar archivo de Llamadas\Consultas auxiliares'
+
+	annotation PBI_ResultType = Exception
+
+expression 'Archivo de ejemplo' =
+		let
+		    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Conexiones aplicativo"),
+		    Navegación1 = Origen{0}[Content]
+		in
+		    Navegación1
+	lineageTag: 94b3cfdd-8f88-4e3c-976a-a5819cc8dbeb
+	queryGroup: 'Transformar archivo de Conexiones aplicativo\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = Navegación
+
+expression Parámetro1 = #"Archivo de ejemplo" meta [IsParameterQuery=true, BinaryIdentifier=#"Archivo de ejemplo", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 75ee8183-af24-4d4b-b442-80f025211c34
+	queryGroup: 'Transformar archivo de Conexiones aplicativo\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo de ejemplo' =
+		let
+		    Origen = Csv.Document(Parámetro1,[Delimiter=";", Columns=26, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+	lineageTag: e8187e7d-0c27-4ef9-9692-a076a037e151
+	queryGroup: 'Transformar archivo de Conexiones aplicativo'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar archivo' =
+		let
+		    Origen = (Parámetro1 as binary) => let
+		    Origen = Csv.Document(Parámetro1,[Delimiter=";", Columns=26, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+		in
+		    Origen
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo""}" ]
+	lineageTag: 6a39f9cd-ce89-4fd4-92a0-96f93ae2b727
+	queryGroup: 'Transformar archivo de Conexiones aplicativo\Consultas auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Archivo de ejemplo (2)' =
+		let
+		    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Ventas"),
+		    Navegación1 = Origen{0}[Content]
+		in
+		    Navegación1
+	lineageTag: 218255b4-eb83-46f5-9c93-3a4b1df45d63
+	queryGroup: 'Transformar archivo de Ventas\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = Navegación
+
+expression Parámetro2 = #"Archivo de ejemplo (2)" meta [IsParameterQuery=true, BinaryIdentifier=#"Archivo de ejemplo (2)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: aab6a183-72e3-4deb-9897-50904b243024
+	queryGroup: 'Transformar archivo de Ventas\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo de ejemplo (2)' =
+		let
+		    Origen = Csv.Document(Parámetro2,[Delimiter=";", Columns=104, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+	lineageTag: c86386b1-5b41-4a4d-a217-dfeccf51b062
+	queryGroup: 'Transformar archivo de Ventas'
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+
+expression 'Transformar archivo (2)' =
+		let
+		    Origen = (Parámetro2 as binary) => let
+		    Origen = Csv.Document(Parámetro2,[Delimiter=";", Columns=104, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+		in
+		    Origen
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo (2)""}" ]
+	lineageTag: 87ac38ba-3df2-4747-8934-b45dabb57b85
+	queryGroup: 'Transformar archivo de Ventas\Consultas auxiliares'
+
+	annotation PBI_ResultType = Function
+
+	annotation PBI_NavigationStepName = Navegación
+

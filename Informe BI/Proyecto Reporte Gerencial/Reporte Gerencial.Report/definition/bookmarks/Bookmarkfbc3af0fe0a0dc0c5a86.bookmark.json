@@ -1,0 +1,2535 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Agente",
+  "name": "Bookmarkfbc3af0fe0a0dc0c5a86",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "fd06488742e0583b2b00",
+      "b1c13b408be344ed9081",
+      "dff6baa5150d2390ab1a",
+      "37ccac275986b5ee2413",
+      "c1a159ebe00dd9905dc0",
+      "ae08577c679a03e92c7e",
+      "085233990935ebb0a76d",
+      "aa8550fa0a6052230ee0",
+      "a4a92719300d0942e215",
+      "7bf2389f30d27ca76e0e",
+      "18682927cb56d536a42b",
+      "c8435ccd5750ae900ebe",
+      "9918d4f3703485b74479",
+      "cbb2e530c3b666513d7a",
+      "edbfdee677da72de0262",
+      "d776ca87b940cae2bc94"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection901b2b080ce1c19313c2",
+    "filters": {
+      "byName": {
+        "Filter73f64901e50d81457a72": {
+          "name": "Filter73f64901e50d81457a72",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "l"
+                            }
+                          },
+                          "Property": "Año"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "2025L"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Fecha"
+                }
+              },
+              "Property": "Date"
+            }
+          },
+          "howCreated": 1,
+          "cachedDisplayNames": [
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Año"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2025L"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "2025"
+            }
+          ]
+        }
+      },
+      "byExpr": [
+        {
+          "name": "Filter2faff8d6926543f09616",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "l"
+                            }
+                          },
+                          "Property": "Mes"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'febrero'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'marzo'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'abril'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'mayo'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'junio'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'julio'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'agosto'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Fecha"
+                }
+              },
+              "Property": "Date"
+            }
+          },
+          "howCreated": 1,
+          "cachedDisplayNames": [
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'febrero'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "febrero"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'marzo'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "marzo"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'abril'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "abril"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'mayo'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "mayo"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'junio'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "junio"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'julio'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "julio"
+            },
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'agosto'"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "agosto"
+            }
+          ]
+        },
+        {
+          "name": "Filter0918cc05c738d4d24b77",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "s",
+                "Entity": "Supervisores",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "s"
+                                }
+                              },
+                              "Property": "Team Leader"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "null"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Supervisores"
+                }
+              },
+              "Property": "Team Leader"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSection901b2b080ce1c19313c2": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "Filtere28e828f0dd2895db396",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "e",
+                    "Entity": "Estados_Por_Camp_Y_Agent_Cls",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Not": {
+                        "Expression": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "e"
+                                    }
+                                  },
+                                  "Property": "Antiguedad"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                    }
+                  },
+                  "Property": "Antiguedad"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {
+          "e3ebba127bde90c26cb9": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "edbfdee677da72de0262": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a03aefc99957a09b5224",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9055b2c8b1540a00785b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4c14273ae11e4eb984ee",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Activas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8be9cde03aa7ca000810",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "d776ca87b940cae2bc94": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0e11a55468390117be65",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Activas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "69b82ef90c07576edc07",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ec1d98c05157797ecb26",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Cuartil 2"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Cuartil 2"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "02fd1a185ae9cbac00d7": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          },
+          "c8435ccd5750ae900ebe": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4de2a397aeade06b0122",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46f7940614b703092eec",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5edf388d04a551c4b565",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Activas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "203b97707e0990ebded3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "aa8550fa0a6052230ee0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d476d66fd3aa7e0025c5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c5e396b460d27a93431d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Activas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "08bd0a70c6b2a442360b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Supervisor"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b7312501370a9dd8685e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Supervisor"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "ae08577c679a03e92c7e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b6106e74d87292c96507",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Agentes conectados"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3174574a0b34a5ad8325",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d3110ce9b71ec0580e1d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Conexión"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3472bc855656727c9a53",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Planificado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c9d9081f6d5898cd1434",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Conexión - Aux"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1c9236d37115e07e3d72",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Productivo"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8778151d702a12099675",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Pausas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8fc01e3d00e050207a36",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. ACD - sin gestión"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "de998151b13962d2c851",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Disponible"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6e85d9f430770860347c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. AHT"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3e2da8d017e379ed070a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Adherencia"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8760f89ac30e961d8c3d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Productivo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "038b3da33362011be323",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e0e5886f89007777849a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "c1a159ebe00dd9905dc0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bbd3775ac993ddc105eb",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5e35dcc205766300e3b0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ffd1615dea64d349197b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Activas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "71ecee9b660570560c93",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Semana del Mes"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "37ccac275986b5ee2413": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d916c779cbacb86d1d68",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Agentes conectados"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "68776dbdaddc5ab6110d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Conexión"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bcd33460dd3731300020",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Planificado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "40ff228e40610e50306b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Conexión - Aux"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0855a5ab1e95796c6dc9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Productivo"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3338108042691742425e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Pausas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "32c7a9da99b205bcbb14",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. ACD - sin gestión"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "84d2fef024957e93b885",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Disponible"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "00e0b17802e46d5ea2bb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. AHT"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1ca213025ce4d5b06080",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Adherencia"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0115b4505ac35002702d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Productivo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fcc3368b1c0ad0187456",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3ef0537f69ada3d85a30",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fae7863a64ed533018c5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Supervisor"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Productivo"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Supervisor"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "dff6baa5150d2390ab1a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "035852459330822b6b47",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Agentes conectados"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3888efff00b06ac4a0d0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Conexión"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a4de30594720e9cb5e18",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Planificado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "959632f0d50b88493150",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Conexión - Aux"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6c9eaef8802d06ac07c6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Productivo"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6377cf591621c086638e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Pausas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fa9fe39b401e107b5679",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. ACD - sin gestión"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7f0f92883947019a0450",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Disponible"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d54ea640add1dc16a9d0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. AHT"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c80c22b874997e99e441",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Adherencia"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b8e48a7a4c0ab7003be2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Productivo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0afe47c9339e06814a21",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "db48e5935919764c697c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "04a0a45003040a2bedb0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "b1c13b408be344ed9081": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "88338d48786dc0d80bbb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Agentes conectados"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "073d459eab4b81ed19bd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Conexión"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c6b5a03f9995724b0279",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Planificado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "006eb512a838e0e877c6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Conexión - Aux"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "60f36424a03a26ee3e9c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Productivo"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4345a12591d091b9050a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Pausas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cf0a7df5928687037d32",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. ACD - sin gestión"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b6d507370cb6ca0e0810",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Disponible"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a1bfb68b101c909ca197",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. AHT"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ba72bacd47dc30b091d0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Adherencia"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8ee484a6d37a07787352",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Productivo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "31934b7615c759c23b47",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "90abdef8beb26b9b83e8",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f72810d90c5b7cd004c0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "fd06488742e0583b2b00": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "555c63bb506ed62b246c",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "e",
+                        "Entity": "Estados_Por_Camp_Y_Agent_Cls",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Aggregation": {
+                                    "Expression": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "e"
+                                          }
+                                        },
+                                        "Property": "T. Conexión"
+                                      }
+                                    },
+                                    "Function": 0
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Conexión"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "481db1b30463991e60ec",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Planificado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "83bd7d1eb2b1897b280b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Conexión - Aux"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cef24274510979a7c084",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Productivo"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d7c15a516d39e75091ce",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Pausas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6a2c36eaa76148a6c1a7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. ACD - sin gestión"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "eea5dfd2e4232d856069",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. Disponible"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6c3e145fe3315a9603d6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "T. AHT"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "91fc6e568a5854888ab5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Adherencia"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fb557daf3db2247d0097",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "%Productivo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b6f6789725c827ed3d7e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                            }
+                          },
+                          "Property": "Venta cantadas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d57a8d5371a31a381887",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "SPH Cantadas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e32595a0b9217b2c8433",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Nombre completo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Estados_Por_Camp_Y_Agent_Cls"
+                        }
+                      },
+                      "Property": "Nombre completo"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

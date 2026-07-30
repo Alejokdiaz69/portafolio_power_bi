@@ -1,0 +1,34 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-CO
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Rechazos","ANS de Entrega","planta_activa_mes","WMS","ventas_2","Operador","Planes","Procedencia","Estado de procedencia","Campaña","Estado pago"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_f78af82b-3ce3-4c80-92f2-4f93f5bce9d5
+ref table Fecha
+ref table LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f
+ref table Rechazos
+ref table 'ANS de Entrega'
+ref table Arrastre
+ref table 'Tabla cruce'
+ref table planta_activa_mes
+ref table WMS
+ref table ventas_2
+ref table Operador
+ref table Planes
+ref table Procedencia
+ref table 'Estado de procedencia'
+ref table Campaña
+ref table 'Estado pago'
+ref table LocalDateTable_eb94725c-1725-462b-888e-101b1f08d215
+
+ref cultureInfo es-ES
+

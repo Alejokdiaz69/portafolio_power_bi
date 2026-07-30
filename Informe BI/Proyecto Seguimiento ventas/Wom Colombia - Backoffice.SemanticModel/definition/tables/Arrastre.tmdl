@@ -1,0 +1,111 @@
+table Arrastre
+	lineageTag: 07e4e5af-1f18-4f4e-aabc-c4a93105213f
+
+	column Arrastre
+		formatString: #,0
+		lineageTag: 4ddf0f2f-82b6-4a35-b40e-044c84ee66a7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Arrastre]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año arrastre' = FORMAT(Arrastre[completed_date],"YYYY")
+		lineageTag: 4535815a-b9e3-472e-9efa-b4ad6db889ef
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave arrastre' = Arrastre[nombre completo]&Arrastre[ARBOL_USUARIO]&Arrastre[Mes estado actual]&Arrastre[Año arrastre]
+		lineageTag: c86c652c-d5be-42d6-a090-09fe5003340a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre completo'
+		lineageTag: e991cd36-f586-4eca-b1a2-29206ecedd34
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: ventas_2[Nombre completo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ARBOL_USUARIO
+		lineageTag: c75abc9f-f10b-4ed6-94f2-f1101f44b9f7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: ventas_2[ARBOL_USUARIO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Team Leader'
+		lineageTag: 128b7b45-dfdd-4880-b522-7fa5dc9b5750
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: ventas_2[Team Leader]
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPLETED_DATE
+		formatString: General Date
+		lineageTag: 0ebded50-b58a-4453-945a-211db1388f4f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: ventas_2[COMPLETED_DATE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes estado actual'
+		lineageTag: b12f96b2-48da-4743-8c8b-1c1654be4978
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: ventas_2[Mes estado actual]
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPERADOR_DONANTE
+		lineageTag: 5c54204f-00a5-4a51-b3bc-3705799dbd50
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: ventas_2[OPERADOR_DONANTE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Procedencia
+		lineageTag: 238d1233-04a1-45fe-9c07-0b20927b13f8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: ventas_2[Procedencia]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Campaña
+		lineageTag: c3fb768f-5072-4317-aa00-87c239d811d0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: ventas_2[Campaña]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transportador
+		lineageTag: c4ea8d99-e0b0-4b93-86f7-9307993522d0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: ventas_2[Transportador]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTADO_PAGO
+		lineageTag: 0ff3ceaa-04e2-42d5-b83f-8abb9a634b10
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: ventas_2[ESTADO_PAGO]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Arrastre = calculated
+		mode: import
+		source = SUMMARIZE(Ventas_2,ventas_2[Nombre completo],ventas_2[ESTADO_PAGO],ventas_2[OPERADOR_DONANTE],ventas_2[Transportador],ventas_2[Campaña],ventas_2[Procedencia],ventas_2[ARBOL_USUARIO],ventas_2[Team Leader],Ventas_2[completed_date],Ventas_2[Mes estado actual],"Arrastre",SUM(Ventas_2[Arrastre]))
+
+	annotation PBI_Id = 18d9ab1dd44348a1abaaccbf874d960d
+

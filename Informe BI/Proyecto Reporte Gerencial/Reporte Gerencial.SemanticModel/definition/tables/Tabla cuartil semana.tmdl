@@ -1,0 +1,162 @@
+table 'Tabla cuartil semana'
+	lineageTag: 5d34768f-f20d-4e74-8640-3fdc5922013b
+
+	measure 'SPH Activas 2' = DIVIDE(SUM('Tabla cuartil semana'[Venta completada]),SUM('Tabla cuartil semana'[Tiempo logeado]))
+		formatString: 0.00
+		lineageTag: 881cc54f-92f3-49db-8ce5-2c7132622a11
+
+	measure 'SPH cantadas 2' = DIVIDE(SUM('Tabla cuartil semana'[Venta cantadas]),SUM('Tabla cuartil semana'[Tiempo logeado]))
+		formatString: 0.00
+		lineageTag: f02d300e-a1b2-427e-9046-e2bc72912dc7
+
+	column 'Tiempo logeado'
+		lineageTag: 90f607c6-03a3-4b90-baa7-6d62b2c86f0e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Tiempo logeado]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'llave cuartil semana' = ("1"&"/"&'Tabla cuartil semana'[Mes numero]&"/"&'Tabla cuartil semana'[Año])*1
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 01d5ea71-02a8-4bb6-9126-447006232fc0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'SPH 2' = DIVIDE('Tabla cuartil semana'[Venta cantadas],'Tabla cuartil semana'[Tiempo logeado])
+		formatString: 0.00
+		lineageTag: 95ce18f6-0e07-4d91-80df-07a4bdc7c66c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Venta cantadas'
+		formatString: 0
+		lineageTag: 6e04c594-b108-47a7-b3a9-cd0335314a8d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Venta cantadas]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cuartil =
+			
+			VAR MesActual = 'Tabla cuartil semana'[Mes]
+			VAR Jerarquia =
+			    RANKX(
+			        FILTER(
+			            ALL('Tabla cuartil semana'),
+			            'Tabla cuartil semana'[Mes] = MesActual
+			        ),
+			        'Tabla cuartil semana'[SPH 2],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			VAR TotalContar =
+			    COUNTROWS(
+			        FILTER(
+			            ALL('Tabla cuartil semana'),
+			            'Tabla cuartil semana'[Mes] = MesActual
+			        )
+			    )
+			VAR Porcentaje = DIVIDE(Jerarquia, TotalContar)
+			RETURN
+			    IF(
+			        ISBLANK('Tabla cuartil semana'[SPH 2]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            Porcentaje > 0.75, "Q4",
+			            Porcentaje <= 0.25, "Q1",
+			            Porcentaje > 0.25 && Porcentaje <= 0.50, "Q2",
+			            Porcentaje > 0.50 && Porcentaje <= 0.75, "Q3"
+			        )
+			    )
+		lineageTag: 1580a983-008a-4322-ad84-187c8ff9b4a9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SPH activo' = DIVIDE('Tabla cuartil semana'[Venta completada],'Tabla cuartil semana'[Tiempo logeado])
+		formatString: 0.00
+		lineageTag: a76910db-7f8b-44db-b9be-1cb67f0fcb81
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Venta completada'
+		formatString: 0
+		lineageTag: 968ff927-96ea-44c1-9791-ca294a400d4b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Venta completada]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre completo'
+		lineageTag: eebe06de-df66-4deb-b56a-52b1d2a7b920
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Nombre completo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Semana del Mes'
+		lineageTag: 8e559a77-2bf2-4112-bc88-8c53fc047c8b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Semana del Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		lineageTag: 23735dff-7aed-4ebf-bf4a-df02f9184e02
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Año]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agente
+		lineageTag: 7f2e9add-1bb2-43f4-950c-916adf901e2b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Agente]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave semana 2' = 'Tabla cuartil semana'[Nombre completo]&'Tabla cuartil semana'[Agente]&'Tabla cuartil semana'[Mes]&'Tabla cuartil semana'[Año]
+		lineageTag: 1ca0f403-94d3-4125-ba43-be51aa876bc5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes numero'
+		lineageTag: a049faf9-be6e-4ed8-aaa6-cc109896ae3a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Mes numero]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		lineageTag: 2e2069ab-1f93-4269-9845-af09b97ba1ef
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tabla cuartil semana' = calculated
+		mode: import
+		source = SUMMARIZE(Conexiones,Conexiones[Nombre completo],Conexiones[Agente],Conexiones[Semana del Mes],Conexiones[Mes],Conexiones[Año],Conexiones[Mes numero],"Venta cantadas",SUM(Conexiones[Ventas]),"Tiempo logeado",SUM(Conexiones[Total conexion]),"Venta completada",SUM(Conexiones[Venta completada]))
+
+	annotation PBI_Id = 660234abbbc544a4adec8fa54f72b236
+

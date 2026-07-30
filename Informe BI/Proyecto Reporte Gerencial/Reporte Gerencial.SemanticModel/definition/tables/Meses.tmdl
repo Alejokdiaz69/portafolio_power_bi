@@ -1,0 +1,56 @@
+table Meses
+	lineageTag: 3397172b-babe-4b0d-acc6-bc5d8f21b5d6
+
+	column Mes
+		lineageTag: 21e5b63b-78c4-45fb-90df-9187d71010ae
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fecha[Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		lineageTag: 384c9bb0-1b5e-49f2-b99f-af9b0e6e14f0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fecha[Año]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave meses' = Meses[Mes]&Meses[Año]
+		lineageTag: 71c5e1fa-d83f-46c3-ab01-fa960ba3e6fc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'numero mes'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8da8b8ba-a351-42a9-913f-bfc16d2d9cc6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Fecha[numero mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden = Meses[numero mes]&" "&Meses[Mes]
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8ea30a7e-14c2-4182-9a4b-c90dafc50dc9
+		summarizeBy: none
+
+		variation Variación
+			isDefault
+			relationship: d0a45950-f038-49a6-b504-9b44046f33fd
+			defaultHierarchy: LocalDateTable_0518eed4-c1ce-456d-8269-e9fbf9b9d621.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Meses = calculated
+		mode: import
+		source = SUMMARIZE(Fecha,Fecha[Mes],Fecha[Año],Fecha[numero mes])
+
+	annotation PBI_Id = 3af6fbd2d0b84645a0f8cf001029c6b3
+

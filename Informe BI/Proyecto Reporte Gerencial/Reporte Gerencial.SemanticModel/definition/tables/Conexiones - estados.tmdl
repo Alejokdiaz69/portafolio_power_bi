@@ -1,0 +1,153 @@
+table 'Conexiones - estados'
+	lineageTag: 7b18b958-a94e-400d-afa6-029abbc4a398
+
+	column Agente
+		dataType: string
+		lineageTag: 1f97af4a-4c25-4e77-a53f-799069191671
+		summarizeBy: none
+		sourceColumn: Agente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 861039e0-eb6b-460a-9910-67364a874d3f
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: 0df13dfa-8c12-41db-9245-c9db177aef5f
+			defaultHierarchy: LocalDateTable_ac1d192d-2f13-4c30-9465-1eff1c0a9ac2.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EstadoEspanol2
+		dataType: string
+		lineageTag: 30410e6d-b04f-4f38-a08f-47f9a3bdd7af
+		summarizeBy: none
+		sourceColumn: EstadoEspanol2
+
+		annotation SummarizationSetBy = Automatic
+
+	column tiempo
+		dataType: double
+		lineageTag: de1c2498-5c86-408c-be38-4363005a1ae6
+		summarizeBy: sum
+		sourceColumn: tiempo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tiempo seg'
+		dataType: double
+		lineageTag: 9112d7e3-0ae1-48bc-a65b-98b5a6808534
+		summarizeBy: sum
+		sourceColumn: Tiempo seg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Llave conexiones estado' = 'Conexiones - estados'[Fecha]&'Conexiones - estados'[Agente]&'Conexiones - estados'[EstadoEspanol2]
+		lineageTag: 58b198ba-27f4-4132-8301-5b3ed6d1f2e4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Baño = IF('Conexiones - estados'[EstadoEspanol2]="Baño",'Conexiones - estados'[tiempo],0)
+		lineageTag: 53467624-f1ae-4414-95e8-819dc3a13747
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Colacion = IF('Conexiones - estados'[EstadoEspanol2]="Colacion",'Conexiones - estados'[tiempo],0)
+		lineageTag: c6a733c2-10d2-4315-aedb-2e04e8daf885
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Descanso = IF('Conexiones - estados'[EstadoEspanol2]="Descanso",'Conexiones - estados'[tiempo],0)
+		lineageTag: 3257493b-49dc-4918-a25c-91760398c890
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Disponible = IF('Conexiones - estados'[EstadoEspanol2]="Disponible",'Conexiones - estados'[tiempo],0)
+		lineageTag: 4ada8ef8-8973-45ff-8639-37fb5311d23c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Entrenamiento = IF('Conexiones - estados'[EstadoEspanol2]="EN_ENTRNAMIENTO",'Conexiones - estados'[tiempo],0)
+		lineageTag: 5186e96f-422a-4aed-a412-bc3c061dd37f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fuera de turno' = IF('Conexiones - estados'[EstadoEspanol2]="FUERA_DE_TURNO",'Conexiones - estados'[tiempo],0)
+		lineageTag: 70544507-e043-42a8-87c0-4d4dd9da77c3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'No ACD' = IF('Conexiones - estados'[EstadoEspanol2]="NO_ACD",'Conexiones - estados'[tiempo],0)
+		lineageTag: eec3cc51-6766-4a18-971d-abc4f19dbbf9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tareas administraticas' = IF('Conexiones - estados'[EstadoEspanol2]="TAREAS_ADMINISTRATIVAS",'Conexiones - estados'[tiempo],0)
+		lineageTag: a69523eb-cede-4afd-a111-72f2e8ced27f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Trabajando = IF('Conexiones - estados'[EstadoEspanol2]="TRABAJANDO",'Conexiones - estados'[tiempo],0)
+		lineageTag: c8a1c887-715b-487b-9bd2-d0ec9118d69a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Conexiones - estados' = m
+		mode: import
+		source =
+				let
+				    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Conexiones"),
+				    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+				    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (3)", each #"Transformar archivo (3)"([Content])),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+				    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo (3)"}),
+				    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo (3)", Table.ColumnNames(#"Transformar archivo (3)"(#"Archivo de ejemplo (3)"))),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columna de tabla expandida1",{{"Source.Name", type text}, {"Campana", type text}, {"Agente", type text}, {"Fecha", type date}, {"Hora_Inicio", type time}, {"Hora_Fin", type time}, {"Outsourcer", type text}, {"EstadoEspanol2", type text}, {"Tiempo", type duration}, {"TiempoSegundos", Int64.Type}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Tipo cambiado","2","",Replacer.ReplaceText,{"Agente"}),
+				    #"Filas agrupadas" = Table.Group(#"Valor reemplazado", {"Agente", "Fecha", "EstadoEspanol2"}, {{"tiempo", each List.Sum([Tiempo]), type nullable duration}, {"Tiempo seg", each List.Sum([TiempoSegundos]), type nullable number}})
+				in
+				    #"Filas agrupadas"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegación
+

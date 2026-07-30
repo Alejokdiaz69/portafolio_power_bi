@@ -1,0 +1,23 @@
+relationship 202cc0a1-ad58-4fc2-adef-8bc7e811110a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fecha.Date
+	toColumn: LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5.Date
+
+relationship 9bfb76a5-bfa7-4b31-b10f-24bbc3a1a3f9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Trafico vs proyeccion'.'Inicio Intervalo'
+	toColumn: LocalDateTable_6f4e6790-2c7b-4e68-bba5-8ca2786bdc72.Date
+
+relationship 6a0fdc56-157c-427e-b197-a3a19ebc53ed
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Trafico vs proyeccion'.'Fin Intervalo'
+	toColumn: LocalDateTable_7eea0e24-1488-4b3d-b823-2fcdbe891df7.Date
+
+relationship 321f1988-a87c-4a0d-8865-bd38e27a8e7a
+	fromColumn: 'Trafico vs proyeccion'.Fecha
+	toColumn: Fecha.Date
+
+relationship 77c8b088-4668-4054-b910-f3ef6cd27106
+	fromColumn: 'Trafico vs proyeccion'.'Nombre Skill'
+	toColumn: Skill.skill
+

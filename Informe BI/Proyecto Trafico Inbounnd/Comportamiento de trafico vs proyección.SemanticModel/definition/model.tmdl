@@ -1,0 +1,24 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-419
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Skill","Trafico vs proyeccion"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_250a28aa-0d73-4091-9c57-74862ac72e00
+ref table Skill
+ref table Fecha
+ref table LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5
+ref table 'Trafico vs proyeccion'
+ref table LocalDateTable_6f4e6790-2c7b-4e68-bba5-8ca2786bdc72
+ref table LocalDateTable_7eea0e24-1488-4b3d-b823-2fcdbe891df7
+
+ref cultureInfo es-ES
+

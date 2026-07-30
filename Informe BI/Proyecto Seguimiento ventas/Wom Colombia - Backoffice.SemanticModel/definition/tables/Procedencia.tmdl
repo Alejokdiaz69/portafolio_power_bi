@@ -1,0 +1,51 @@
+table Procedencia
+	excludeFromModelRefresh
+	lineageTag: cddf4b4b-9767-46cc-8745-d4c00c492e6b
+
+	column Orden
+		dataType: string
+		lineageTag: ac32d04e-a826-4637-b7fc-064126806a0b
+		summarizeBy: none
+		sourceColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cumple política'
+		dataType: string
+		lineageTag: 4dc296a1-c010-47d7-9a0c-7bdba15cc366
+		summarizeBy: none
+		sourceColumn: Cumple política
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		lineageTag: 0ea71c13-04da-48ac-853d-88b1300101fc
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: string
+		lineageTag: c8ecf6b3-7d5e-4cb1-88df-c84472095d8d
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Procedencia = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Seguimiento ventas\Data\No procedentes.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Orden", type text}, {"Cumple política", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegación
+

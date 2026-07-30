@@ -1,0 +1,186 @@
+table 'Tabla cruce'
+	lineageTag: 33c62eef-3125-47bb-a072-c21968058487
+
+	measure '%Conv N' =
+			
+			DIVIDE(
+				SUM('Tabla cruce'[Ventas mismo mes]),
+				SUM('Tabla cruce'[ventas cantadas])
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 440d6700-808b-4cbf-af52-80abe0390d07
+
+	measure '%Conv N+1' =
+			
+			DIVIDE(SUM('Tabla cruce'[Activa]), SUM('Tabla cruce'[ventas cantadas]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 4ad14fb6-9b54-4950-8d23-318550f5ed23
+
+	measure '% Conv Arrastre' =
+			
+			DIVIDE([Medida], SUM('Tabla cruce'[ventas cantadas]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: e0252fa1-a910-4f68-8f2d-d3d0617a1e0a
+
+	measure %Rechazo =
+			
+			DIVIDE(SUM('Tabla cruce'[Rechazada]), SUM('Tabla cruce'[Ventas cantadas]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: ee81228d-39b4-4559-a81b-7788c45b3082
+
+	measure %Activo =
+			
+			DIVIDE(SUM('Tabla cruce'[Activa]), SUM('Tabla cruce'[Ventas cantadas]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: aa332676-f05b-4d65-85ff-e2e940b1b3cc
+
+	measure %Pendiente =
+			
+			DIVIDE(SUM('Tabla cruce'[Pendiente]), SUM('Tabla cruce'[Ventas cantadas]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 01f8bce1-3ce0-41cb-8249-48f6235dd467
+
+	column 'Ventas cantadas'
+		formatString: #,0
+		lineageTag: 44fc95ce-1753-45e0-a36e-a1867566ac28
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ventas cantadas]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ventas mismo mes'
+		formatString: #,0
+		lineageTag: 59a7a48f-c002-40ea-ad1d-08f6466a6dd5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ventas mismo mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año cruce' = FORMAT('Tabla cruce'[Fecha ingresada],"YYYY")
+		lineageTag: 0613ade5-eefa-4e69-92d7-f543f686e49b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'llave cruce' = 'Tabla cruce'[Nombre completo]&'Tabla cruce'[Ejecutivo venta]&'Tabla cruce'[Mes fecha ingreso]&'Tabla cruce'[Año cruce]
+		lineageTag: 2a2d5217-66db-40b4-90e1-6b07722ca2cf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pendiente
+		formatString: 0
+		lineageTag: 6185d024-47f7-42fe-b7ed-08c0a0c0ef35
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Pendiente]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre completo'
+		lineageTag: 3d2ae9d2-0b5d-450d-9f43-820be05a0d19
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[NOMBRE COMPLETO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origen llamada'
+		lineageTag: 7b59bbae-5303-430b-ae85-42c9c91c64ae
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[Origen llamada]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre operadora'
+		lineageTag: 22b42b33-e0b2-4dbd-b00f-f98e13780288
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[Nombre operadora]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ejecutivo venta'
+		lineageTag: 0e96aaee-541e-4519-95c7-a2154848484f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[Ejecutivo venta]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'JEFE DIRECTO'
+		lineageTag: dc39b71c-f57c-4040-a744-fda0e607e9c1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[JEFE DIRECTO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes fecha ingreso'
+		lineageTag: 2914d32e-0d15-4174-a19e-72c8ec904d2f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[Mes Fecha Ingreso]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activa
+		formatString: 0
+		lineageTag: 2392537d-02ba-410f-8331-8df4bd72770d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Activa]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rechazada
+		formatString: 0
+		lineageTag: 99d153cc-fef9-4e5f-9fb2-15cf9cd5087b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Rechazada]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha ingresada'
+		formatString: Short Date
+		lineageTag: 78abede4-e75e-485e-9142-7d8e73f35570
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[Fecha ingresada]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANTIGÜEDAD
+		lineageTag: 936c0f07-73b9-4d5e-ad28-c1d65f616721
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[ANTIGÜEDAD]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CARGO SIN RATIFICAR'
+		lineageTag: 42e15a38-16a7-4ac1-8ea3-4b7ad1b5f203
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[CARGO SIN RATIFICAR]
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASIFICACION
+		lineageTag: 513b6bb2-febe-404f-9132-6d63611a66d0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[CLASIFICACION]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tabla cruce' = calculated
+		mode: import
+		source = SUMMARIZE(Ventas,ventas[Nombre completo],Ventas[Origen llamada],Ventas[CARGO SIN RATIFICAR],Ventas[ANTIGÜEDAD],Ventas[Nombre operadora],Ventas[Ejecutivo venta],Ventas[CLASIFICACION],Ventas[JEFE DIRECTO],Ventas[Mes fecha ingreso],Ventas[Fecha Ingresada],"Ventas cantadas",SUM(Ventas[Unic]),"Ventas mismo mes",SUM(Ventas[Activos mismo mes]),"Activa",SUM(Ventas[Activo]),"Rechazada",SUM(Ventas[Rechazo]),"Pendiente",SUM(Ventas[pendiente]))
+
+	annotation PBI_Id = 413bef52689d4050b6873a36cfdc5a22
+

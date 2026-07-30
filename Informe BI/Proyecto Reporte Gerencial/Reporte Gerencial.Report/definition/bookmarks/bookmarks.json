@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
+  "items": [
+    {
+      "name": "Bookmark22608ad848cef7a09207",
+      "displayName": "General",
+      "children": [
+        "Bookmark458a939260df809093b1",
+        "Bookmark748247321293d7c8509e"
+      ]
+    },
+    {
+      "name": "Bookmark4f9fc0c32846f74ace17",
+      "displayName": "OPS",
+      "children": [
+        "Bookmark8c93ff49b11badb8b04d",
+        "Bookmark91a8ed869d3e3df471a9"
+      ]
+    },
+    {
+      "name": "Bookmarkbb7a8431c36a4a1892f3",
+      "displayName": "Eika",
+      "children": [
+        "Bookmark56448c47b4b899008f75",
+        "Bookmarka4139a7ba0ecbc2925b1",
+        "Bookmarka5ad6d4698bd2bb9cc99",
+        "Bookmark50f3f514cbf99f0e8fda"
+      ]
+    },
+    {
+      "name": "Bookmarka08ce06e42663b7a3429",
+      "displayName": "Conversion OPS",
+      "children": [
+        "Bookmark06ddad73605ff2ab951f",
+        "Bookmark89781cdbd0750a1394b1"
+      ]
+    },
+    {
+      "name": "Bookmarkade99013790378323de5",
+      "displayName": "WMS",
+      "children": [
+        "Bookmarka2d62122557ba5339a31",
+        "Bookmarke2c6ddad663e9cb270b8",
+        "Bookmark8d15e3bfd6d328df3810"
+      ]
+    },
+    {
+      "name": "Bookmark8844ae7d3efefc435baf",
+      "displayName": "Rechazo",
+      "children": [
+        "Bookmark9735f316163fc04c501b",
+        "Bookmark756ffcb9d1ba03e34873"
+      ]
+    },
+    {
+      "name": "Bookmarkc4a638d7158925071006",
+      "displayName": "SPH",
+      "children": [
+        "Bookmark7758e47382605202dbda",
+        "Bookmark070edecaaad1b4da5bc7",
+        "Bookmark6507ac96940ea03010a6",
+        "Bookmark66e4e709d355d81bb884",
+        "Bookmark23a9950c4ceeb2ad6763",
+        "Bookmark8da9264c050e7a071d0c"
+      ]
+    },
+    {
+      "name": "Bookmark7de9c3cbe60b18a89b92",
+      "displayName": "KP´S",
+      "children": [
+        "Bookmarkd884efa782c4e8ab6c47",
+        "Bookmark3ae31ab3820a3771676c",
+        "Bookmark5b52bb2c78059bd57127",
+        "Bookmarkfbc3af0fe0a0dc0c5a86",
+        "Bookmarkdcf5734777b9ce4e61dd"
+      ]
+    },
+    {
+      "name": "Bookmarkf72aecc401024e613bc8",
+      "displayName": "Rank",
+      "children": [
+        "Bookmarkf375c975e9525e87e76c",
+        "Bookmarke0d48ecfe0e0305cc0c0",
+        "Bookmarka90c3793b68b0a0a4cda"
+      ]
+    },
+    {
+      "name": "Bookmark525faa7d5c5600b2c304",
+      "displayName": "Equipos",
+      "children": [
+        "Bookmark4252391915a58e2807a6",
+        "Bookmark42bd4bb862b690243393",
+        "Bookmark4a421d580ae518067128"
+      ]
+    }
+  ]
+}

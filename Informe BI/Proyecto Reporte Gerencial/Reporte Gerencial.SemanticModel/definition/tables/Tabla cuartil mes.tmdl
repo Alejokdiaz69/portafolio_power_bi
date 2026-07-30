@@ -1,0 +1,146 @@
+table 'Tabla cuartil mes'
+	lineageTag: ef9af6f8-2e8c-4cbe-9a8c-323094f78bbe
+
+	column 'Tiempo logeado'
+		lineageTag: 4804a704-3c47-41a7-ae4a-7ecc78e1ab76
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Tiempo logeado]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'llave cuartil mes' = ("1"&"/"&'Tabla cuartil mes'[Mes numero]&"/"&'Tabla cuartil mes'[Año])*1
+		dataType: dateTime
+		formatString: d/mm/yyyy
+		lineageTag: de45f049-afa4-40eb-93dd-32af9ce94eb1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Venta cantadas'
+		formatString: 0
+		lineageTag: ba918618-da14-485f-850c-85d3315f2959
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Venta cantadas]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SPH 2' = DIVIDE('Tabla cuartil mes'[Venta cantadas],'Tabla cuartil mes'[Tiempo logeado])
+		formatString: 0.00
+		lineageTag: ce2de4d0-7c1d-4b9c-a8b6-fdacb7f5611f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cuartil =
+			
+			VAR MesActual = 'Tabla cuartil mes'[Mes]
+			VAR Jerarquia =
+			    RANKX(
+			        FILTER(
+			            ALL('Tabla cuartil mes'),
+			            'Tabla cuartil mes'[Mes] = MesActual
+			        ),
+			        'Tabla cuartil mes'[SPH 2],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			VAR TotalContar =
+			    COUNTROWS(
+			        FILTER(
+			            ALL('Tabla cuartil mes'),
+			            'Tabla cuartil mes'[Mes] = MesActual
+			        )
+			    )
+			VAR Porcentaje = DIVIDE(Jerarquia, TotalContar)
+			RETURN
+			    IF(
+			        ISBLANK('Tabla cuartil mes'[SPH 2]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            Porcentaje > 0.75, "Q4",
+			            Porcentaje <= 0.25, "Q1",
+			            Porcentaje > 0.25 && Porcentaje <= 0.50, "Q2",
+			            Porcentaje > 0.50 && Porcentaje <= 0.75, "Q3"
+			        )
+			    )
+		lineageTag: 9ab83f2c-f3a8-45d4-abbd-5a5c15cc6b6b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre completo'
+		lineageTag: c0a636e2-baab-45d8-9744-1de7fa2c382b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Nombre completo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		lineageTag: e70ac70c-6811-4c82-84e0-83f1b8159df1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		lineageTag: 0ed5ea4a-a536-47db-9319-92b8f7b759d9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Año]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave cuartil mes 2' = 'Tabla cuartil mes'[Nombre completo]&'Tabla cuartil mes'[Agente]&'Tabla cuartil mes'[Mes numero]&'Tabla cuartil mes'[Año]
+		lineageTag: f9060807-f45a-4357-bb0c-46b868d3d627
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agente
+		lineageTag: 850bf5ad-cc0d-4b0a-b965-691c396189e8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Agente]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes numero'
+		lineageTag: eb6ceb6d-f80c-4d04-aafa-96f9f7c84133
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Mes numero]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha ingreso'
+		formatString: Short Date
+		lineageTag: 0bfcccf9-fac4-4e7c-a645-85e02c7f51f3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Conexiones[Fecha ingreso]
+
+		variation Variación
+			isDefault
+			relationship: 2866beec-795e-40b9-826e-09c9573cf815
+			defaultHierarchy: LocalDateTable_a08b2233-6516-400f-b326-99f061fb207f.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tabla cuartil mes' = calculated
+		mode: import
+		source = SUMMARIZE(Conexiones,Conexiones[Nombre completo],Conexiones[Mes numero],Conexiones[Fecha ingreso],Conexiones[Agente],Conexiones[Mes],Conexiones[Año],"Venta cantadas",SUM(Conexiones[Ventas]),"Tiempo logeado",SUM(Conexiones[Total conexion]))
+
+	annotation PBI_Id = f2849b34d5e04d59b9ce3051184fbaf9
+

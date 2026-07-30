@@ -1,0 +1,79 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-CO
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Transformar archivo de Conexiones'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Transformar archivo de Conexiones\Consultas auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar archivo de Llamadas'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'Transformar archivo de Llamadas\Consultas auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar archivo de Conexiones aplicativo'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Transformar archivo de Ventas'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'Transformar archivo de Conexiones aplicativo\Consultas auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar archivo de Ventas\Consultas auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["Conexiones","Archivo de ejemplo (3)","Parámetro3","Transformar archivo de ejemplo (3)","Transformar archivo (3)","Llamadas","Archivo de ejemplo (4)","Parámetro4","Transformar archivo de ejemplo (4)","Transformar archivo (4)","Ventas","planta activa","Conexiones - estados","Data Fibrx","Conexiones aplicativo","Archivo de ejemplo","Parámetro1","Transformar archivo de ejemplo","Transformar archivo","Ventas (2)","Archivo de ejemplo (2)","Parámetro2","Transformar archivo de ejemplo (2)","Transformar archivo (2)"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_f78af82b-3ce3-4c80-92f2-4f93f5bce9d5
+ref table Fecha
+ref table 'Tabla cruce'
+ref table Meses
+ref table 'Tabla cuartil mes'
+ref table 'Tabla cuartil semana'
+ref table LocalDateTable_0518eed4-c1ce-456d-8269-e9fbf9b9d621
+ref table Conexiones
+ref table Llamadas
+ref table Ventas
+ref table LocalDateTable_2fc8d33c-580b-48cd-adc8-02970ca9c50e
+ref table 'planta activa'
+ref table LocalDateTable_81e179f8-2999-48b0-83a0-a25529b612b4
+ref table 'Conexiones - estados'
+ref table Operador
+ref table 'Data Fibrx'
+ref table LocalDateTable_e79d244a-dca6-4421-8534-9f8fa8d57a9a
+ref table LocalDateTable_f6eb208b-af0b-4b54-8086-618ad10988a6
+ref table LocalDateTable_1b2fa722-87af-4cfd-b8ce-e356c288cdf8
+ref table LocalDateTable_f946c87d-f34a-437b-855c-19ddac292056
+ref table LocalDateTable_3eb1cd2f-fe48-49fd-9466-c90bac814a47
+ref table LocalDateTable_ac1d192d-2f13-4c30-9465-1eff1c0a9ac2
+ref table 'Conexiones aplicativo'
+ref table LocalDateTable_97774e5c-07c1-4a03-9af3-55acfc476105
+ref table 'Ventas (2)'
+ref table LocalDateTable_83f64ca4-2fb1-46f0-9ff0-e52635ed43ee
+ref table LocalDateTable_a08b2233-6516-400f-b326-99f061fb207f
+ref table LocalDateTable_7bb42b9a-1cda-4cd0-bc51-edbc7198875e
+ref table LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f
+
+ref cultureInfo es-ES
+

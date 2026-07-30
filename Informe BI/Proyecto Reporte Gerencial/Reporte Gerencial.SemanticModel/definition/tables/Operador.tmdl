@@ -1,0 +1,63 @@
+table Operador
+	lineageTag: bb3345aa-13a7-40c8-a3b0-a777e113e606
+
+	column 'Nombre operadora'
+		lineageTag: f9b85e83-b5f9-4ced-9a57-aa9fe81fd434
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Ventas[Nombre operadora]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Operador","TableItemName":"Operador","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column Operador =
+			SWITCH(
+				TRUE,
+				ISBLANK('Operador'[Nombre operadora]),
+				"(En blanco)",
+				'Operador'[Nombre operadora] IN {"CLARO"},
+				"CLARO",
+				'Operador'[Nombre operadora] IN {"MOVISTAR"},
+				"MOVISTAR",
+				'Operador'[Nombre operadora] IN {"ENTEL",
+					"MUNDO MOVIL",
+					"SIMPLE MOVIL",
+					"TELEFONICA DEL SUR S.A.",
+					"VIRGIN MOBILE",
+					"VTR"},
+				"Otros Operadores",
+				'Operador'[Nombre operadora] IN {""},
+				"Sin operador",
+				'Operador'[Nombre operadora]
+			)
+		lineageTag: 54a4e99b-4ec3-433b-8937-3d5a678ceff6
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Operador"
+				          }
+				        },
+				        "Property": "Nombre operadora"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"o","Entity":"Operador"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"o"}},"Property":"Nombre operadora"}}],"GroupItems":[{"DisplayName":"(En blanco)","BlankDefaultPlaceholder":true},{"DisplayName":"CLARO","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"o"}},"Property":"Nombre operadora"}}],"Values":[[{"Literal":{"Value":"'CLARO'"}}]]}}},{"DisplayName":"MOVISTAR","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"o"}},"Property":"Nombre operadora"}}],"Values":[[{"Literal":{"Value":"'MOVISTAR'"}}]]}}},{"DisplayName":"Otros Operadores","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"o"}},"Property":"Nombre operadora"}}],"Values":[[{"Literal":{"Value":"'ENTEL'"}}],[{"Literal":{"Value":"'MUNDO MOVIL'"}}],[{"Literal":{"Value":"'SIMPLE MOVIL'"}}],[{"Literal":{"Value":"'TELEFONICA DEL SUR S.A.'"}}],[{"Literal":{"Value":"'VIRGIN MOBILE'"}}],[{"Literal":{"Value":"'VTR'"}}]]}}},{"DisplayName":"Sin operador","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"o"}},"Property":"Nombre operadora"}}],"Values":[[{"Literal":{"Value":"''"}}]]}}}]}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Operador = calculated
+		mode: import
+		source = SUMMARIZE(Ventas,Ventas[Nombre operadora])
+
+	annotation PBI_Id = 460a179edfa84cb28968cbdef573d7b2
+

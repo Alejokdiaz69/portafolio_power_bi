@@ -1,0 +1,45 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-419
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Transformar archivo de Portada (2)'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar archivo de Portada (2)\Consultas auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar archivo de Bench (2)'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Transformar archivo de Bench (2)\Consultas auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["Bench","Bench acumulado","Portada","Portada acumulado","Prioridad","Portada (2)","Archivo de ejemplo (2)","Parámetro2","Transformar archivo de ejemplo (2)","Transformar archivo (2)","Bench (2)","Archivo de ejemplo (3)","Parámetro3","Transformar archivo de ejemplo (3)","Transformar archivo (3)","Campaña/Canal"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_250a28aa-0d73-4091-9c57-74862ac72e00
+ref table Fecha
+ref table LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5
+ref table Bench
+ref table Portada
+ref table Prioridad
+ref table 'Portada (2)'
+ref table 'Bench (2)'
+ref table LocalDateTable_6807fec2-6172-4b2c-86f5-73f95c393831
+ref table Campaña/Canal
+ref table LocalDateTable_f4a88612-f42d-497f-b3c3-dce8b326e5d0
+
+ref cultureInfo es-ES
+

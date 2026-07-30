@@ -1,0 +1,34 @@
+table 'ANS de Entrega'
+	excludeFromModelRefresh
+	lineageTag: 1ba49616-0ff7-4a33-933a-7a131f7c7c97
+
+	column 'Tipo de transito'
+		dataType: string
+		lineageTag: ddf2707c-bb89-4e6e-9d02-930b22493561
+		summarizeBy: none
+		sourceColumn: Tipo de transito
+
+		annotation SummarizationSetBy = Automatic
+
+	column Días
+		dataType: int64
+		formatString: 0
+		lineageTag: 548df691-2d10-4d15-93aa-7ff2200a1fd6
+		summarizeBy: none
+		sourceColumn: Días
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ANS de Entrega' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8nN09vT3c/RR0lEyVYrViVYKDXJy9PMHco3A3CBX14gAVxdPF5CQBZqQgmtwgKuzJ1i3oQFY0tE1yNUfwQ1KTc5Pz0xJdM0LKM0ryQdKGIPFnfJTUtMTXYtLEvNSEosgwrEA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Tipo de transito" = _t, Días = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Tipo de transito", type text}, {"Días", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

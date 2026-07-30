@@ -1,0 +1,201 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 6597.2972972972975
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 6768.62448691701
+          },
+          "nodeIndex": "Fecha",
+          "nodeLineageTag": "dfd0a669-55e4-4d9b-9ef4-9fa47c9a4e47",
+          "size": {
+            "height": 314,
+            "width": 254
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 366.66666666666674,
+            "y": 6375.0619869170187
+          },
+          "nodeIndex": "Tabla cruce",
+          "nodeLineageTag": "33c62eef-3125-47bb-a072-c21968058487",
+          "size": {
+            "height": 364,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 722.097014925373,
+            "y": 6771.3686106131036
+          },
+          "nodeIndex": "Meses",
+          "nodeLineageTag": "3397172b-babe-4b0d-acc6-bc5d8f21b5d6",
+          "size": {
+            "height": 268,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1095.1467661691545,
+            "y": 6969.6266942223092
+          },
+          "nodeIndex": "Tabla cuartil mes",
+          "nodeLineageTag": "ef9af6f8-2e8c-4cbe-9a8c-323094f78bbe",
+          "size": {
+            "height": 309,
+            "width": 212.33333333333348
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 1086.4788986103963,
+            "y": 6641.3955033041075
+          },
+          "nodeIndex": "Tabla cuartil semana",
+          "nodeLineageTag": "5d34768f-f20d-4e74-8640-3fdc5922013b",
+          "size": {
+            "height": 289,
+            "width": 227.33333333333326
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 361.83333333333303,
+            "y": 6767.8469972548382
+          },
+          "nodeIndex": "Conexiones",
+          "nodeLineageTag": "b7c53372-da00-43f7-8ff8-c6984897d268",
+          "size": {
+            "height": 274,
+            "width": 240
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 366.83333333333337,
+            "y": 7356.3198722141487
+          },
+          "nodeIndex": "Llamadas",
+          "nodeLineageTag": "259f0eac-3370-42a2-80fd-739fd5647d6f",
+          "size": {
+            "height": 220,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 364.49999999999955,
+            "y": 7067.8787702657282
+          },
+          "nodeIndex": "Ventas",
+          "nodeLineageTag": "6be3a9c4-c98f-4d54-b495-9c44826808e5",
+          "size": {
+            "height": 255.42857142857156,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 371.16666666666652,
+            "y": 7602.0393950281041
+          },
+          "nodeIndex": "Conexiones - estados",
+          "nodeLineageTag": "7b18b958-a94e-400d-afa6-029abbc4a398",
+          "size": {
+            "height": 300.66666666666652,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 724.16666666666674,
+            "y": 7065.92701052005
+          },
+          "nodeIndex": "Operador",
+          "nodeLineageTag": "bb3345aa-13a7-40c8-a3b0-a777e113e606",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1705.8122319437296,
+            "y": 6194.74721358344
+          },
+          "nodeIndex": "Ventas (2)",
+          "nodeLineageTag": "3cd19450-bca7-405c-8cb5-1887dd003f94",
+          "size": {
+            "height": 124,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 747.49999999999989,
+            "y": 6333.3058870571349
+          },
+          "nodeIndex": "planta activa",
+          "size": {
+            "height": 317.33333333333348,
+            "width": 250.66666666666674
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1117.8122319437296,
+            "y": 6020.795922908932
+          },
+          "nodeIndex": "Data Fibrx",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1701.8122319437296,
+            "y": 6666.74721358344
+          },
+          "nodeIndex": "Conexiones aplicativo",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 74,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

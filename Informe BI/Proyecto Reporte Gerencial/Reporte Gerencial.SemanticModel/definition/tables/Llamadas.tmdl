@@ -1,0 +1,62 @@
+table Llamadas
+	lineageTag: 259f0eac-3370-42a2-80fd-739fd5647d6f
+
+	column Corte
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 57f6b888-ee0b-48fc-8fd0-02c118262cb9
+		summarizeBy: none
+		sourceColumn: Corte
+
+		variation Variación
+			isDefault
+			relationship: c91e77ef-d5ab-4a68-a394-543798846a6f
+			defaultHierarchy: LocalDateTable_3eb1cd2f-fe48-49fd-9466-c90bac814a47.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Agente
+		dataType: string
+		lineageTag: 9e0ea9ab-538b-457a-9ab2-f3c6085208d6
+		summarizeBy: none
+		sourceColumn: Agente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total de llamadas'
+		dataType: double
+		lineageTag: f798de81-3c95-4b7f-a9ab-37d639df850c
+		summarizeBy: sum
+		sourceColumn: Total de llamadas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Llave llamadas' = Llamadas[Agente]&FORMAT(Llamadas[Corte],"DD")&FORMAT(Llamadas[Corte],"M")&FORMAT(Llamadas[Corte],"YYYY")
+		lineageTag: e5eb9cb8-b855-4e8b-a9d8-d0c7089654e0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Llamadas = m
+		mode: import
+		source =
+				let
+				    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Llamadas"),
+				    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+				    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (4)", each #"Transformar archivo (4)"([Content])),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+				    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo (4)"}),
+				    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo (4)", Table.ColumnNames(#"Transformar archivo (4)"(#"Archivo de ejemplo (4)"))),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columna de tabla expandida1",{{"Source.Name", type text}, {"Campaña", type text}, {"Corte", type date}, {"Agente", type text}, {"Tot.", Int64.Type}, {"Tot. Web", Int64.Type}, {"Aten.", Int64.Type}, {"Ab.", Int64.Type}, {"Canc.", Int64.Type}, {"Fant.", Int64.Type}, {"Ent.", Int64.Type}, {"Ent. Aten.", Int64.Type}, {"Sal.", Int64.Type}, {"Sal. Aten.", Int64.Type}, {"Ext.", Int64.Type}, {"% SL Ent.", Percentage.Type}, {"LPH", Int64.Type}, {"GPH", Int64.Type}, {"Tpo. Dur.", type text}, {"Tpo. IVR", type time}, {"Tpo. Timb.", type time}, {"Tpo. Resp.", type time}, {"Tpo. Aten.", type time}, {"Tpo. Aten. Ent.", type time}, {"Tpo. Aten. Sal.", type time}, {"Tpo. Conc.", type time}, {"Tpo. Conc. Ent.", type time}, {"Tpo. Conc. Sal.", type time}, {"Tpo. Ab.", type time}, {"Tpo. Ret.", type time}, {"Tpo. Tr.", type time}, {"Tiempo Conf.", type time}, {"Tpo. Prev.", type time}, {"Tiempo Tr. Ext.", type time}, {"Prom. Tpo. Timb.", type time}, {"Prom. Tpo. Aten.", type time}, {"Prom. Tpo. Conc.", type time}, {"Prom. Tpo. Ret.", type time}, {"% Ag. Oc.", Percentage.Type}, {"% Aten. Ag.", Percentage.Type}, {"Tpo. Agtes", type time}}),
+				    #"Filas agrupadas" = Table.Group(#"Tipo cambiado", {"Corte", "Agente"}, {{"Total de llamadas", each List.Sum([#"Aten."]), type nullable number}})
+				in
+				    #"Filas agrupadas"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegación
+

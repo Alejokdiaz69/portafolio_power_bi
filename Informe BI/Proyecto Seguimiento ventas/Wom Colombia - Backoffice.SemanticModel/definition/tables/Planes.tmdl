@@ -1,0 +1,44 @@
+table Planes
+	excludeFromModelRefresh
+	lineageTag: 5569275b-67d9-4770-b545-be77beda46b7
+
+	column Plan
+		dataType: string
+		lineageTag: 43654b09-cbfe-4021-be03-bd99876c8392
+		summarizeBy: none
+		sourceColumn: Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column Homologacion
+		dataType: string
+		lineageTag: 291da49f-b765-4a7d-94c0-87f360d084bb
+		summarizeBy: none
+		sourceColumn: Homologacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALOR
+		dataType: string
+		lineageTag: e74f1e89-88f0-4483-8557-24268ce9b36e
+		summarizeBy: none
+		sourceColumn: VALOR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Planes = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Planes.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Hoja1_Sheet,{{"Column1", type text}, {"Column2", type text}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Plan", type text}, {"Homologacion", type text}})
+				in
+				    #"Tipo cambiado1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

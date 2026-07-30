@@ -1,0 +1,1074 @@
+table 'Trafico vs proyeccion'
+	lineageTag: 9794debf-4078-4ea5-adec-db992d286462
+
+	measure 'Llamadas umbral' = SUM('Trafico vs proyeccion'[Llamadas ACD 00 - 05])+SUM('Trafico vs proyeccion'[Llamadas ACD 05 - 10])+SUM('Trafico vs proyeccion'[Llamadas ACD 10 - 15])+SUM('Trafico vs proyeccion'[Llamadas ACD 15 - 20])+SUM('Trafico vs proyeccion'[Llamadas ACD 20 - 30])
+		formatString: #,0
+		lineageTag: 218939d6-5304-412f-929f-739eb424ae56
+
+	measure 'Nivel de servicio' = [Llamadas umbral] / SUM('Trafico vs proyeccion'[Llamadas Ofrecidas Otras])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 65863bc4-4dfe-45b9-99d4-a297835be1c2
+
+	measure 'Llamadas Proyectadas +12%' = SUM('Trafico vs proyeccion'[Proyección])*1.12
+		formatString: #,0
+		lineageTag: 2a13021a-1473-4a14-82b2-9aa6be5a35d4
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Nivel de Abandono' = ```
+			SUM('Trafico vs proyeccion'[Llamadas Abandonadas])/SUM('Trafico vs proyeccion'[Llamadas Ofrecidas Otras]) 
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 2104b981-aef5-47a9-a4a7-ea70dbb32df9
+
+	measure 'Nivel de Atención' = SUM('Trafico vs proyeccion'[Llamadas Atendidas])/SUM('Trafico vs proyeccion'[Llamadas Ofrecidas Otras])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 4d490f1f-62dd-432a-84bc-d285871bc61c
+
+	measure 'Desviacion Ofrecida Vs Proyectadas' = ```
+			
+			VAR Division = DIVIDE(SUM('Trafico vs proyeccion'[Llamadas Ofrecidas]), SUM('Trafico vs proyeccion'[Proyección]))
+			
+			RETURN
+			IF(
+			    ISBLANK(Division), 
+			    BLANK(), 
+			    Division - 1
+			)
+			```
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: bba0dcde-87a3-4f17-9126-e4024e3a6043
+
+	measure %Dispobinilidad = SUM('Trafico vs proyeccion'[I_AVAILTIME])/SUM('Trafico vs proyeccion'[I_STAFFTIME])
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 37ff3992-62db-4237-b216-d5c41b58c485
+
+	measure 'TMO IN' = CONVERT((SUM('Trafico vs proyeccion'[I_ACDTIME])/SUM('Trafico vs proyeccion'[Llamadas Atendidas])/86400),DATETIME)
+		formatString: h:nn:ss
+		lineageTag: 38fca19a-34d0-445e-ad4e-74c1b1831780
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'KPI nivel servicio' = 0.8
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: acb496d7-26f5-4494-b5a6-deed7afb9a51
+
+	measure 'KPI nivel de atencion' = 0.98
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: e6af70a0-3792-40ed-afe4-00cdd824499c
+
+	measure 'KPI abandono' = 0.02
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: f6ff96c5-52cf-4a71-98b8-0efa32cd5040
+
+	measure 'TPC OUT' = CONVERT((SUM('Trafico vs proyeccion'[AUXOUTOFFTIME])/SUM('Trafico vs proyeccion'[AUXOUTOFFCALLS])/86400),DATETIME)
+		formatString: h:nn:ss
+		lineageTag: 5f3ab28f-be0b-479f-825d-55ae00a1de2a
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'TPC IN' = CONVERT((((SUM('Trafico vs proyeccion'[I_ACDTIME])+SUM('Trafico vs proyeccion'[I_ACWTIME])+SUM('Trafico vs proyeccion'[AUXOUTOFFTIME]))/SUM('Trafico vs proyeccion'[Llamadas Atendidas]))/86400),DATETIME)
+		formatString: h:nn:ss
+		lineageTag: fa18d14c-645d-4568-ac44-4f9a4765512f
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'TMO IN (minutos)' = [TMO IN] * 1440
+		formatString: 0.00
+		lineageTag: e9147985-20b1-4312-a8c7-f513717d8846
+
+	measure 'TMO OUT (minutos)' = [TPC OUT] * 1440
+		formatString: 0.00
+		lineageTag: a4c2bd5b-047f-4ced-8b75-70004e848d5b
+
+	measure 'Proyección Año Anterior' =
+			
+			CALCULATE(
+			    SUM('Trafico vs proyeccion'[Proyección]),
+			    DATEADD(Fecha[Date],-1,YEAR)
+			)
+		formatString: 0
+		lineageTag: 5e9c5be3-d3b7-42fb-840e-2135a1a6ab19
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Trafico Año Anterior' =
+			
+			CALCULATE(
+			    SUM('Trafico vs proyeccion'[Llamadas Atendidas]),
+			    DATEADD(Fecha[Date],-1,YEAR)
+			)
+		formatString: 0
+		lineageTag: 89a9c084-960f-4e20-8ea5-e069e3003f27
+
+	measure 'Nivel de servicio Año Anterior' =
+			
+			CALCULATE(
+			    [Nivel de servicio],
+			    DATEADD(Fecha[Date],-1,YEAR)
+			)
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 49c2da2e-d85c-400e-8ce5-7c8053c3d706
+
+	measure 'Nivel de Atencion Año Anterior' =
+			
+			CALCULATE(
+			    [Nivel de Atención],
+			    DATEADD(Fecha[Date],-1,YEAR)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 01ba7fcd-7a0c-4b26-88c6-4f26314b6c2a
+
+	measure 'Nivel de Abandono Año Anterior' =
+			
+			CALCULATE(
+			    [Nivel de Abandono],
+			    DATEADD(Fecha[Date],-1,YEAR)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 3a96290b-812f-4265-bf34-1221220435db
+
+	measure 'Proyección Mes Anterior' =
+			
+			CALCULATE(
+			    SUM('Trafico vs proyeccion'[Proyección]),
+			    DATEADD(Fecha[Date],-1,MONTH)
+			)
+		formatString: 0
+		lineageTag: 9f4f298b-5cce-4235-9f99-7a0d6b4ed7c1
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Trafico Mes Anterior' =
+			
+			CALCULATE(
+			    SUM('Trafico vs proyeccion'[Llamadas Atendidas]),
+			    DATEADD(Fecha[Date],-1,MONTH)
+			)
+		formatString: 0
+		lineageTag: 89f37980-ef71-4b43-9c8a-621808cdead2
+
+	measure 'Nivel de Atencion Mes Anterior' =
+			
+			CALCULATE(
+			    [Nivel de Atención],
+			    DATEADD(Fecha[Date],-1,MONTH)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 23fcff7f-d5b9-4131-a475-3fd5e5bdbd39
+
+	measure 'Nivel de Abandono Mes Anterior' =
+			
+			CALCULATE(
+			    [Nivel de Abandono],
+			    DATEADD(Fecha[Date],-1,MONTH)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: b1d134fa-3ae8-4123-8aa4-11b71f2573a5
+
+	measure 'Nivel de servicio Mes Anterior' =
+			
+			CALCULATE(
+			    [Nivel de servicio],
+			    DATEADD(Fecha[Date],-1,MONTH)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 71557887-30da-462d-b3e3-a24cc4622a59
+
+	measure 'Trafico Dia Anterior' =
+			
+			CALCULATE(
+			    SUM('Trafico vs proyeccion'[Llamadas Atendidas]),
+			    DATEADD(Fecha[Date],-1,DAY)
+			)
+		formatString: 0
+		lineageTag: 8a5cda5b-6779-407d-94d8-81affef2b29b
+
+	measure 'Nivel de servicio Dia Anterior' =
+			
+			CALCULATE(
+			    [Nivel de servicio],
+			    DATEADD(Fecha[Date],-1,DAY)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: c026c27e-d30a-4606-ab12-e92d8d252ee6
+
+	measure 'Nivel de Atencion Dia Anterior' =
+			
+			CALCULATE(
+			    [Nivel de Atención],
+			    DATEADD(Fecha[Date],-1,DAY)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 7616d2ba-14ba-431d-9947-cdc65411bc3b
+
+	measure 'Nivel de Abandono Dia Anterior' =
+			
+			CALCULATE(
+			    [Nivel de Abandono],
+			    DATEADD(Fecha[Date],-1,DAY)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 3f9d794b-bbae-41af-83df-541bbf6ac0f2
+
+	measure 'Nivel de servicio Semana Anterior' =
+			
+			CALCULATE(
+			    [Nivel de servicio],
+			    DATEADD('Fecha'[Date], -7, DAY)
+			)
+		lineageTag: 8e331a73-dce8-4ada-96f0-65e829e1d798
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nivel de Atencion Semana Anterior' =
+			
+			CALCULATE(
+			    [Nivel de Atención],
+			    DATEADD(Fecha[Date],-7,DAY)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 960aa21a-6288-40a8-8a8b-86c87e5ba388
+
+	measure 'Nivel de Abandono Semana Anterior' =
+			
+			CALCULATE(
+			    [Nivel de Abandono],
+			    DATEADD(Fecha[Date],-7,DAY)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 50e316bb-21d4-4e93-8e0d-a6451d206bb2
+
+	measure 'Trafico Semana Anterior' =
+			
+			CALCULATE(
+			    SUM('Trafico vs proyeccion'[Llamadas Atendidas]),
+			    DATEADD(Fecha[Date],-7,DAY)
+			)
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: eeca8fa9-a184-4000-b174-7422d39683ae
+
+	column Llave
+		dataType: double
+		lineageTag: e9370a8b-04a6-4fc6-9b03-e12587c8fe2f
+		summarizeBy: sum
+		sourceColumn: Llave
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fecha
+		dataType: dateTime
+		formatString: d/mm/yyyy
+		lineageTag: 9908a4fb-fe13-4538-9c63-311213ef6103
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Numero Skill'
+		dataType: string
+		lineageTag: 59e061d7-2ca9-41e0-b442-be37311c1040
+		summarizeBy: none
+		sourceColumn: Numero Skill
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Skill'
+		dataType: string
+		lineageTag: d5db0b0b-d79e-4cd8-af9f-15593c111d71
+		summarizeBy: none
+		sourceColumn: Nombre Skill
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inicio Intervalo'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: b3d5f013-b0b2-466a-885f-645b56cfbaf6
+		summarizeBy: none
+		sourceColumn: Inicio Intervalo
+
+		variation Variación
+			isDefault
+			relationship: 9bfb76a5-bfa7-4b31-b10f-24bbc3a1a3f9
+			defaultHierarchy: LocalDateTable_6f4e6790-2c7b-4e68-bba5-8ca2786bdc72.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fin Intervalo'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b0b62cd9-746d-42cc-a2cf-e5b5e8e48b15
+		summarizeBy: none
+		sourceColumn: Fin Intervalo
+
+		variation Variación
+			isDefault
+			relationship: 6a0fdc56-157c-427e-b197-a3a19ebc53ed
+			defaultHierarchy: LocalDateTable_7eea0e24-1488-4b3d-b823-2fcdbe891df7.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% Nivel Eficiencia'
+		dataType: int64
+		formatString: 0
+		lineageTag: 13864977-877b-4ad8-92db-560a45b892a9
+		summarizeBy: sum
+		sourceColumn: % Nivel Eficiencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% Nivel Servicio'
+		dataType: int64
+		formatString: 0
+		lineageTag: 23e30d66-cd96-4b54-93f1-516773ec8727
+		summarizeBy: sum
+		sourceColumn: % Nivel Servicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Velocidad Promedio Respuesta'
+		dataType: int64
+		formatString: 0
+		lineageTag: 07ed28a5-f556-4007-99e0-02d41541817a
+		summarizeBy: sum
+		sourceColumn: Velocidad Promedio Respuesta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LLamadas Ofrecidas'
+		dataType: int64
+		formatString: #,0
+		lineageTag: ff9829df-9a79-4b8d-9c7e-3b9b2c68584e
+		summarizeBy: sum
+		sourceColumn: LLamadas Ofrecidas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Atendidas'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 89b89926-3ddb-4d18-948c-3f46fcd659c6
+		summarizeBy: sum
+		sourceColumn: Llamadas Atendidas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Promedio Conversación'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2169e88b-fc0a-4b22-8cda-4cff63f8bd49
+		summarizeBy: sum
+		sourceColumn: Tiempo Promedio Conversación
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Promedio ACD'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f982622-9a0d-4793-8771-3eca3b761aa6
+		summarizeBy: sum
+		sourceColumn: Tiempo Promedio ACD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Promedio ACW'
+		dataType: int64
+		formatString: 0
+		lineageTag: ff0c3d68-d92d-4600-abf5-177ec13cb06d
+		summarizeBy: sum
+		sourceColumn: Tiempo Promedio ACW
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Abandonadas'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 302c5e51-189e-4d27-9f64-ff22ae305b8e
+		summarizeBy: sum
+		sourceColumn: Llamadas Abandonadas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Promedio Abandono'
+		dataType: string
+		lineageTag: ac23798b-d0cd-4f83-b4cd-b926d2ddc2a3
+		summarizeBy: none
+		sourceColumn: Tiempo Promedio Abandono
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Desbordadas a Otra Cola'
+		dataType: int64
+		formatString: 0
+		lineageTag: 47ee24ee-f121-44d9-afa3-0b579cbe8b24
+		summarizeBy: sum
+		sourceColumn: Llamadas Desbordadas a Otra Cola
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Promedio Espera en Cola de las Desbordadas'
+		dataType: string
+		lineageTag: bac632be-6545-49f1-a5a2-2c45f2e4e3ac
+		summarizeBy: none
+		sourceColumn: Tiempo Promedio Espera en Cola de las Desbordadas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Desbordadas de Otra Cola'
+		dataType: int64
+		formatString: 0
+		lineageTag: 13d98f42-11cb-4b5d-8b4d-dc4fc5878f15
+		summarizeBy: sum
+		sourceColumn: Llamadas Desbordadas de Otra Cola
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Desbordadas a otra Cola por Segunda Vez'
+		dataType: int64
+		formatString: 0
+		lineageTag: 473cf9b3-436b-4093-a322-9592eca7ef12
+		summarizeBy: sum
+		sourceColumn: Llamadas Desbordadas a otra Cola por Segunda Vez
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Promedio Espera en Cola de las Desbordadas por Segunda Vez'
+		dataType: string
+		lineageTag: b0d7f97e-8b91-4e94-a4a7-06171fc2a8d4
+		summarizeBy: none
+		sourceColumn: Tiempo Promedio Espera en Cola de las Desbordadas por Segunda Vez
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Estado Desconexión Forzado'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2bbbcfa7-e05c-480b-bb7a-8da94f0c01cd
+		summarizeBy: sum
+		sourceColumn: Llamadas Estado Desconexión Forzado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Estado Ocupado Forzado'
+		dataType: int64
+		formatString: 0
+		lineageTag: 77f242aa-2d2d-45a0-9720-2879f3da149e
+		summarizeBy: sum
+		sourceColumn: Llamadas Estado Ocupado Forzado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Transferidas'
+		dataType: int64
+		formatString: 0
+		lineageTag: e0b7c479-788b-469a-9146-62690e65670f
+		summarizeBy: sum
+		sourceColumn: Llamadas Transferidas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Salientes Extensión'
+		dataType: int64
+		formatString: 0
+		lineageTag: 84a968a8-857e-4d71-ab3c-65d261a3a9ae
+		summarizeBy: sum
+		sourceColumn: Llamadas Salientes Extensión
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Promedio Conversación Llamadas Salientes Extensión'
+		dataType: string
+		lineageTag: a4ab7aee-2001-4942-9025-c367501168e2
+		summarizeBy: none
+		sourceColumn: Tiempo Promedio Conversación Llamadas Salientes Extensión
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Salientes Externas'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3aacb768-7ca7-4392-8ac4-27d96a1e37f4
+		summarizeBy: sum
+		sourceColumn: Llamadas Salientes Externas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Promedio Conversación Llamadas Salientes Externas'
+		dataType: string
+		lineageTag: a88674ee-9840-44c6-8716-17778b6ee04f
+		summarizeBy: none
+		sourceColumn: Tiempo Promedio Conversación Llamadas Salientes Externas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas con Tiempos de Hold'
+		dataType: int64
+		formatString: 0
+		lineageTag: cf518177-a318-4cb5-9e2e-974a632ad8e5
+		summarizeBy: sum
+		sourceColumn: Llamadas con Tiempos de Hold
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Promedio Hold'
+		dataType: string
+		lineageTag: 115a1736-f351-447e-a603-222f92f1b271
+		summarizeBy: none
+		sourceColumn: Tiempo Promedio Hold
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Puestas en Conferencia'
+		dataType: int64
+		formatString: 0
+		lineageTag: aa97b3be-77c7-4ae0-87d8-31d4073598a7
+		summarizeBy: sum
+		sourceColumn: Llamadas Puestas en Conferencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero Maximo de Llamadas en Cola'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7aef02a4-df3d-43c8-b4a3-c9896ecadce0
+		summarizeBy: sum
+		sourceColumn: Numero Maximo de Llamadas en Cola
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Demora Maxima en Cola'
+		dataType: int64
+		formatString: 0
+		lineageTag: b3ebe425-4214-4994-bc97-678776074681
+		summarizeBy: sum
+		sourceColumn: Demora Maxima en Cola
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% Nivel Productividad'
+		dataType: double
+		lineageTag: 90b1edd2-7835-49e4-bcc6-1566c16586c7
+		summarizeBy: sum
+		sourceColumn: % Nivel Productividad
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Promedio de Agentes Presentes'
+		dataType: double
+		lineageTag: 88181edc-43a3-4783-869d-bac000cbd96b
+		summarizeBy: sum
+		sourceColumn: Promedio de Agentes Presentes
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Llamadas Por Agente'
+		dataType: int64
+		formatString: 0
+		lineageTag: b02a3dc2-3904-43ee-83f1-a5a133fe189c
+		summarizeBy: sum
+		sourceColumn: Llamadas Por Agente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas ACD 00 - 05'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e78042a-63e2-438b-8091-cc8ba6672bf9
+		summarizeBy: sum
+		sourceColumn: Llamadas ACD 00 - 05
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas ACD 05 - 10'
+		dataType: int64
+		formatString: 0
+		lineageTag: 51955a97-be5f-4867-94ea-f752557bfe52
+		summarizeBy: sum
+		sourceColumn: Llamadas ACD 05 - 10
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas ACD 10 - 15'
+		dataType: int64
+		formatString: 0
+		lineageTag: afa27dbe-87f9-4bd2-995c-678fa217b5c4
+		summarizeBy: sum
+		sourceColumn: Llamadas ACD 10 - 15
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas ACD 15 - 20'
+		dataType: int64
+		formatString: 0
+		lineageTag: ed8c8f26-afcb-4520-8c59-c6726faa98c4
+		summarizeBy: sum
+		sourceColumn: Llamadas ACD 15 - 20
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas ACD 20 - 30'
+		dataType: int64
+		formatString: 0
+		lineageTag: 26ead629-7fd6-4d79-9052-9c2a6c359b4f
+		summarizeBy: sum
+		sourceColumn: Llamadas ACD 20 - 30
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas ACD 30 - 40'
+		dataType: int64
+		formatString: 0
+		lineageTag: 98366196-b99a-44d7-9152-90a8a77a05b2
+		summarizeBy: sum
+		sourceColumn: Llamadas ACD 30 - 40
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas ACD 40 - 50'
+		dataType: int64
+		formatString: 0
+		lineageTag: 38ba2480-a3ee-4a98-a13f-b446e304dc06
+		summarizeBy: sum
+		sourceColumn: Llamadas ACD 40 - 50
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas ACD 50 - 60'
+		dataType: int64
+		formatString: 0
+		lineageTag: 233783e6-047d-448f-9ab7-df347e75a819
+		summarizeBy: sum
+		sourceColumn: Llamadas ACD 50 - 60
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas ACD 60 - 120'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7be3a8bf-d41e-4180-8222-46594f50ce57
+		summarizeBy: sum
+		sourceColumn: Llamadas ACD 60 - 120
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas ACD > 120'
+		dataType: int64
+		formatString: 0
+		lineageTag: 91e08fc3-5065-4e46-9d7c-33f4d6467f21
+		summarizeBy: sum
+		sourceColumn: Llamadas ACD > 120
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Aban 00 - 05'
+		dataType: int64
+		formatString: 0
+		lineageTag: f1c3023b-ad5f-448b-a805-b481c7d84847
+		summarizeBy: sum
+		sourceColumn: Llamadas Aban 00 - 05
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Aban 05 - 10'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8aa8ac19-8dac-453b-9637-9f2703106421
+		summarizeBy: sum
+		sourceColumn: Llamadas Aban 05 - 10
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Aban 10 - 15'
+		dataType: int64
+		formatString: 0
+		lineageTag: d24b6019-7b41-493e-bfb8-ff52e32851fc
+		summarizeBy: sum
+		sourceColumn: Llamadas Aban 10 - 15
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Aban 15 - 20'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0a7a3d57-4d8d-44d1-9bf9-405566cadf90
+		summarizeBy: sum
+		sourceColumn: Llamadas Aban 15 - 20
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Aban 20 - 30'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5621147e-6457-48e7-a2fb-390c073e1469
+		summarizeBy: sum
+		sourceColumn: Llamadas Aban 20 - 30
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Aban 30 - 40'
+		dataType: int64
+		formatString: 0
+		lineageTag: a9012028-410d-4bff-91bb-2fb1d006606f
+		summarizeBy: sum
+		sourceColumn: Llamadas Aban 30 - 40
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Aban 40 - 50'
+		dataType: int64
+		formatString: 0
+		lineageTag: 41098b73-fdbf-4db9-a31b-05000fbaf357
+		summarizeBy: sum
+		sourceColumn: Llamadas Aban 40 - 50
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Aban 50 - 60'
+		dataType: int64
+		formatString: 0
+		lineageTag: 42633d05-2c37-4123-b27c-06a538926f59
+		summarizeBy: sum
+		sourceColumn: Llamadas Aban 50 - 60
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Aban 60 - 120'
+		dataType: int64
+		formatString: 0
+		lineageTag: 86199b4a-fda7-4e5b-85ae-9e059bab82b5
+		summarizeBy: sum
+		sourceColumn: Llamadas Aban 60 - 120
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Aban > 120'
+		dataType: int64
+		formatString: 0
+		lineageTag: bdd36243-a211-4c8c-b2d0-0c932eafd8bf
+		summarizeBy: sum
+		sourceColumn: Llamadas Aban > 120
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AVAILTIME
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c7d93f8-8acf-4ee9-a07e-45628448c96f
+		summarizeBy: sum
+		sourceColumn: I_AVAILTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_ACDTIME
+		dataType: int64
+		formatString: 0
+		lineageTag: 97b7a381-f6f0-4819-915d-2907ea567f01
+		summarizeBy: sum
+		sourceColumn: I_ACDTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_ACWTIME
+		dataType: int64
+		formatString: 0
+		lineageTag: fa90f735-e7a2-4ec4-85ec-679c5a354f39
+		summarizeBy: sum
+		sourceColumn: I_ACWTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f1f6491-f8ae-4e0f-9118-2a2483662a37
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME0
+		dataType: int64
+		formatString: 0
+		lineageTag: 234048ed-0305-4c61-940f-d217e53e3f87
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME0
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME1
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ae33ed0-1cd5-49c3-a91a-5a5f799cf5aa
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME1
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME10
+		dataType: int64
+		formatString: 0
+		lineageTag: 207866fe-1e71-40c9-8f13-2671c55ecf69
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME10
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME11
+		dataType: int64
+		formatString: 0
+		lineageTag: dd53455e-a33b-405e-96be-8c5a8e58a0e9
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME11
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME12
+		dataType: int64
+		formatString: 0
+		lineageTag: a2e958d2-37d0-402a-8d2a-0d80e8ea6be5
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME12
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME13
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ff42bc0-e170-4844-aac7-a31a29ba0983
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME13
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME14
+		dataType: int64
+		formatString: 0
+		lineageTag: f6836af2-26e3-40e3-afbd-485ccab6bfc7
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME14
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME15
+		dataType: int64
+		formatString: 0
+		lineageTag: abd18ec9-3ae5-4f03-af59-96cb9af9f54c
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME15
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME16
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b1c0f34-be37-4156-bf5b-e1a41d5fa2fb
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME16
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME17
+		dataType: int64
+		formatString: 0
+		lineageTag: 22df5267-cc00-4e06-98f0-6ea53d22d0be
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME17
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME18
+		dataType: int64
+		formatString: 0
+		lineageTag: 45c4c7e2-ed2f-4531-9341-5cfc34a4b6d3
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME18
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME19
+		dataType: int64
+		formatString: 0
+		lineageTag: 10e062eb-2efb-4d57-9e7b-0ea7f95628a0
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME19
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_AUXTIME2
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b218559-3c54-42b2-8e65-c8862dc43b49
+		summarizeBy: sum
+		sourceColumn: I_AUXTIME2
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_OTHERTIME
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e0a10b7-0a7f-4426-b3eb-5702d7a89f2c
+		summarizeBy: sum
+		sourceColumn: I_OTHERTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_RINGTIME
+		dataType: int64
+		formatString: 0
+		lineageTag: 048db57e-10c6-4813-80ea-a3e239da0b00
+		summarizeBy: sum
+		sourceColumn: I_RINGTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column I_STAFFTIME
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d8cd152-d9ab-493f-a3d6-0bfd3c4e51de
+		summarizeBy: sum
+		sourceColumn: I_STAFFTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAXSTAFFED
+		dataType: int64
+		formatString: 0
+		lineageTag: 06746135-b2e6-447d-b1e7-ad2f811bf46e
+		summarizeBy: sum
+		sourceColumn: MAXSTAFFED
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACDAUXOUTCALLS
+		dataType: int64
+		formatString: 0
+		lineageTag: f07602a4-0f28-4f19-b732-cad1906d82ea
+		summarizeBy: sum
+		sourceColumn: ACDAUXOUTCALLS
+
+		annotation SummarizationSetBy = Automatic
+
+	column AUXOUTOFFTIME
+		dataType: int64
+		formatString: 0
+		lineageTag: da22cff0-3f8d-4188-850e-5db0c8516fb3
+		summarizeBy: sum
+		sourceColumn: AUXOUTOFFTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column AUXOUTOFFCALLS
+		dataType: int64
+		formatString: 0
+		lineageTag: 7664fef9-0bbb-4841-9b38-f5c7127d1f30
+		summarizeBy: sum
+		sourceColumn: AUXOUTOFFCALLS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proyección
+		dataType: double
+		formatString: #,0
+		lineageTag: 10f4c038-c442-4112-a60b-153afd1ecc12
+		summarizeBy: sum
+		sourceColumn: Proyección
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Segmento
+		dataType: string
+		lineageTag: a875e8c1-75c3-4952-972c-ba16e62cc28f
+		summarizeBy: none
+		sourceColumn: Segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llamadas Ofrecidas Otras'
+		dataType: int64
+		formatString: 0
+		lineageTag: fce76151-847f-4be0-96ed-663def6332ef
+		summarizeBy: sum
+		sourceColumn: Llamadas Ofrecidas Otras
+
+		annotation SummarizationSetBy = Automatic
+
+	column Requerido
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ae29ac2-610f-444e-881f-a269d88d280f
+		summarizeBy: sum
+		sourceColumn: Requerido
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'dia semana'
+		dataType: string
+		lineageTag: 40ab8fe8-766b-4202-8b7e-c5498f34fb04
+		summarizeBy: none
+		sourceColumn: dia semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column día
+		dataType: int64
+		formatString: 0
+		lineageTag: 628abdb4-9d16-4a08-acba-34ec613a9e10
+		summarizeBy: sum
+		sourceColumn: día
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: string
+		lineageTag: 620a5e64-b23f-41f8-a104-9ca798fb9589
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column TPC
+		dataType: string
+		lineageTag: 53cc85b2-70b1-4de7-bb74-cf73b827ad53
+		summarizeBy: none
+		sourceColumn: TPC
+
+		annotation SummarizationSetBy = Automatic
+
+	column Umbral = SUM('Trafico vs proyeccion'[Llamadas Aban 00 - 05])+SUM('Trafico vs proyeccion'[Llamadas Aban 05 - 10])+SUM('Trafico vs proyeccion'[Llamadas Aban 10 - 15])+SUM('Trafico vs proyeccion'[Llamadas ACD 15 - 20])+SUM('Trafico vs proyeccion'[Llamadas ACD 20 - 30])
+		formatString: 0
+		lineageTag: d9365578-4bfa-477e-9c59-564d44d7e349
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Skill = LOOKUPVALUE(Skill[skill],Skill[skill],'Trafico vs proyeccion'[Nombre Skill])
+		lineageTag: b1ec1a70-0505-4d75-96e4-bcb8de56619e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Trafico vs proyeccion' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Trafico Inbounnd\Data\BBDD Tráfico.xlsx"), null, true),
+				    Tabla3_Table = Origen{[Item="Tabla3",Kind="Table"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Tabla3_Table,{{"Llave", type number}, {"Fecha", type datetime}, {"Numero Skill", type text}, {"Nombre Skill", type text}, {"Inicio Intervalo", type datetime}, {"Fin Intervalo", type datetime}, {"% Nivel Eficiencia", Int64.Type}, {"% Nivel Servicio", Int64.Type}, {"Velocidad Promedio Respuesta", Int64.Type}, {"LLamadas Ofrecidas", Int64.Type}, {"Llamadas Atendidas", Int64.Type}, {"Tiempo Promedio Conversación", Int64.Type}, {"Tiempo Promedio ACD", Int64.Type}, {"Tiempo Promedio ACW", Int64.Type}, {"Llamadas Abandonadas", Int64.Type}, {"Tiempo Promedio Abandono", type any}, {"Llamadas Desbordadas a Otra Cola", Int64.Type}, {"Tiempo Promedio Espera en Cola de las Desbordadas", type any}, {"Llamadas Desbordadas de Otra Cola", Int64.Type}, {"Llamadas Desbordadas a otra Cola por Segunda Vez", Int64.Type}, {"Tiempo Promedio Espera en Cola de las Desbordadas por Segunda Vez", type any}, {"Llamadas Estado Desconexión Forzado", Int64.Type}, {"Llamadas Estado Ocupado Forzado", Int64.Type}, {"Llamadas Transferidas", Int64.Type}, {"Llamadas Salientes Extensión", Int64.Type}, {"Tiempo Promedio Conversación Llamadas Salientes Extensión", type any}, {"Llamadas Salientes Externas", Int64.Type}, {"Tiempo Promedio Conversación Llamadas Salientes Externas", type any}, {"Llamadas con Tiempos de Hold", Int64.Type}, {"Tiempo Promedio Hold", type any}, {"Llamadas Puestas en Conferencia", Int64.Type}, {"Numero Maximo de Llamadas en Cola", Int64.Type}, {"Demora Maxima en Cola", Int64.Type}, {"% Nivel Productividad", type number}, {"Promedio de Agentes Presentes", type number}, {"Llamadas Por Agente", Int64.Type}, {"Llamadas ACD 00 - 05", Int64.Type}, {"Llamadas ACD 05 - 10", Int64.Type}, {"Llamadas ACD 10 - 15", Int64.Type}, {"Llamadas ACD 15 - 20", Int64.Type}, {"Llamadas ACD 20 - 30", Int64.Type}, {"Llamadas ACD 30 - 40", Int64.Type}, {"Llamadas ACD 40 - 50", Int64.Type}, {"Llamadas ACD 50 - 60", Int64.Type}, {"Llamadas ACD 60 - 120", Int64.Type}, {"Llamadas ACD > 120", Int64.Type}, {"Llamadas Aban 00 - 05", Int64.Type}, {"Llamadas Aban 05 - 10", Int64.Type}, {"Llamadas Aban 10 - 15", Int64.Type}, {"Llamadas Aban 15 - 20", Int64.Type}, {"Llamadas Aban 20 - 30", Int64.Type}, {"Llamadas Aban 30 - 40", Int64.Type}, {"Llamadas Aban 40 - 50", Int64.Type}, {"Llamadas Aban 50 - 60", Int64.Type}, {"Llamadas Aban 60 - 120", Int64.Type}, {"Llamadas Aban > 120", Int64.Type}, {"I_AVAILTIME", Int64.Type}, {"I_ACDTIME", Int64.Type}, {"I_ACWTIME", Int64.Type}, {"I_AUXTIME", Int64.Type}, {"I_AUXTIME0", Int64.Type}, {"I_AUXTIME1", Int64.Type}, {"I_AUXTIME10", Int64.Type}, {"I_AUXTIME11", Int64.Type}, {"I_AUXTIME12", Int64.Type}, {"I_AUXTIME13", Int64.Type}, {"I_AUXTIME14", Int64.Type}, {"I_AUXTIME15", Int64.Type}, {"I_AUXTIME16", Int64.Type}, {"I_AUXTIME17", Int64.Type}, {"I_AUXTIME18", Int64.Type}, {"I_AUXTIME19", Int64.Type}, {"I_AUXTIME2", Int64.Type}, {"I_OTHERTIME", Int64.Type}, {"I_RINGTIME", Int64.Type}, {"I_STAFFTIME", Int64.Type}, {"MAXSTAFFED", Int64.Type}, {"ACDAUXOUTCALLS", Int64.Type}, {"AUXOUTOFFTIME", Int64.Type}, {"AUXOUTOFFCALLS", Int64.Type}, {"Proyección", type number}, {"Segmento", type text}, {"Llamadas Ofrecidas Otras", Int64.Type}, {"Requerido", Int64.Type}, {"dia semana", type text}, {"día", Int64.Type}, {"mes", type text}, {"TPC", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

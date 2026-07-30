@@ -1,0 +1,98 @@
+relationship b8a6feba-3f58-4279-ba2c-cb35c30cc9c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fecha.Date
+	toColumn: LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f.Date
+
+relationship 77cd1a6e-6798-4028-bdc4-d6608104f7b0
+	fromColumn: 'Tabla cruce'.'llave cruce'
+	toColumn: planta_activa_mes.'Llave planta'
+
+relationship 8af01603-888a-4dd3-8b12-4f4befdc73fb
+	fromColumn: Arrastre.'Llave arrastre'
+	toColumn: planta_activa_mes.'Llave planta'
+
+relationship 2dc027d4-b7dc-4f4c-9856-cde48e299c7b
+	fromColumn: ventas_2.'Tipo de Transito'
+	toColumn: 'ANS de Entrega'.'Tipo de transito'
+
+relationship c22238f4-fbee-40f5-865a-88253ee1d919
+	fromColumn: ventas_2.FECHA_CREACION_ORDEN
+	toColumn: Fecha.Date
+
+relationship adda74fd-7057-4b49-9ff7-dec6cbfdecff
+	fromColumn: ventas_2.'Llave ventas'
+	toColumn: planta_activa_mes.'Llave planta'
+
+relationship 3a5d6665-a414-4729-b239-726215815edb
+	fromColumn: Rechazos.OPERADOR_DONANTE
+	toColumn: Operador.OPERADOR_DONANTE
+
+relationship b44506d0-0bf3-44da-85f8-3ecbf1dda29e
+	fromColumn: ventas_2.OPERADOR_DONANTE
+	toColumn: Operador.OPERADOR_DONANTE
+
+relationship b199cbea-7d92-49ae-b584-dba978aecb3e
+	fromColumn: ventas_2.NOMBRE_OFERTA
+	toColumn: Planes.Plan
+
+relationship 2d5a077a-77c4-4838-9aa9-27586e0811f3
+	fromColumn: Procedencia.'Cumple política'
+	toColumn: 'Estado de procedencia'.'Estado de procedencia'
+
+relationship a521987d-9e05-4af0-bbce-c276d0b4ebcb
+	fromColumn: ventas_2.Procedencia
+	toColumn: 'Estado de procedencia'.'Estado de procedencia'
+
+relationship 150fdba1-078d-48d9-98f3-25144be06b66
+	fromColumn: ventas_2.Campaña
+	toColumn: Campaña.Campaña
+
+relationship 96f9a806-69b1-45a9-8b41-79e05ac850b7
+	fromColumn: ventas_2.ESTADO_PAGO
+	toColumn: 'Estado pago'.ESTADO_PAGO
+
+relationship 62848a40-5386-4d69-a41b-4e1431311895
+	fromColumn: 'Tabla cruce'.FECHA_CREACION_ORDEN
+	toColumn: Fecha.Date
+
+relationship 4b96fdea-7f83-4935-967c-5ac87400aca4
+	fromColumn: 'Tabla cruce'.OPERADOR_DONANTE
+	toColumn: Operador.OPERADOR_DONANTE
+
+relationship 7a41c9a5-a21d-4e00-b952-45d802235765
+	fromColumn: 'Tabla cruce'.Procedencia
+	toColumn: 'Estado de procedencia'.'Estado de procedencia'
+
+relationship 623d11a6-54f7-442f-b6a6-4a7d9728f555
+	fromColumn: 'Tabla cruce'.Campaña
+	toColumn: Campaña.Campaña
+
+relationship 7dd2faa4-7a2a-495d-a636-49b0343b7c46
+	fromColumn: Arrastre.COMPLETED_DATE
+	toColumn: Fecha.Date
+
+relationship 5c254c2a-ed32-48f9-9d53-7472b2951602
+	fromColumn: Arrastre.OPERADOR_DONANTE
+	toColumn: Operador.OPERADOR_DONANTE
+
+relationship 8fb16a96-f22f-4ce6-9823-4c72927e696a
+	fromColumn: Arrastre.Procedencia
+	toColumn: 'Estado de procedencia'.'Estado de procedencia'
+
+relationship a58d90dc-5bb1-4f8c-bb9b-600fb6c4ceed
+	fromColumn: Arrastre.Campaña
+	toColumn: Campaña.Campaña
+
+relationship 91169fbb-a19d-41a5-8a16-3328751f6f00
+	fromColumn: Arrastre.ESTADO_PAGO
+	toColumn: 'Estado pago'.ESTADO_PAGO
+
+relationship 73efa23a-763a-43bb-a5fb-251b20bc5f6d
+	fromColumn: 'Tabla cruce'.ESTADO_PAGO
+	toColumn: 'Estado pago'.ESTADO_PAGO
+
+relationship 3cc97166-126f-4ac9-ac80-d50278c8ff47
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ventas_2.COMPLETED_DATE
+	toColumn: LocalDateTable_eb94725c-1725-462b-888e-101b1f08d215.Date
+

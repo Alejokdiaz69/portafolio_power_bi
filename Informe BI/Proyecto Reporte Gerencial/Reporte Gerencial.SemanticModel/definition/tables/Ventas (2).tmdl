@@ -1,0 +1,66 @@
+table 'Ventas (2)'
+	lineageTag: 3cd19450-bca7-405c-8cb5-1887dd003f94
+
+	column Agente
+		dataType: string
+		lineageTag: 9fb353cd-46bc-4510-8c8a-46f439e8a59e
+		summarizeBy: none
+		sourceColumn: Agente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 7f98ec8b-118d-4479-84c6-935b8adc48a5
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: 33de57b2-ebaa-4af9-8b2b-86093c111ab2
+			defaultHierarchy: LocalDateTable_83f64ca4-2fb1-46f0-9ff0-e52635ed43ee.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Total ventass'
+		dataType: double
+		lineageTag: 42e3d7fe-f2de-4c91-bd7d-82c5f64ace59
+		summarizeBy: sum
+		sourceColumn: Total ventass
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Ventas (2)' = m
+		mode: import
+		source =
+				let
+				    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Ventas"),
+				    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+				    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (2)", each #"Transformar archivo (2)"([Content])),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+				    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo (2)"}),
+				    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo (2)", Table.ColumnNames(#"Transformar archivo (2)"(#"Archivo de ejemplo (2)"))),
+				    #"Dividir columna por delimitador" = Table.SplitColumn(Table.TransformColumnTypes(#"Columna de tabla expandida1", {{"Fecha estado actual", type text}}, "es-CO"), "Fecha estado actual", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Fecha estado actual.1", "Fecha estado actual.2"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Dividir columna por delimitador",{{"Fecha estado actual.1", type date}, {"Fecha estado actual.2", type time}}),
+				    #"Dividir columna por delimitador1" = Table.SplitColumn(Table.TransformColumnTypes(#"Tipo cambiado1", {{"Fecha ingresada", type text}}, "es-CO"), "Fecha ingresada", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Fecha ingresada.1", "Fecha ingresada.2"}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Dividir columna por delimitador1",{{"Fecha ingresada.1", type date}, {"Fecha ingresada.2", type time}}),
+				    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Tipo cambiado2",{{"Fecha estado actual.2", "Hora estado actual"}, {"Fecha estado actual.1", "Fecha estado actual"}, {"Fecha ingresada.2", "Hora ingresada"}, {"Fecha ingresada.1", "Fecha ingresada"}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Columnas con nombre cambiado3",null,"Sin operador",Replacer.ReplaceValue,{"Nombre operadora"}),
+				    #"Poner En Mayúsculas Cada Palabra" = Table.TransformColumns(#"Valor reemplazado",{{"Nombre operadora", Text.Proper, type text}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Poner En Mayúsculas Cada Palabra", "Unic", each 1),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Unic", Int64.Type}}),
+				    #"Filas agrupadas" = Table.Group(#"Tipo cambiado3", {"Ejecutivo venta", "Fecha ingresada"}, {{"Total ventass", each List.Sum([Unic]), type nullable number}}),
+				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Filas agrupadas",{{"Fecha ingresada", "Fecha"}, {"Ejecutivo venta", "Agente"}}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Columnas con nombre cambiado2","2","",Replacer.ReplaceText,{"Agente"})
+				in
+				    #"Valor reemplazado1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

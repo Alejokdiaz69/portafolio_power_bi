@@ -1,0 +1,106 @@
+relationship d0a45950-f038-49a6-b504-9b44046f33fd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Meses.Orden
+	toColumn: LocalDateTable_0518eed4-c1ce-456d-8269-e9fbf9b9d621.Date
+
+relationship c01cddc8-bcce-41bc-89b6-83ebfeb5e21e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Ventas.'Fecha estado actual'
+	toColumn: LocalDateTable_2fc8d33c-580b-48cd-adc8-02970ca9c50e.Date
+
+relationship 150816f3-98d3-49dd-aaef-329e9f093f4b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'planta activa'.'FECHA INGRESO'
+	toColumn: LocalDateTable_81e179f8-2999-48b0-83a0-a25529b612b4.Date
+
+relationship d6b19bb6-567b-465d-8318-5745ccfe7260
+	fromColumn: Conexiones.'llave mes'
+	toColumn: Meses.'Llave meses'
+
+relationship 22e1632e-9376-498a-910d-6e0877dbb98c
+	fromColumn: Conexiones.'Llave conexiones 3'
+	toColumn: 'planta activa'.'Llave planta'
+
+relationship 0d421b6f-d9e4-4d65-ada1-818d92025885
+	fromColumn: Ventas.'Nombre operadora'
+	toColumn: Operador.'Nombre operadora'
+
+relationship fbe6b93f-f592-4149-9b34-645f45746ca6
+	fromColumn: 'Tabla cuartil semana'.'Llave semana 2'
+	toColumn: 'planta activa'.'Llave planta'
+
+relationship 687fb28e-910d-42d6-ad62-ed4e41ec574d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data Fibrx'.'MES INGRESO'
+	toColumn: LocalDateTable_e79d244a-dca6-4421-8534-9f8fa8d57a9a.Date
+
+relationship a20bad8b-0b4f-45c9-8905-0d370856b53c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data Fibrx'.'FECHA ESTADO'
+	toColumn: LocalDateTable_f6eb208b-af0b-4b54-8086-618ad10988a6.Date
+
+relationship b0b93418-b580-4f02-9fe8-ee7c3242bc6e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data Fibrx'.Agenda
+	toColumn: LocalDateTable_1b2fa722-87af-4cfd-b8ce-e356c288cdf8.Date
+
+relationship b15f9c66-a3b1-41a1-a55d-68004bf9f58c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Conexiones.'Fecha ingreso'
+	toColumn: LocalDateTable_f946c87d-f34a-437b-855c-19ddac292056.Date
+
+relationship c91e77ef-d5ab-4a68-a394-543798846a6f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Llamadas.Corte
+	toColumn: LocalDateTable_3eb1cd2f-fe48-49fd-9466-c90bac814a47.Date
+
+relationship 0df13dfa-8c12-41db-9245-c9db177aef5f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Conexiones - estados'.Fecha
+	toColumn: LocalDateTable_ac1d192d-2f13-4c30-9465-1eff1c0a9ac2.Date
+
+relationship e1e70df6-29d5-4735-9b74-6ff30ead1058
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Conexiones aplicativo'.Fecha
+	toColumn: LocalDateTable_97774e5c-07c1-4a03-9af3-55acfc476105.Date
+
+relationship 33de57b2-ebaa-4af9-8b2b-86093c111ab2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Ventas (2)'.Fecha
+	toColumn: LocalDateTable_83f64ca4-2fb1-46f0-9ff0-e52635ed43ee.Date
+
+relationship 2866beec-795e-40b9-826e-09c9573cf815
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Tabla cuartil mes'.'Fecha ingreso'
+	toColumn: LocalDateTable_a08b2233-6516-400f-b326-99f061fb207f.Date
+
+relationship 462199b1-e9cf-4862-9c92-7e1a6bb8e7b7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data Fibrx'.'fecha de instalacion programada en new mat'
+	toColumn: LocalDateTable_7bb42b9a-1cda-4cd0-bc51-edbc7198875e.Date
+
+relationship 6e724084-5eb7-4169-903a-0a61385fac18
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fecha.Date
+	toColumn: LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f.Date
+
+relationship b641733d-52b6-402d-9a35-30e185f85b6a
+	fromColumn: Conexiones.Fecha
+	toColumn: Fecha.Date
+
+relationship ae2b744d-d344-4ae2-bedb-eac7614d1767
+	fromColumn: Ventas.'Fecha ingresada'
+	toColumn: Fecha.Date
+
+relationship a2a6c231-ef97-4eef-bf00-edd3cccd610a
+	fromColumn: 'Tabla cuartil mes'.'llave cuartil mes'
+	toColumn: Fecha.Date
+
+relationship 39b08a7b-031f-4dba-b426-2533722a8aa7
+	fromColumn: 'Tabla cuartil semana'.'llave cuartil semana'
+	toColumn: Fecha.Date
+
+relationship 64afbeab-0eb8-48dd-98a5-6ac8a0bc58eb
+	fromColumn: 'Tabla cruce'.'Fecha ingresada'
+	toColumn: Fecha.Date
+

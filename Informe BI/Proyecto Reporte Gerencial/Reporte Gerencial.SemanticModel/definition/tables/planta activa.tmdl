@@ -1,0 +1,151 @@
+table 'planta activa'
+	lineageTag: 7acea971-50ed-48c7-9323-aa76242bf1b2
+
+	column 'USER INCONCERT'
+		dataType: string
+		lineageTag: a3a2018e-7069-4d7f-8648-55a7b2e51c75
+		summarizeBy: none
+		sourceColumn: USER INCONCERT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'USUARIO MAT'
+		dataType: string
+		lineageTag: 568636f3-5f3e-41c0-b9de-466f271d6d4d
+		summarizeBy: none
+		sourceColumn: USUARIO MAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NOMBRE COMPLETO'
+		dataType: string
+		lineageTag: 474272d3-90bc-4a82-acc8-4f870c18a83a
+		summarizeBy: none
+		sourceColumn: NOMBRE COMPLETO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FECHA INGRESO'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: ff84b765-b808-489a-ba33-3e86b0668afe
+		summarizeBy: none
+		sourceColumn: FECHA INGRESO
+
+		variation Variación
+			isDefault
+			relationship: 150816f3-98d3-49dd-aaef-329e9f093f4b
+			defaultHierarchy: LocalDateTable_81e179f8-2999-48b0-83a0-a25529b612b4.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'CARGO SIN RATIFICAR'
+		dataType: string
+		lineageTag: e7696104-2026-4e0e-b50c-a78ffb670a54
+		summarizeBy: none
+		sourceColumn: CARGO SIN RATIFICAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CARGO RATIFICADO'
+		dataType: string
+		lineageTag: ffd5ebe2-2e9d-4f38-886d-4299015890bf
+		summarizeBy: none
+		sourceColumn: CARGO RATIFICADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'JEFE DIRECTO'
+		dataType: string
+		lineageTag: 38cfe230-40bb-47e6-875c-e07881dff5ba
+		summarizeBy: none
+		sourceColumn: JEFE DIRECTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTADO
+		dataType: string
+		lineageTag: fc50284a-8b72-4d72-a495-ee2e39498b15
+		summarizeBy: none
+		sourceColumn: ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes ingreso'
+		dataType: int64
+		formatString: 0
+		lineageTag: 29b20379-1b85-419b-85e4-63e055169052
+		summarizeBy: sum
+		sourceColumn: Mes ingreso
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año ingreso'
+		dataType: int64
+		formatString: 0
+		lineageTag: a76c4e01-13aa-4eb2-843f-e67daf2ac4aa
+		summarizeBy: sum
+		sourceColumn: Año ingreso
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave planta' = 'planta activa'[USER INCONCERT]&'planta activa'[Mes ingreso]&'planta activa'[Año ingreso]
+		lineageTag: 4fa9602b-dc96-4d83-9fc7-07b605cdc809
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave planta 2' = 'planta activa'[USER INCONCERT]&'planta activa'[Mes ingreso]&'planta activa'[Año ingreso]
+		lineageTag: 5e5b5154-8445-4ead-a841-85cd8c6d8df0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave planta 3' = ```
+			'planta activa'[CODIGO AGENTE]&'planta activa'[Mes ingreso]&'planta activa'[Año ingreso] 
+			```
+		lineageTag: 0aad1c13-5781-4d18-879c-8863ca885efd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave planta 4' = 'planta activa'[USUARIO MAT]&'planta activa'[Mes ingreso]&'planta activa'[Año ingreso]
+		lineageTag: 87244abf-e7d5-439e-8b7c-3f8ad536e2f4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CODIGO AGENTE'
+		dataType: string
+		lineageTag: 02a3a913-ccbe-485d-a17c-a9db6db85aad
+		summarizeBy: none
+		sourceColumn: CODIGO AGENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANTIGÜEDAD
+		dataType: string
+		lineageTag: fd1ead48-a4cf-400d-afd4-cf25b9aeac68
+		summarizeBy: none
+		sourceColumn: ANTIGÜEDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'planta activa' = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Planta Activa.csv"),[Delimiter=";", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"CODIGO AGENTE", type text}, {"USER INCONCERT", type text}, {"USUARIO MAT", type text}, {"NOMBRE COMPLETO", type text}, {"FECHA INGRESO", type date}, {"CARGO SIN RATIFICAR", type text}, {"CARGO RATIFICADO", type text}, {"JEFE DIRECTO", type text}, {"ESTADO", type text}, {"MES_PLANTA", Int64.Type}, {"AÑO_PLANTA", Int64.Type}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"MES_PLANTA", "Mes ingreso"}, {"AÑO_PLANTA", "Año ingreso"}}),
+				    #"Filas filtradas" = Table.SelectRows(#"Columnas con nombre cambiado", each ([USER INCONCERT] <> null))
+				in
+				    #"Filas filtradas"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegación
+

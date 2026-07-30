@@ -1,0 +1,218 @@
+table Rechazos
+	excludeFromModelRefresh
+	lineageTag: 4c722b25-b2be-4502-a26c-e7c46c9a54a4
+
+	column PERIODO_PROCESO_CODIGO
+		dataType: string
+		lineageTag: 45519fbe-5d60-475b-accc-af3385e87459
+		summarizeBy: none
+		sourceColumn: PERIODO_PROCESO_CODIGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NP_ORDER_ID
+		dataType: string
+		lineageTag: f694c374-338b-4e25-ba2d-52dc12b4c871
+		summarizeBy: none
+		sourceColumn: NP_ORDER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATE_DATE
+		dataType: string
+		lineageTag: 258480ff-2dac-4f0a-8e9c-5dedf00cd42c
+		summarizeBy: none
+		sourceColumn: STATE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DONOR_OPERATOR
+		dataType: string
+		lineageTag: 8c024d7f-9486-4967-8c4d-4e730d9d9370
+		summarizeBy: none
+		sourceColumn: DONOR_OPERATOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PORT_NUMBER
+		dataType: string
+		lineageTag: eea33089-3586-44e0-84f8-617ba95e6428
+		summarizeBy: none
+		sourceColumn: PORT_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLOSE_FLAG
+		dataType: string
+		lineageTag: c2176e33-1a52-414f-9654-59a665289e49
+		summarizeBy: none
+		sourceColumn: CLOSE_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLOSE_DATE
+		dataType: string
+		lineageTag: cbf13d42-98d8-4c81-9a02-b7969606d4fc
+		summarizeBy: none
+		sourceColumn: CLOSE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMMENTS
+		dataType: string
+		lineageTag: e732497f-988c-4629-9bfd-926315cadb38
+		summarizeBy: none
+		sourceColumn: COMMENTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATED_DATE
+		dataType: string
+		lineageTag: 062a7563-0a92-4f62-92b0-f25f739292e1
+		summarizeBy: none
+		sourceColumn: CREATED_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column REJECT_REASON_ID
+		dataType: string
+		lineageTag: 0c639fbd-2353-4575-8ac7-ca950634ac78
+		summarizeBy: none
+		sourceColumn: REJECT_REASON_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column REJECT_REASON_ID_BUF
+		dataType: string
+		lineageTag: c0d67130-9f14-48fb-839a-bb46a84c6586
+		summarizeBy: none
+		sourceColumn: REJECT_REASON_ID_BUF
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPERADOR_DONANTE
+		dataType: string
+		lineageTag: b84fb49d-8311-4c9f-88da-32e0c9d0ca3f
+		summarizeBy: none
+		sourceColumn: OPERADOR_DONANTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_ITEM_ID
+		dataType: string
+		lineageTag: 4d90d0f0-3da8-4c2b-adf0-23729a10b053
+		summarizeBy: none
+		sourceColumn: ORDER_ITEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column NP_ORDER_NAME
+		dataType: string
+		lineageTag: f5bdee03-8d6f-4757-97f9-4d0cdf718f1a
+		summarizeBy: none
+		sourceColumn: NP_ORDER_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column NP_ORDER_STATE
+		dataType: string
+		lineageTag: da0ecc1b-98b3-4b18-b583-85273ed54191
+		summarizeBy: none
+		sourceColumn: NP_ORDER_STATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ARBOL_ALMACEN_NOMBRE
+		dataType: string
+		lineageTag: bf6bdfac-617e-4c54-8b69-3ae8357b77d7
+		summarizeBy: none
+		sourceColumn: ARBOL_ALMACEN_NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUST_ORDER_ID
+		dataType: string
+		lineageTag: 27794b5f-c5bf-4416-bcf2-4c128a1aa8a1
+		summarizeBy: none
+		sourceColumn: CUST_ORDER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ARBOL_USUARIO
+		dataType: string
+		lineageTag: 3486f22b-d45c-4955-bd92-74eefc90b873
+		summarizeBy: none
+		sourceColumn: ARBOL_USUARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBESTADO_ORDEN
+		dataType: string
+		lineageTag: 775a579a-1053-4f64-9bef-2da154f9bd10
+		summarizeBy: none
+		sourceColumn: SUBESTADO_ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO
+		dataType: string
+		lineageTag: f4f16531-9bf6-4d08-87aa-fe57315ecf03
+		summarizeBy: none
+		sourceColumn: TIPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALIADO
+		dataType: string
+		lineageTag: ee0bc0c4-0f4b-4cac-9c34-de23c5747786
+		summarizeBy: none
+		sourceColumn: ALIADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECHAZO_PRINCIPAL
+		dataType: string
+		lineageTag: 4d49af94-7dac-4faf-a6d1-51c92b69d612
+		summarizeBy: none
+		sourceColumn: RECHAZO_PRINCIPAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPIFICACION_PRINCIPAL
+		dataType: string
+		lineageTag: 5c13ce65-419e-41c2-a524-ec8c03efc61f
+		summarizeBy: none
+		sourceColumn: TIPIFICACION_PRINCIPAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASIFICACION_PRINCIPAL
+		dataType: string
+		lineageTag: ea56aa13-a426-4085-9471-97adb3cd6b4a
+		summarizeBy: none
+		sourceColumn: CLASIFICACION_PRINCIPAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_CREACION_ORDEN_EKIA
+		dataType: string
+		lineageTag: 86da5af8-c000-4a96-b2d5-0f5a3f6c940a
+		summarizeBy: none
+		sourceColumn: FECHA_CREACION_ORDEN_EKIA
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Rechazos = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Seguimiento ventas\Data\Rechazos.csv"),[Delimiter=";", Columns=25, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Duplicados quitados" = Table.Distinct(#"Encabezados promovidos", {"PORT_NUMBER"})
+				in
+				    #"Duplicados quitados"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegación
+

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
+  "items": [
+    {
+      "name": "Bookmarkc01cca452908c99a572c",
+      "displayName": "Bench",
+      "children": [
+        "Bookmark3de65c0003c0234b6060",
+        "Bookmark7e2c40b477617dbc0003"
+      ]
+    },
+    {
+      "name": "Bookmark569cb1da235755d6e2be",
+      "displayName": "Portada",
+      "children": [
+        "Bookmark6643cab0c620a70c34c4",
+        "Bookmarkcd82119254640872e66b",
+        "Bookmarke0deebbcb7893003053c"
+      ]
+    }
+  ]
+}

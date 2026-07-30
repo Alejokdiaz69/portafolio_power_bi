@@ -1,0 +1,478 @@
+table Conexiones
+	lineageTag: b7c53372-da00-43f7-8ff8-c6984897d268
+
+	measure 'SPH Neto' = DIVIDE(SUM(Conexiones[Venta completada]),SUM(Conexiones[Total conexion]))
+		formatString: 0.00
+		lineageTag: cccfcd24-176e-487f-86a4-dcf431dd380c
+
+	measure 'SPH Bruto' = DIVIDE(SUM(Conexiones[Venta cantadas]),SUM(Conexiones[Total conexion]))
+		formatString: 0.00
+		lineageTag: cd06d081-5b1e-4cdf-a7ee-8fa4cbd8f917
+
+	measure %Productividad = DIVIDE(SUM(Conexiones[Tiempo productivo]),SUM(Conexiones[Total conexion]))
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: df968aab-9ded-4770-b1e0-65021d22c911
+
+	measure '%T. Hablado' = DIVIDE(SUM(Conexiones[Trabajando]),SUM(Conexiones[Total conexion]))
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 21c27fba-b4f0-4960-979d-f67d3fc61718
+
+	measure %Adherencia = DIVIDE(SUM(Conexiones[Total conexion]),SUM(Conexiones[Planificado]))
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: d29997c3-f0c7-42c1-aefd-d79480022bb8
+
+	measure %Cumplimiento = DIVIDE(SUM(Conexiones[Venta completada]),SUM(Conexiones[Venta cantadas]))
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 4fa5faf6-e314-40e5-8fea-a6bbd27f4285
+
+	measure %Caida = 1-DIVIDE(SUM(Conexiones[Venta completada]),SUM(Conexiones[Venta cantadas]))
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: d100fa16-5c99-487b-9e68-adb357efaac7
+
+	measure '%Sin venta' = DIVIDE(SUM(Conexiones[Sin venta]),(SUM(Conexiones[Con venta]) + SUM(Conexiones[Sin venta]) ))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 12d7283f-fa9b-4af0-b5d1-c75de6684173
+
+	measure Destino = ```
+			1 
+			```
+		formatString: 0
+		lineageTag: 59aa6af3-bbca-48cb-95fb-1e70abedc0ea
+
+	column Agente
+		dataType: string
+		lineageTag: 51e8a772-1894-422d-9517-ee6cea2390e1
+		summarizeBy: none
+		sourceColumn: Agente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 50b788ba-aaab-457d-a53a-d3c431f87f91
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Llave conexiones' = Conexiones[Agente]&FORMAT(Conexiones[Fecha],"M")&FORMAT(Conexiones[Fecha],"YYYY")
+		lineageTag: 5bc2bd2e-f95d-4328-9d4c-40767ed2a28d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Baño = LOOKUPVALUE('Conexiones - estados'[Baño],'Conexiones - estados'[Llave conexiones estado],Conexiones[Fecha]&Conexiones[Agente]&"baño")*24
+		lineageTag: 17ff267d-a234-40d7-8c9b-ae96cdb5e3e0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Colacion = LOOKUPVALUE('Conexiones - estados'[Colacion],'Conexiones - estados'[Llave conexiones estado],Conexiones[Fecha]&Conexiones[Agente]&"Colacion")*24
+		lineageTag: 1a10d0e4-3aa1-4f73-8bfd-566a2820c1d4
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Descanso = LOOKUPVALUE('Conexiones - estados'[Descanso],'Conexiones - estados'[Llave conexiones estado],Conexiones[Fecha]&Conexiones[Agente]&"Descanso")*24
+		lineageTag: f0b7aebc-33eb-4852-884b-f5c649fad91e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Entrenamiento = LOOKUPVALUE('Conexiones - estados'[Entrenamiento],'Conexiones - estados'[Llave conexiones estado],Conexiones[Fecha]&Conexiones[Agente]&"EN_ENTRNAMIENTO")*24
+		lineageTag: 49411917-bc64-41cf-9d93-fc78a1109435
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fuera de turno' = LOOKUPVALUE('Conexiones - estados'[Fuera de turno],'Conexiones - estados'[Llave conexiones estado],Conexiones[Fecha]&Conexiones[Agente]&"FUERA_DE_TURNO")*24
+		lineageTag: c0effae9-5e91-4b63-9e73-41ab5da78124
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tareas administrativas' = ```
+			LOOKUPVALUE('Conexiones - estados'[Tareas administraticas],'Conexiones - estados'[Llave conexiones estado],Conexiones[Fecha]&Conexiones[Agente]&"TAREAS_ADMINISTRATIVAS")*24 
+			```
+		lineageTag: fa72fe14-9c29-47de-8897-d5dbadadaeab
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Trabajando = LOOKUPVALUE('Conexiones - estados'[Trabajando],'Conexiones - estados'[Llave conexiones estado],Conexiones[Fecha]&Conexiones[Agente]&"Trabajando")*24
+		lineageTag: 26ab6a99-a772-4b06-a96c-3ad2e8827cc9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Nombre completo' = IF(LOOKUPVALUE('planta activa'[NOMBRE COMPLETO],'planta activa'[Llave planta 2],Conexiones[Llave conexiones])="",LOOKUPVALUE('planta activa'[NOMBRE COMPLETO],'planta activa'[Llave planta 4],Conexiones[Llave conexiones]),LOOKUPVALUE('planta activa'[NOMBRE COMPLETO],'planta activa'[Llave planta 2],Conexiones[Llave conexiones]))
+		lineageTag: f223162b-c888-4ea0-97c8-d1453747eefa
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Venta cantadas' =
+			
+			IF(FORMAT(CALCULATE(
+			    SUM(ventas[Unic]),
+			    FILTER(
+			        ventas,
+			        ventas[Llave ventas 3] = Conexiones[Llave conexiones 2]
+			    )
+			)+Conexiones[Venta cantadas fibra],"Inter")="",0,
+			CALCULATE(
+			    SUM(ventas[Unic]),
+			    FILTER(
+			        ventas,
+			        ventas[Llave ventas 3] = Conexiones[Llave conexiones 2]
+			    )
+			))
+		formatString: #,0
+		lineageTag: b33c15d4-c095-4cac-9d1e-46233866631e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave conexiones 2' = Conexiones[Agente 2]&FORMAT(Conexiones[Fecha],"DD")&FORMAT(Conexiones[Fecha],"M")&FORMAT(Conexiones[Fecha],"YYYY")
+		lineageTag: df54c65d-bbac-467a-a637-e394a7ca16aa
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Venta completada' =
+			
+			IF(FORMAT(CALCULATE(
+			    SUM(Ventas[Activo]),
+			    FILTER(
+			        ventas,
+			        ventas[Llave ventas 3] = Conexiones[Llave conexiones 2]
+			    )
+			)+Conexiones[Venta activas fibra],"Inter")="",0,
+			CALCULATE(
+			    SUM(Ventas[Activo]),
+			    FILTER(
+			        ventas,
+			        ventas[Llave ventas 3] = Conexiones[Llave conexiones 2]
+			    )
+			)+Conexiones[Venta activas fibra])
+		formatString: #,0
+		lineageTag: aebdbd0f-5b88-416b-baa9-511c21000eb7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supervisor = IF(LOOKUPVALUE('planta activa'[JEFE DIRECTO],'planta activa'[Llave planta 2],Conexiones[Llave conexiones])="",LOOKUPVALUE('planta activa'[JEFE DIRECTO],'planta activa'[Llave planta 4],Conexiones[Llave conexiones]),LOOKUPVALUE('planta activa'[JEFE DIRECTO],'planta activa'[Llave planta 2],Conexiones[Llave conexiones]))
+		lineageTag: 48bbd646-cafb-4687-bea2-d5df46f99226
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Antiguedad = IF(LOOKUPVALUE('planta activa'[ANTIGÜEDAD],'planta activa'[Llave planta 2],Conexiones[Llave conexiones])="",LOOKUPVALUE('planta activa'[ANTIGÜEDAD],'planta activa'[Llave planta 4],Conexiones[Llave conexiones]),LOOKUPVALUE('planta activa'[ANTIGÜEDAD],'planta activa'[Llave planta 2],Conexiones[Llave conexiones]))
+		lineageTag: ad34673f-0df0-4cc1-a5df-161b33ca32c0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Agentes conectados' = 1
+		formatString: #,0
+		lineageTag: 8dcdd682-f03c-419d-a03d-871b571a05c8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total conexion' = IF(Conexiones[tiempo]*24=0,Conexiones[Baño]+Conexiones[Colacion]+Conexiones[Descanso]+Conexiones[Entrenamiento]+Conexiones[Fuera de turno]+Conexiones[Tareas administrativas]+Conexiones[Trabajando],Conexiones[tiempo]*24)
+		formatString: #,0
+		lineageTag: b41134c8-d15d-45af-8273-9118a9ef2b93
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'SPH Bruto 2' =
+			IF(FORMAT(DIVIDE(Conexiones[Ventas],Conexiones[Total conexion]),"Inter")="",0,
+			DIVIDE(Conexiones[Ventas],Conexiones[Total conexion]))
+		lineageTag: 758fb631-2403-41bd-9bda-e99fdeb29df1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Mes = FORMAT(Conexiones[Fecha],"MMMM")
+		lineageTag: 8857cd23-5501-430a-a60c-9477c8957642
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Semana del Mes' = "Semana"&" "& 1 + WEEKNUM(Conexiones[Fecha]) - WEEKNUM(STARTOFMONTH(Conexiones[Fecha]))
+		lineageTag: aa2d0f1c-a2af-46a9-aa5c-352c3ce6ed1c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año = FORMAT(Conexiones[Fecha],"YYYY")
+		lineageTag: b1e6ffe1-b27e-441e-8a2d-634fa69ae405
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cuartil =
+			
+			VAR MesActual = Conexiones[Mes]
+			VAR Jerarquia =
+			    RANKX(
+			        FILTER(
+			            ALL(Conexiones),
+			            Conexiones[Mes] = MesActual
+			        ),
+			        Conexiones[SPH Bruto 2],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			VAR TotalContar =
+			    COUNTROWS(
+			        FILTER(
+			            ALL(Conexiones),
+			            Conexiones[Mes] = MesActual
+			        )
+			    )
+			VAR Porcentaje = DIVIDE(Jerarquia, TotalContar)
+			RETURN
+			    IF(
+			        ISBLANK(Conexiones[SPH Bruto 2]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            OR(Porcentaje > 0.75,Conexiones[SPH Bruto 2]=0), "Q4",
+			            Porcentaje <= 0.25, "Q1",
+			            Porcentaje > 0.25 && Porcentaje <= 0.50, "Q2",
+			            Porcentaje > 0.50 && Porcentaje <= 0.75, "Q3"
+			        )
+			    )
+		lineageTag: be331e2d-340a-4448-ae3d-a95c524cee2b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo productivo' = Conexiones[Disponible]+Conexiones[Trabajando]
+		formatString: #,0
+		lineageTag: 0c815ce7-7fdb-4b36-aa75-23e2aa94a884
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Disponible = LOOKUPVALUE('Conexiones - estados'[Disponible],'Conexiones - estados'[Llave conexiones estado],Conexiones[Fecha]&Conexiones[Agente]&"Disponible")*24
+		lineageTag: b2bdd8e2-144c-4e96-b77e-6a96b5082bfb
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'No ACD' = LOOKUPVALUE('Conexiones - estados'[No ACD],'Conexiones - estados'[Llave conexiones estado],Conexiones[Fecha]&Conexiones[Agente]&"NO_ACD")*24
+		lineageTag: cdd5153a-395f-4395-8564-835f922014e4
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Planificado = Conexiones[Agentes conectados]*8
+		formatString: #,0
+		lineageTag: 65367e4d-a6b4-4a55-a314-4b264d28b4bd
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'llave mes' = Conexiones[Mes]&Conexiones[Año]
+		lineageTag: c330cce4-25ef-446b-9799-df8b207a71c9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave conexiones 3' = ```
+			Conexiones[Agente 2]&FORMAT(Conexiones[Fecha],"M")&Conexiones[Año] 
+			```
+		lineageTag: f63b0879-6b6b-455b-90cb-0e2d857a9e41
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Factura Logeo' = Conexiones[Tiempo productivo]*7000
+		formatString: #,0
+		lineageTag: d814c8a6-7b9b-43d3-8475-8637219d1c7e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Mes numero' = FORMAT(Conexiones[Fecha],"M")
+		lineageTag: 967c9373-9ea4-4426-8a72-8ff50e77ae4f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Venta cantadas fibra' =
+			
+			CALCULATE(
+			    SUM('Data Fibrx'[Venta cantada]),
+			    FILTER(
+			        'Data Fibrx',
+			        'Data Fibrx'[Llave fibra 3] = Conexiones[Llave conexiones 2]
+			    )
+			)
+		formatString: #,0
+		lineageTag: 702cadf2-59a8-4052-82af-3fbad3c34ca6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Venta activas fibra' =
+			
+			CALCULATE(
+			    SUM('Data Fibrx'[Activo]),
+			    FILTER(
+			        'Data Fibrx',
+			        'Data Fibrx'[Llave fibra 3] = Conexiones[Llave conexiones 2]
+			    )
+			)
+		formatString: #,0
+		lineageTag: 36baeef0-f411-417f-bc11-9ceb39bfde86
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'usuario mat' = IF(LOOKUPVALUE('planta activa'[USUARIO MAT],'planta activa'[Llave planta 2],Conexiones[Llave conexiones])="",LOOKUPVALUE('planta activa'[USUARIO MAT],'planta activa'[Llave planta 4],Conexiones[Llave conexiones]),LOOKUPVALUE('planta activa'[USUARIO MAT],'planta activa'[Llave planta 2],Conexiones[Llave conexiones]))
+		lineageTag: 7159ce54-8d06-4160-b82d-863f663fd33c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Llamadas =
+			
+			CALCULATE(
+			    SUM(Llamadas[Total de llamadas]),
+			    FILTER(
+			        Llamadas,
+			        Llamadas[Llave llamadas] = Conexiones[Llave conexiones 2]
+			    )
+			)
+		formatString: #,0
+		lineageTag: 6ae9a4e9-b626-4f31-a506-c5587b12e885
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha ingreso' = IF(FORMAT(LOOKUPVALUE('planta activa'[FECHA INGRESO],'planta activa'[Llave planta 2],Conexiones[Llave conexiones]),"inter")="",LOOKUPVALUE('planta activa'[FECHA INGRESO],'planta activa'[Llave planta 4],Conexiones[Llave conexiones]),LOOKUPVALUE('planta activa'[FECHA INGRESO],'planta activa'[Llave planta 2],Conexiones[Llave conexiones]))
+		formatString: Short Date
+		lineageTag: 89abe96c-0101-475a-871d-8eeb45c1b4f0
+		summarizeBy: none
+
+		variation Variación
+			isDefault
+			relationship: b15f9c66-a3b1-41a1-a55d-68004bf9f58c
+			defaultHierarchy: LocalDateTable_f946c87d-f34a-437b-855c-19ddac292056.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tiempo
+		dataType: double
+		lineageTag: 474746f4-89fe-46b9-aeba-a6a21216473c
+		summarizeBy: sum
+		sourceColumn: Tiempo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Ventas
+		dataType: double
+		lineageTag: f292a244-426a-46de-bac5-d471fec5fcb7
+		summarizeBy: sum
+		sourceColumn: Ventas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sin venta' = IF(Conexiones[Ventas]=0,1,0)
+		formatString: 0
+		lineageTag: 5d74583e-32eb-404e-8c7f-90d3dd7c45d3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Con venta' = IF(Conexiones[Ventas]=0,0,1)
+		formatString: 0
+		lineageTag: aa3ac171-f449-4817-92f3-c68dcabbef60
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Agente 2' = IF(LOOKUPVALUE('planta activa'[USER INCONCERT],'planta activa'[Llave planta 2],Conexiones[Llave conexiones])="",LOOKUPVALUE('planta activa'[USER INCONCERT],'planta activa'[Llave planta 4],Conexiones[Llave conexiones]),LOOKUPVALUE('planta activa'[USER INCONCERT],'planta activa'[Llave planta 2],Conexiones[Llave conexiones]))
+		lineageTag: 1872b78e-5423-4cd5-8586-fd3281879f6b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Columna
+		type: calculated
+		lineageTag: e03cf7b9-3a3d-4aca-992a-9f808c097297
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	hierarchy 'Fecha Jerarquía'
+		lineageTag: 1ad8fd38-b2b9-4706-944c-ea6f1e6358b3
+
+		level Fecha
+			lineageTag: 76300289-b1de-4e57-9be8-ba88c87e2f17
+			column: Fecha
+
+	partition Conexiones = m
+		mode: import
+		source =
+				let
+				    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Conexiones"),
+				    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+				    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (3)", each #"Transformar archivo (3)"([Content])),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+				    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo (3)"}),
+				    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo (3)", Table.ColumnNames(#"Transformar archivo (3)"(#"Archivo de ejemplo (3)"))),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columna de tabla expandida1",{{"Source.Name", type text}, {"Campana", type text}, {"Agente", type text}, {"Fecha", type date}, {"Hora_Inicio", type time}, {"Hora_Fin", type time}, {"Outsourcer", type text}, {"EstadoEspanol2", type text}, {"Tiempo", type duration}, {"TiempoSegundos", Int64.Type}}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Tipo cambiado","2","",Replacer.ReplaceText,{"Agente"}),
+				    #"Consulta anexada" = Table.Combine({#"Valor reemplazado1", #"Conexiones aplicativo", #"Ventas (2)"}),
+				    #"Filas agrupadas" = Table.Group(#"Consulta anexada", {"Fecha", "Agente"}, {{"Tiempo", each List.Sum([Tiempo]), type duration}, {"Ventass", each List.Sum([Total ventass]), type nullable number}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Filas agrupadas",null,0,Replacer.ReplaceValue,{"Ventass"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Valor reemplazado",{{"Ventass", "Ventas"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

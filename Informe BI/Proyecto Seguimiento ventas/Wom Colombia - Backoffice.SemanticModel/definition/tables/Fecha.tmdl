@@ -1,0 +1,41 @@
+table Fecha
+	lineageTag: dfd0a669-55e4-4d9b-9ef4-9fa47c9a4e47
+
+	measure Medida = SUM(Arrastre[arrastre])+SUM('Tabla cruce'[Ventas mismo mes])
+		formatString: #,0
+		lineageTag: 699e7642-2c5f-473e-89ae-71c646730b93
+
+	column Date
+		formatString: d/mm/yyyy
+		lineageTag: cafed731-df26-4e48-ae19-0188b6ed909c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variación
+			isDefault
+			relationship: b8a6feba-3f58-4279-ba2c-cb35c30cc9c7
+			defaultHierarchy: LocalDateTable_8fc8aa2f-a9c1-4873-bf10-8b3c23faf58f.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Día de la semana' = (FORMAT(Fecha[Date].[Date],"DDDD"))
+		lineageTag: 4de55a0f-c0de-4235-8e3f-b4fd7803e064
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Semana del Mes' = "Semana"&" "& 1 + WEEKNUM(Fecha[Date]) - WEEKNUM(STARTOFMONTH(Fecha[Date].[Date]))
+		lineageTag: f5676e2a-c4c4-4485-945d-46e672a1daf5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fecha = calculated
+		mode: import
+		source = CALENDAR("01/01/2000","31/12/2030")
+
+	annotation PBI_Id = f40f10437b6c434095bd80cfef2e564d
+

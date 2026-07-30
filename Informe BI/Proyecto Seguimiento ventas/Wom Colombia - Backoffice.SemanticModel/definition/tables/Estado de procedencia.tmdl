@@ -1,0 +1,25 @@
+table 'Estado de procedencia'
+	excludeFromModelRefresh
+	lineageTag: 215921ca-b8ca-476d-8c46-e19eebdab1a5
+
+	column 'Estado de procedencia'
+		dataType: string
+		lineageTag: f2d5d671-2119-424b-8bd7-774c8d8e9640
+		summarizeBy: none
+		sourceColumn: Estado de procedencia
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Estado de procedencia' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCijKT05NSVWK1YlW8stXKIBxYwE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Estado de procedencia" = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Estado de procedencia", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

@@ -1,0 +1,393 @@
+table WMS
+	excludeFromModelRefresh
+	lineageTag: bc25fe3d-f778-4f90-9dbe-ca009a2f1c25
+
+	column 'Movimiento Supply'
+		dataType: string
+		lineageTag: 926086f6-5476-4728-834c-17b6b965f4a7
+		summarizeBy: none
+		sourceColumn: Movimiento Supply
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pedido_Factura
+		dataType: string
+		lineageTag: 8971ac88-4ad7-4179-b50e-bf4aafddedb9
+		summarizeBy: none
+		sourceColumn: Pedido_Factura
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaCreacion
+		dataType: string
+		lineageTag: 5d0c11e4-2f73-4b16-92ca-326bc00d1dfe
+		summarizeBy: none
+		sourceColumn: FechaCreacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proceso
+		dataType: string
+		lineageTag: 903e639a-2f9e-4c76-a3cf-44940d895003
+		summarizeBy: none
+		sourceColumn: Proceso
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoEstado
+		dataType: string
+		lineageTag: 4fea937d-9702-49cb-ade6-4bce25330970
+		summarizeBy: none
+		sourceColumn: CodigoEstado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		lineageTag: af5adeb9-0aff-483d-8122-dd9072dbd3c9
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZONA
+		dataType: string
+		lineageTag: f4ac4ee3-acda-4cfe-83c9-c6621e691a1a
+		summarizeBy: none
+		sourceColumn: ZONA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CODIGO_ZONA
+		dataType: string
+		lineageTag: 70dcaaef-61e9-48db-a0ec-7ba9915d02bf
+		summarizeBy: none
+		sourceColumn: CODIGO_ZONA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSPORTADOR
+		dataType: string
+		lineageTag: 650e3c09-a4f3-4ce1-8c33-07fcc5e9efa7
+		summarizeBy: none
+		sourceColumn: TRANSPORTADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column GUIA
+		dataType: string
+		lineageTag: fd472a7b-e7d6-48b4-9018-dee052bb6888
+		summarizeBy: none
+		sourceColumn: GUIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ciudad_Destino
+		dataType: string
+		lineageTag: 3192d4e3-56c4-40db-a78a-50ea3736a1b4
+		summarizeBy: none
+		sourceColumn: Ciudad_Destino
+
+		annotation SummarizationSetBy = Automatic
+
+	column Departamento
+		dataType: string
+		lineageTag: e3f4e25b-6b9f-40cf-a74d-0d42b65d957e
+		summarizeBy: none
+		sourceColumn: Departamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column telefono
+		dataType: string
+		lineageTag: 448f5a2c-ef8c-4fb4-b658-6f069aab7280
+		summarizeBy: none
+		sourceColumn: telefono
+
+		annotation SummarizationSetBy = Automatic
+
+	column transportador3
+		dataType: string
+		lineageTag: edf705c0-b809-4b7f-9107-d916a622caea
+		summarizeBy: none
+		sourceColumn: transportador3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Guía
+		dataType: string
+		lineageTag: 67a65b5d-3dad-450e-8608-966f89e64dc4
+		summarizeBy: none
+		sourceColumn: Guía
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado2
+		dataType: string
+		lineageTag: 3c6b201f-28b6-48b5-8b65-fbfd17655dd6
+		summarizeBy: none
+		sourceColumn: Estado2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subestado
+		dataType: string
+		lineageTag: e2b26fa4-9ac2-418f-944e-f8ed64196d91
+		summarizeBy: none
+		sourceColumn: Subestado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha primer intento'
+		dataType: string
+		lineageTag: d6ec36de-e317-4cbf-a460-d4451c2506d0
+		summarizeBy: none
+		sourceColumn: Fecha primer intento
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# intentos'
+		dataType: string
+		lineageTag: e21ce6b2-e9b5-49d7-98e7-ac511216f1a9
+		summarizeBy: none
+		sourceColumn: # intentos
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ALERTA TELEFONO'
+		dataType: string
+		lineageTag: 321f41f0-8fca-4e53-8b0d-32ea3ec27a41
+		summarizeBy: none
+		sourceColumn: ALERTA TELEFONO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ALERTA ECOTECK'
+		dataType: string
+		lineageTag: 08f8a7ee-fed3-46d8-ab1a-f621713f0e06
+		summarizeBy: none
+		sourceColumn: ALERTA ECOTECK
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESTINO
+		dataType: string
+		lineageTag: fb5637fc-6194-40e9-8e8a-7e89825bc50d
+		summarizeBy: none
+		sourceColumn: DESTINO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MATRIZ TIEMPOS'
+		dataType: string
+		lineageTag: 684d275d-ea43-4718-928b-8e2bb7fe1267
+		summarizeBy: none
+		sourceColumn: MATRIZ TIEMPOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Día
+		dataType: string
+		lineageTag: e04b64c5-344b-44c1-9744-ac2328a1a263
+		summarizeBy: none
+		sourceColumn: Día
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		lineageTag: 04bb89cc-2a57-440b-b4d6-fb722309bbc4
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub_estado_agrupado
+		dataType: string
+		lineageTag: 9f2996e1-fd30-470d-86a9-d396d7c76d46
+		summarizeBy: none
+		sourceColumn: Sub_estado_agrupado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hora_pedido
+		dataType: string
+		lineageTag: 64e43cf4-d4d5-4c7c-8551-2345875cfa5f
+		summarizeBy: none
+		sourceColumn: Hora_pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'rango hora pedido'
+		dataType: string
+		lineageTag: 3007de4b-fcca-4fd9-ac73-e215741ef0aa
+		summarizeBy: none
+		sourceColumn: rango hora pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia compromiso despacho'
+		dataType: string
+		lineageTag: afc04d71-73f6-46cb-9952-31aee414d4d3
+		summarizeBy: none
+		sourceColumn: Dia compromiso despacho
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Final'
+		dataType: string
+		lineageTag: 8565b5ee-9083-46e8-a847-fc6e89ffa21f
+		summarizeBy: none
+		sourceColumn: Fecha Final
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSPORTADOR2
+		dataType: string
+		lineageTag: 286043a1-b9c1-4630-81c8-7a10686a409a
+		summarizeBy: none
+		sourceColumn: TRANSPORTADOR2
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOCALIDAD
+		dataType: string
+		lineageTag: dd65c0f9-af15-4814-970b-653bd3321bc9
+		summarizeBy: none
+		sourceColumn: LOCALIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TIPO PEDIDO'
+		dataType: string
+		lineageTag: 64c30b14-578d-452a-bfa8-02eedae72986
+		summarizeBy: none
+		sourceColumn: TIPO PEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRE_ORGANIZACION
+		dataType: string
+		lineageTag: 1c350d19-50b2-4422-b467-082a0fa0a015
+		summarizeBy: none
+		sourceColumn: NOMBRE_ORGANIZACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORGANIZACION
+		dataType: string
+		lineageTag: 097710d3-5aab-4a81-9c79-7bb18b9d02c9
+		summarizeBy: none
+		sourceColumn: ORGANIZACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column Entrega_primer_intento
+		dataType: string
+		lineageTag: 7dbf6afa-5c58-4350-8892-32a938c6c1ed
+		summarizeBy: none
+		sourceColumn: Entrega_primer_intento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Promesa
+		dataType: string
+		lineageTag: bc348cbb-a370-4930-a2de-963f2c93ba56
+		summarizeBy: none
+		sourceColumn: Promesa
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Despacho'
+		dataType: string
+		lineageTag: adf5dbd7-7c7a-4dfd-94c5-7e17b73e0339
+		summarizeBy: none
+		sourceColumn: Fecha Despacho
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo_producto
+		dataType: string
+		lineageTag: a7da1b1e-7345-427e-bf98-aa71bc121c77
+		summarizeBy: none
+		sourceColumn: Tipo_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nuevos Estados'
+		dataType: string
+		lineageTag: b64a8024-43c6-4316-8430-ec8f5a6e851f
+		summarizeBy: none
+		sourceColumn: Nuevos Estados
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gestión
+		dataType: string
+		lineageTag: ea56fd20-9dcc-4ed5-957a-6cd8d6828f0b
+		summarizeBy: none
+		sourceColumn: Gestión
+
+		annotation SummarizationSetBy = Automatic
+
+	column E-Commerce
+		dataType: string
+		lineageTag: bcdb1980-64b0-4a6f-8dca-c02fe0ebb3e5
+		summarizeBy: none
+		sourceColumn: E-Commerce
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column1
+		dataType: string
+		lineageTag: 5d86bd98-f546-4644-a709-ae3dd0b72834
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column _1
+		dataType: string
+		lineageTag: b943f5ed-02d5-4203-9948-93113a48e67e
+		summarizeBy: none
+		sourceColumn: _1
+
+		annotation SummarizationSetBy = Automatic
+
+	column _2
+		dataType: string
+		lineageTag: 7e3dc13e-53fb-4e14-90c5-ed3f880c51ca
+		summarizeBy: none
+		sourceColumn: _2
+
+		annotation SummarizationSetBy = Automatic
+
+	column _3
+		dataType: string
+		lineageTag: 7566ff87-ae0e-4894-8403-a96118fc147a
+		summarizeBy: none
+		sourceColumn: _3
+
+		annotation SummarizationSetBy = Automatic
+
+	column _4
+		dataType: string
+		lineageTag: 41128fa0-de26-4a3e-81f7-ddf4eefe1c8a
+		summarizeBy: none
+		sourceColumn: _4
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WMS = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Seguimiento ventas\Data\WMS.csv"),[Delimiter=";", Columns=47, Encoding=1252, QuoteStyle=QuoteStyle.Csv]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+				in
+				    #"Encabezados promovidos"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegación
+

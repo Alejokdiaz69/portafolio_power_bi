@@ -1,0 +1,1141 @@
+table Ventas
+	lineageTag: 6be3a9c4-c98f-4d54-b495-9c44826808e5
+
+	column Orden
+		dataType: string
+		lineageTag: b7b1f897-699b-4bf1-a997-56aaaea96f9e
+		summarizeBy: none
+		sourceColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estado actual'
+		dataType: string
+		lineageTag: a67e57ea-07ef-401a-a8f0-15c2f4d1974b
+		summarizeBy: none
+		sourceColumn: Estado actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Ventas","TableItemName":"Clasificación","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Fecha estado actual'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2256f897-b5cb-4168-a44f-eddf33f52404
+		summarizeBy: none
+		sourceColumn: Fecha estado actual
+
+		variation Variación
+			isDefault
+			relationship: c01cddc8-bcce-41bc-89b6-83ebfeb5e21e
+			defaultHierarchy: LocalDateTable_2fc8d33c-580b-48cd-adc8-02970ca9c50e.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Hora estado actual'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 62de8091-aa28-4e5f-b9d2-13ef5683c08f
+		summarizeBy: none
+		sourceColumn: Hora estado actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Sub estado actual'
+		dataType: string
+		lineageTag: 6c5ef34c-c7f6-4666-98bc-dd7b8c890414
+		summarizeBy: none
+		sourceColumn: Sub estado actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column Canal
+		dataType: string
+		lineageTag: 90c5e13b-e322-433d-a960-c787e55e415f
+		summarizeBy: none
+		sourceColumn: Canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha ingresada'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 08bb79cb-39b2-4408-b598-95df8bb6cc20
+		summarizeBy: none
+		sourceColumn: Fecha ingresada
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Hora ingresada'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 18851e3b-681b-4811-a219-4045510de85e
+		summarizeBy: none
+		sourceColumn: Hora ingresada
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Fecha grabacion venta'
+		dataType: string
+		lineageTag: d923da04-986b-44d5-8a54-cff7c49d9f03
+		summarizeBy: none
+		sourceColumn: Fecha grabacion venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha documento/pago'
+		dataType: string
+		lineageTag: cf60af6c-a2da-4965-bc48-6d9760b587ce
+		summarizeBy: none
+		sourceColumn: Fecha documento/pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha validacion'
+		dataType: string
+		lineageTag: b4f1bd68-bc18-4e95-8dd4-d20a46f814b6
+		summarizeBy: none
+		sourceColumn: Fecha validacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha rechazo validacion'
+		dataType: string
+		lineageTag: c41a9307-cc13-4003-8a8c-62e497ec1ac3
+		summarizeBy: none
+		sourceColumn: Fecha rechazo validacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha pendiente picking'
+		dataType: string
+		lineageTag: 6e90f739-d433-4576-9af4-d0bed9742eb6
+		summarizeBy: none
+		sourceColumn: Fecha pendiente picking
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha picking'
+		dataType: string
+		lineageTag: 5b8bd542-ac78-4918-ade5-d2b2ac9ad163
+		summarizeBy: none
+		sourceColumn: Fecha picking
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha pendiente retiro'
+		dataType: string
+		lineageTag: 41e691e8-de1b-4f29-9a38-e6a8f1c90826
+		summarizeBy: none
+		sourceColumn: Fecha pendiente retiro
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha agrupada'
+		dataType: string
+		lineageTag: 4930fa8f-5c00-4b65-80ed-3035aeb5c885
+		summarizeBy: none
+		sourceColumn: Fecha agrupada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha ingreso delivery'
+		dataType: string
+		lineageTag: 5fbbe6ae-83f3-4bfc-a27e-9d4a139f2576
+		summarizeBy: none
+		sourceColumn: Fecha ingreso delivery
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha recepcion delivery'
+		dataType: string
+		lineageTag: 05f6a700-efdc-4eb2-b621-ba325eeb9c90
+		summarizeBy: none
+		sourceColumn: Fecha recepcion delivery
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha intento 1'
+		dataType: string
+		lineageTag: f5e4f543-c064-4287-9a62-f96de3882b6f
+		summarizeBy: none
+		sourceColumn: Fecha intento 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha intento 2'
+		dataType: string
+		lineageTag: 81e66d73-a147-4fdd-80fd-c57701045a7f
+		summarizeBy: none
+		sourceColumn: Fecha intento 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha intento 3'
+		dataType: string
+		lineageTag: 9af9cc2a-a1dc-4da2-adfe-9197880a981d
+		summarizeBy: none
+		sourceColumn: Fecha intento 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha no entrega'
+		dataType: string
+		lineageTag: 37949db7-8a00-4da6-8ff7-48bf1a6ad7a2
+		summarizeBy: none
+		sourceColumn: Fecha no entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha recuperar despacho'
+		dataType: string
+		lineageTag: 61efb8be-9984-4f09-b757-e4d09f4e96a4
+		summarizeBy: none
+		sourceColumn: Fecha recuperar despacho
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha error portabilidad'
+		dataType: string
+		lineageTag: 33051f22-b1fc-4ac0-a89c-4c7a4bf76c73
+		summarizeBy: none
+		sourceColumn: Fecha error portabilidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha error activacion'
+		dataType: string
+		lineageTag: 8edc296d-6c70-4af7-a380-0fbde2026269
+		summarizeBy: none
+		sourceColumn: Fecha error activacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha activacion'
+		dataType: string
+		lineageTag: dd3a18a8-3cb8-4352-9087-5d5171f29466
+		summarizeBy: none
+		sourceColumn: Fecha activacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha finalizada'
+		dataType: string
+		lineageTag: e250d6b4-0afe-4165-8bc7-1deff12f5555
+		summarizeBy: none
+		sourceColumn: Fecha finalizada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha caducada'
+		dataType: string
+		lineageTag: dcff2310-2b97-4a97-9759-51cfcbb2edd5
+		summarizeBy: none
+		sourceColumn: Fecha caducada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha rechazada fraude'
+		dataType: string
+		lineageTag: c40df204-7ffd-4a99-ac31-d806e9fa894a
+		summarizeBy: none
+		sourceColumn: Fecha rechazada fraude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha rechazada picking'
+		dataType: string
+		lineageTag: 9eebf1ca-f776-4c32-9721-40b5cc9d2f7f
+		summarizeBy: none
+		sourceColumn: Fecha rechazada picking
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha rechazada portabilidad'
+		dataType: string
+		lineageTag: 0dbdffda-244e-4e48-9507-8cd24d13bb2e
+		summarizeBy: none
+		sourceColumn: Fecha rechazada portabilidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha cliente desiste'
+		dataType: string
+		lineageTag: 93cb4db6-9b61-468a-8f0c-57204254630a
+		summarizeBy: none
+		sourceColumn: Fecha cliente desiste
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha enviada devolucion'
+		dataType: string
+		lineageTag: 8651a42e-cfc8-4185-b2a6-f00a2bb9a8dd
+		summarizeBy: none
+		sourceColumn: Fecha enviada devolucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha no agendado'
+		dataType: string
+		lineageTag: d0f0bc0b-bd99-409e-9411-06f10a4ae57f
+		summarizeBy: none
+		sourceColumn: Fecha no agendado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha entrega'
+		dataType: string
+		lineageTag: 98159a8d-c571-4f6c-ae7a-0bba8d34970e
+		summarizeBy: none
+		sourceColumn: Fecha entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha mermado'
+		dataType: string
+		lineageTag: 71fd6819-3bc5-46cf-a39a-606b632bc2f4
+		summarizeBy: none
+		sourceColumn: Fecha mermado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha cliente desiste opl'
+		dataType: string
+		lineageTag: 7443b554-0710-45e1-bd25-3c3b78b3fd37
+		summarizeBy: none
+		sourceColumn: Fecha cliente desiste opl
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha original agendada'
+		dataType: string
+		lineageTag: 449543e9-8861-4386-bcb3-e7ff126ad7b7
+		summarizeBy: none
+		sourceColumn: Fecha original agendada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ultima fecha agendada'
+		dataType: string
+		lineageTag: 84140f8d-18f9-4208-bfa5-2c8a450ec02a
+		summarizeBy: none
+		sourceColumn: Ultima fecha agendada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre region'
+		dataType: string
+		lineageTag: c558c3e4-136e-4e77-b1ff-e2858eccebcc
+		summarizeBy: none
+		sourceColumn: Nombre region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre provincia'
+		dataType: string
+		lineageTag: 5a2e05eb-8845-46c9-8fbf-e65ec7962eb7
+		summarizeBy: none
+		sourceColumn: Nombre provincia
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre comuna'
+		dataType: string
+		lineageTag: 6993e223-6788-44e8-8738-ad31fe6fce76
+		summarizeBy: none
+		sourceColumn: Nombre comuna
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre localidad'
+		dataType: string
+		lineageTag: 26ee0f77-f3c4-42e7-83d4-7d621b326f57
+		summarizeBy: none
+		sourceColumn: Nombre localidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region despacho'
+		dataType: string
+		lineageTag: 7dfa8cf3-fcf6-4673-a079-daf3f3a540a3
+		summarizeBy: none
+		sourceColumn: Region despacho
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Provincia despacho'
+		dataType: string
+		lineageTag: fbba5c87-e2cd-4d22-a3d4-589b089fd5aa
+		summarizeBy: none
+		sourceColumn: Provincia despacho
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Comuna despacho'
+		dataType: string
+		lineageTag: 2e658558-1e66-49b5-8775-9ae6f76f3e82
+		summarizeBy: none
+		sourceColumn: Comuna despacho
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ejecutivo venta'
+		dataType: string
+		lineageTag: a484f8f1-9fb7-44a8-89b2-0a20e82ec12b
+		summarizeBy: none
+		sourceColumn: Ejecutivo venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo venta'
+		dataType: string
+		lineageTag: 66cc66e5-8f6e-4665-a022-aa0f8f3343fc
+		summarizeBy: none
+		sourceColumn: Tipo venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origen llamada'
+		dataType: string
+		lineageTag: a4808134-22b3-4c59-a36c-7662c8c08326
+		summarizeBy: none
+		sourceColumn: Origen llamada
+
+		annotation SummarizationSetBy = Automatic
+
+	column Campana
+		dataType: string
+		lineageTag: 91123a44-9353-4f8a-b78d-054ed44ed607
+		summarizeBy: none
+		sourceColumn: Campana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Modalidad venta'
+		dataType: string
+		lineageTag: 7b3c18d9-9e11-4aca-b197-bb2d4eaff5f6
+		summarizeBy: none
+		sourceColumn: Modalidad venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre operadora'
+		dataType: string
+		lineageTag: 2351be4d-4174-41a5-84fd-b1cce63088b3
+		summarizeBy: none
+		sourceColumn: Nombre operadora
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plan
+		dataType: string
+		lineageTag: e589040c-a25b-402c-a2f0-f7040d028989
+		summarizeBy: none
+		sourceColumn: Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor plan'
+		dataType: int64
+		formatString: 0
+		lineageTag: 86ef3d0c-5258-4a75-9efd-807a08c24b1b
+		summarizeBy: sum
+		sourceColumn: Valor plan
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes ventas' = FORMAT(Ventas[Fecha ingresada],"m")
+		lineageTag: b1787369-7aff-4ab7-8639-ec9c4112ca03
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave ventas 2' = Ventas[Ejecutivo venta]&ventas[Mes ventas]&Ventas[Año Feha Ingresada]
+		lineageTag: a00da3aa-e192-48e2-b1d2-c7543b44f1e1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave ventas' = ventas[Nombre completo]&Ventas[Ejecutivo venta]&ventas[Mes ventas]&Ventas[Año Feha Ingresada]
+		lineageTag: abb4e066-d415-4e56-b53b-6034c8a9b5dd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiasCalculados =
+			
+			VAR FechaCreacion = [Fecha ingresada]
+			VAR FechaCompletada = [Fecha estado actual].[Date]
+			VAR Hoy = TODAY()
+			VAR PrimerDiaMesActual = DATE(YEAR(Hoy), MONTH(Hoy), 1)
+			VAR PrimerDiaCreacion = DATE(YEAR(FechaCreacion), MONTH(FechaCreacion), 1)
+			VAR Dias =
+			    IF(
+			        NOT(ISBLANK(FechaCreacion)) && NOT(ISBLANK(FechaCompletada)),
+			        0,
+			        IF(
+			            FechaCreacion < (PrimerDiaMesActual - 60),
+			            DATEDIFF(FechaCreacion, PrimerDiaCreacion + 60, DAY),
+			            DATEDIFF(FechaCreacion, PrimerDiaMesActual, DAY)
+			        )
+			    )
+			RETURN
+			MAX(Dias, 0)
+		formatString: 0
+		lineageTag: a0ce8882-24be-4f69-94d6-ad157769f626
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Arrastre =
+			IF(
+			    AND(Ventas[Activo]=1,Ventas[Mes estado actual]<>ventas[Mes fecha ingreso]),
+			    1,0)
+		formatString: 0
+		lineageTag: e149b17f-85d3-466f-9bc1-1054ae4ecc7f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activos mismo mes' =
+			IF(
+			    AND(Ventas[Activo]=1,Ventas[Mes estado actual]=Ventas[Mes fecha ingreso]),
+			    1,0)
+		formatString: 0
+		lineageTag: ee958df9-a2e1-4819-9b77-a536295cb379
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Clasificación =
+			SWITCH(
+				TRUE,
+				ISBLANK('Ventas'[Estado actual]),
+				"(En blanco)",
+				'Ventas'[Estado actual] IN {"Finalizada exitosamente"},
+				"Activa",
+				'Ventas'[Estado actual] IN {"En bodega agrupadas",
+					"En bodega pendiente de picking",
+					"En correccion de documentacion",
+					"En despacho",
+					"En ejecucion de activacion y portabilidad",
+					"En espera de Pago",
+					"En recuperacion",
+					"En Validacion",
+					"Enviado a recuperacion",
+					"Enviado a regularizacion de factibilidad de portabilidad",
+					"Enviado a regularizacion de Portabilidad o Activacion",
+					"Pendiente cap",
+					"Pendiente de validacion",
+					"Pendiente validacion call center",
+					"Rechazado pendiente correccion"},
+				"Pendiente",
+				'Ventas'[Estado actual] IN {"Caducada",
+					"Cancelado",
+					"Cliente desiste",
+					"Mermado",
+					"Pendiente creacion Whale",
+					"Prospecto"},
+				"Rechazo",
+				'Ventas'[Estado actual]
+			)
+		lineageTag: 991f2373-24af-4f83-a52e-55cbd52977b1
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Ventas"
+				          }
+				        },
+				        "Property": "Estado actual"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"v","Entity":"Ventas"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Estado actual"}}],"GroupItems":[{"DisplayName":"(En blanco)","BlankDefaultPlaceholder":true},{"DisplayName":"Activa","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Estado actual"}}],"Values":[[{"Literal":{"Value":"'Finalizada exitosamente'"}}]]}}},{"DisplayName":"Pendiente","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Estado actual"}}],"Values":[[{"Literal":{"Value":"'En bodega agrupadas'"}}],[{"Literal":{"Value":"'En bodega pendiente de picking'"}}],[{"Literal":{"Value":"'En correccion de documentacion'"}}],[{"Literal":{"Value":"'En despacho'"}}],[{"Literal":{"Value":"'En ejecucion de activacion y portabilidad'"}}],[{"Literal":{"Value":"'En espera de Pago'"}}],[{"Literal":{"Value":"'En recuperacion'"}}],[{"Literal":{"Value":"'En Validacion'"}}],[{"Literal":{"Value":"'Enviado a recuperacion'"}}],[{"Literal":{"Value":"'Enviado a regularizacion de factibilidad de portabilidad'"}}],[{"Literal":{"Value":"'Enviado a regularizacion de Portabilidad o Activacion'"}}],[{"Literal":{"Value":"'Pendiente cap'"}}],[{"Literal":{"Value":"'Pendiente de validacion'"}}],[{"Literal":{"Value":"'Pendiente validacion call center'"}}],[{"Literal":{"Value":"'Rechazado pendiente correccion'"}}]]}}},{"DisplayName":"Rechazo","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Estado actual"}}],"Values":[[{"Literal":{"Value":"'Caducada'"}}],[{"Literal":{"Value":"'Cancelado'"}}],[{"Literal":{"Value":"'Cliente desiste'"}}],[{"Literal":{"Value":"'Mermado'"}}],[{"Literal":{"Value":"'Pendiente creacion Whale'"}}],[{"Literal":{"Value":"'Prospecto'"}}]]}}}]}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave ventas 3' = Ventas[Agente 2]&FORMAT(Ventas[Fecha ingresada],"DD")&ventas[Mes ventas]&Ventas[Año Feha Ingresada]
+		lineageTag: 89b00074-dcff-42a6-8bfb-42ab5346353a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source.Name'
+		dataType: string
+		lineageTag: 9fea721c-2279-4f53-96ea-41a638ff0f19
+		summarizeBy: none
+		sourceColumn: Source.Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes fecha ingreso'
+		dataType: string
+		lineageTag: c0e4b1d6-3284-4308-bcc5-5f6ac02075b7
+		summarizeBy: none
+		sourceColumn: Mes fecha ingreso
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes estado actual'
+		dataType: string
+		lineageTag: 622df54d-c494-4374-8e9e-fc705b1a9d7f
+		summarizeBy: none
+		sourceColumn: Mes estado actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año Feha Ingresada'
+		dataType: string
+		lineageTag: f8ca2659-9fa6-4700-b52c-1f74f031f4b5
+		summarizeBy: none
+		sourceColumn: Año Feha Ingresada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre completo' = IF(LOOKUPVALUE('planta activa'[NOMBRE COMPLETO],'planta activa'[Llave planta 2],Ventas[Llave ventas 2])="",LOOKUPVALUE('planta activa'[NOMBRE COMPLETO],'planta activa'[Llave planta 4],Ventas[Llave ventas 2]),LOOKUPVALUE('planta activa'[NOMBRE COMPLETO],'planta activa'[Llave planta 2],Ventas[Llave ventas 2]))
+		lineageTag: daed400b-d3ae-4e46-b1ef-bfa220a51951
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activo
+		dataType: int64
+		formatString: 0
+		lineageTag: 7753fb2a-0432-4264-90ca-b60373178513
+		summarizeBy: sum
+		sourceColumn: Activo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unic
+		dataType: int64
+		formatString: 0
+		lineageTag: 50da413b-219f-4c83-af63-5695c0ef9158
+		summarizeBy: sum
+		sourceColumn: Unic
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CARGO SIN RATIFICAR' = IF(LOOKUPVALUE('planta activa'[CARGO SIN RATIFICAR],'planta activa'[Llave planta 2],Ventas[Llave ventas 2])="",LOOKUPVALUE('planta activa'[CARGO SIN RATIFICAR],'planta activa'[Llave planta 4],Ventas[Llave ventas 2]),LOOKUPVALUE('planta activa'[CARGO SIN RATIFICAR],'planta activa'[Llave planta 2],Ventas[Llave ventas 2]))
+		lineageTag: 9032e1c8-878a-48c0-b5f1-24365db1808f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANTIGÜEDAD = IF(LOOKUPVALUE('planta activa'[ANTIGÜEDAD],'planta activa'[Llave planta 2],Ventas[Llave ventas 2])="",LOOKUPVALUE('planta activa'[ANTIGÜEDAD],'planta activa'[Llave planta 4],Ventas[Llave ventas 2]),LOOKUPVALUE('planta activa'[ANTIGÜEDAD],'planta activa'[Llave planta 2],Ventas[Llave ventas 2]))
+		lineageTag: 204f012b-76fb-434e-9a6c-4a43541d9d6b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'JEFE DIRECTO' = IF(LOOKUPVALUE('planta activa'[JEFE DIRECTO],'planta activa'[Llave planta 2],Ventas[Llave ventas 2])="",LOOKUPVALUE('planta activa'[JEFE DIRECTO],'planta activa'[Llave planta 4],Ventas[Llave ventas 2]),LOOKUPVALUE('planta activa'[JEFE DIRECTO],'planta activa'[Llave planta 2],Ventas[Llave ventas 2]))
+		lineageTag: 991bd44d-3507-4c20-a376-69135dd5e9a5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column pendiente
+		dataType: int64
+		formatString: 0
+		lineageTag: db3735ef-8425-42ef-89ef-c62debb80468
+		summarizeBy: sum
+		sourceColumn: pendiente
+
+		annotation SummarizationSetBy = Automatic
+
+	column rechazo
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c218f78-12ab-4fb8-894b-4ad4c49cc978
+		summarizeBy: sum
+		sourceColumn: rechazo
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASIFICACION
+		dataType: string
+		lineageTag: ff1958f9-7683-4bcf-a6b5-869a0e8b54b3
+		summarizeBy: none
+		sourceColumn: CLASIFICACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Agente 2' = IF(LOOKUPVALUE('planta activa'[USER INCONCERT],'planta activa'[Llave planta 2],Ventas[Llave ventas 2])="",LOOKUPVALUE('planta activa'[USER INCONCERT],'planta activa'[Llave planta 4],Ventas[Llave ventas 2]),LOOKUPVALUE('planta activa'[USER INCONCERT],'planta activa'[Llave planta 2],Ventas[Llave ventas 2]))
+		lineageTag: 6b434b7c-c13b-44c4-bc5d-7c26b57f0352
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column1
+		dataType: string
+		lineageTag: 83f2e0d3-98c0-4d94-a543-a36b59a23f6a
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column _1
+		dataType: string
+		lineageTag: 35818aaa-734e-4230-afb5-a57522682911
+		summarizeBy: none
+		sourceColumn: _1
+
+		annotation SummarizationSetBy = Automatic
+
+	column _2
+		dataType: string
+		lineageTag: 8a507c8a-bd95-4b66-8903-83a862ee6b68
+		summarizeBy: none
+		sourceColumn: _2
+
+		annotation SummarizationSetBy = Automatic
+
+	column _3
+		dataType: string
+		lineageTag: cbabfa6f-aa91-4cd1-b2a4-2c77301eab0b
+		summarizeBy: none
+		sourceColumn: _3
+
+		annotation SummarizationSetBy = Automatic
+
+	column _4
+		dataType: string
+		lineageTag: 0fe4a277-95c9-4225-8596-e7999bc151e6
+		summarizeBy: none
+		sourceColumn: _4
+
+		annotation SummarizationSetBy = Automatic
+
+	column _5
+		dataType: string
+		lineageTag: 0cd7b2e7-1ff0-4277-8cf8-11afcf662678
+		summarizeBy: none
+		sourceColumn: _5
+
+		annotation SummarizationSetBy = Automatic
+
+	column _6
+		dataType: string
+		lineageTag: b70b02e0-8261-4b01-8940-1944a30fecb3
+		summarizeBy: none
+		sourceColumn: _6
+
+		annotation SummarizationSetBy = Automatic
+
+	column _7
+		dataType: string
+		lineageTag: 04d77503-b9e8-40b0-a514-1ed9893bfdc7
+		summarizeBy: none
+		sourceColumn: _7
+
+		annotation SummarizationSetBy = Automatic
+
+	column _8
+		dataType: string
+		lineageTag: a3b54706-5dd0-405d-9d8c-e516fe0fd02a
+		summarizeBy: none
+		sourceColumn: _8
+
+		annotation SummarizationSetBy = Automatic
+
+	column _9
+		dataType: string
+		lineageTag: 7b9fb00a-c401-4b44-b61d-b646640701fd
+		summarizeBy: none
+		sourceColumn: _9
+
+		annotation SummarizationSetBy = Automatic
+
+	column _10
+		dataType: string
+		lineageTag: 54f51f6f-1888-4e04-9ef5-e6dee0e556db
+		summarizeBy: none
+		sourceColumn: _10
+
+		annotation SummarizationSetBy = Automatic
+
+	column _11
+		dataType: string
+		lineageTag: c517311d-4433-4328-a3ea-5d1eca62a0c8
+		summarizeBy: none
+		sourceColumn: _11
+
+		annotation SummarizationSetBy = Automatic
+
+	column _12
+		dataType: string
+		lineageTag: 83f1a4f4-112c-4e76-b2cf-6b38de3538ac
+		summarizeBy: none
+		sourceColumn: _12
+
+		annotation SummarizationSetBy = Automatic
+
+	column _13
+		dataType: string
+		lineageTag: 1fe8b670-2174-48dc-b81f-f5dee9e992d3
+		summarizeBy: none
+		sourceColumn: _13
+
+		annotation SummarizationSetBy = Automatic
+
+	column _14
+		dataType: string
+		lineageTag: 980728f1-d092-487b-8910-d2ed5fc33b3e
+		summarizeBy: none
+		sourceColumn: _14
+
+		annotation SummarizationSetBy = Automatic
+
+	column _15
+		dataType: string
+		lineageTag: 6eaafb58-eefd-467b-91b2-f8881446b6d7
+		summarizeBy: none
+		sourceColumn: _15
+
+		annotation SummarizationSetBy = Automatic
+
+	column _16
+		dataType: string
+		lineageTag: 3f78eee5-1f87-4b6e-9320-052370cde483
+		summarizeBy: none
+		sourceColumn: _16
+
+		annotation SummarizationSetBy = Automatic
+
+	column _17
+		dataType: string
+		lineageTag: fadb3ff0-4528-426b-922d-a06d47dd7a89
+		summarizeBy: none
+		sourceColumn: _17
+
+		annotation SummarizationSetBy = Automatic
+
+	column _18
+		dataType: string
+		lineageTag: 620e9b2e-6b5a-4716-a42a-a44fd29690e4
+		summarizeBy: none
+		sourceColumn: _18
+
+		annotation SummarizationSetBy = Automatic
+
+	column _19
+		dataType: string
+		lineageTag: c82541d8-e822-4845-b69d-a7c89505e9f6
+		summarizeBy: none
+		sourceColumn: _19
+
+		annotation SummarizationSetBy = Automatic
+
+	column _20
+		dataType: string
+		lineageTag: ea46a3cc-9e0c-4d3b-9343-eb8e5c6ec4ad
+		summarizeBy: none
+		sourceColumn: _20
+
+		annotation SummarizationSetBy = Automatic
+
+	column _21
+		dataType: string
+		lineageTag: f3e00eee-3887-412e-919f-079ea029cd93
+		summarizeBy: none
+		sourceColumn: _21
+
+		annotation SummarizationSetBy = Automatic
+
+	column _22
+		dataType: string
+		lineageTag: 3cbeefab-9f2c-42e3-989d-a5af89097a66
+		summarizeBy: none
+		sourceColumn: _22
+
+		annotation SummarizationSetBy = Automatic
+
+	column _23
+		dataType: string
+		lineageTag: ae75570c-62a4-4ef9-9b7a-14990e1f051f
+		summarizeBy: none
+		sourceColumn: _23
+
+		annotation SummarizationSetBy = Automatic
+
+	column _24
+		dataType: string
+		lineageTag: 7ba14d4d-e846-4f47-a89a-9d94a1b56af6
+		summarizeBy: none
+		sourceColumn: _24
+
+		annotation SummarizationSetBy = Automatic
+
+	column _25
+		dataType: string
+		lineageTag: a698b0cf-5adc-4030-b3bc-b669cc32a9f3
+		summarizeBy: none
+		sourceColumn: _25
+
+		annotation SummarizationSetBy = Automatic
+
+	column _26
+		dataType: string
+		lineageTag: 2ce7e257-a250-4d5c-bf5f-17e7a1ca61c1
+		summarizeBy: none
+		sourceColumn: _26
+
+		annotation SummarizationSetBy = Automatic
+
+	column _27
+		dataType: string
+		lineageTag: f075862a-7fb4-4d1d-a753-8717929c2ade
+		summarizeBy: none
+		sourceColumn: _27
+
+		annotation SummarizationSetBy = Automatic
+
+	column _28
+		dataType: string
+		lineageTag: bfeef773-87eb-4a85-ae92-9eb956cd2184
+		summarizeBy: none
+		sourceColumn: _28
+
+		annotation SummarizationSetBy = Automatic
+
+	column _29
+		dataType: string
+		lineageTag: ac351169-e779-4f4e-879b-7eef20edc56d
+		summarizeBy: none
+		sourceColumn: _29
+
+		annotation SummarizationSetBy = Automatic
+
+	column _30
+		dataType: string
+		lineageTag: 677da063-44ac-4c19-86af-5be91f6c7df1
+		summarizeBy: none
+		sourceColumn: _30
+
+		annotation SummarizationSetBy = Automatic
+
+	column _31
+		dataType: string
+		lineageTag: 91fa794b-2724-435a-b015-1a7a4d089b26
+		summarizeBy: none
+		sourceColumn: _31
+
+		annotation SummarizationSetBy = Automatic
+
+	column _32
+		dataType: string
+		lineageTag: 4543b492-294b-434f-991f-6a43c4e48423
+		summarizeBy: none
+		sourceColumn: _32
+
+		annotation SummarizationSetBy = Automatic
+
+	column _33
+		dataType: string
+		lineageTag: cfaf7784-4842-4419-a5b6-7c4cf499898b
+		summarizeBy: none
+		sourceColumn: _33
+
+		annotation SummarizationSetBy = Automatic
+
+	column _34
+		dataType: string
+		lineageTag: 9bfaf181-6d64-46e9-88d8-61765c44c011
+		summarizeBy: none
+		sourceColumn: _34
+
+		annotation SummarizationSetBy = Automatic
+
+	column _35
+		dataType: string
+		lineageTag: dab495bb-b20c-4394-9c1a-93335d85c06b
+		summarizeBy: none
+		sourceColumn: _35
+
+		annotation SummarizationSetBy = Automatic
+
+	column _36
+		dataType: string
+		lineageTag: 02c38e77-12f1-4438-a8d3-b201b87c62d6
+		summarizeBy: none
+		sourceColumn: _36
+
+		annotation SummarizationSetBy = Automatic
+
+	column _37
+		dataType: string
+		lineageTag: 75760276-7b84-452e-8af2-fdaaf791b147
+		summarizeBy: none
+		sourceColumn: _37
+
+		annotation SummarizationSetBy = Automatic
+
+	column _38
+		dataType: string
+		lineageTag: 9c82ea7b-e1cf-4f9a-ba26-1a3e3bf36298
+		summarizeBy: none
+		sourceColumn: _38
+
+		annotation SummarizationSetBy = Automatic
+
+	column _39
+		dataType: string
+		lineageTag: 2f01c207-1fb4-4377-b20a-303e1cf9a8f0
+		summarizeBy: none
+		sourceColumn: _39
+
+		annotation SummarizationSetBy = Automatic
+
+	column _40
+		dataType: string
+		lineageTag: a91e616f-525d-4891-aa46-bbbd613b857a
+		summarizeBy: none
+		sourceColumn: _40
+
+		annotation SummarizationSetBy = Automatic
+
+	column _41
+		dataType: string
+		lineageTag: aec20cc7-0579-4296-a2e7-b38cdaf83e2d
+		summarizeBy: none
+		sourceColumn: _41
+
+		annotation SummarizationSetBy = Automatic
+
+	column _42
+		dataType: string
+		lineageTag: ac5ca028-7493-4780-bfca-61ce4524d77b
+		summarizeBy: none
+		sourceColumn: _42
+
+		annotation SummarizationSetBy = Automatic
+
+	column _43
+		dataType: string
+		lineageTag: e3f7b684-09db-4bd2-983b-2632fc2bb6e2
+		summarizeBy: none
+		sourceColumn: _43
+
+		annotation SummarizationSetBy = Automatic
+
+	column _44
+		dataType: string
+		lineageTag: cd700f29-65cf-4edc-a3cd-5e5878af724a
+		summarizeBy: none
+		sourceColumn: _44
+
+		annotation SummarizationSetBy = Automatic
+
+	column _45
+		dataType: string
+		lineageTag: 1f12bd1f-3039-4c04-85bb-e73979ce3c16
+		summarizeBy: none
+		sourceColumn: _45
+
+		annotation SummarizationSetBy = Automatic
+
+	column _46
+		dataType: string
+		lineageTag: 80b5da35-a6a2-40e4-a6b8-b424ec67184f
+		summarizeBy: none
+		sourceColumn: _46
+
+		annotation SummarizationSetBy = Automatic
+
+	column _47
+		dataType: string
+		lineageTag: c10113c0-bc37-4b10-8304-f9b4bb528c40
+		summarizeBy: none
+		sourceColumn: _47
+
+		annotation SummarizationSetBy = Automatic
+
+	column _48
+		dataType: string
+		lineageTag: f51bdfff-e569-4878-9ca0-6b706b35161b
+		summarizeBy: none
+		sourceColumn: _48
+
+		annotation SummarizationSetBy = Automatic
+
+	column _49
+		dataType: string
+		lineageTag: 0f292503-2384-424a-bf2e-21b80dc92a0c
+		summarizeBy: none
+		sourceColumn: _49
+
+		annotation SummarizationSetBy = Automatic
+
+	column _50
+		dataType: string
+		lineageTag: e0a06fd9-9470-43e6-8b98-75249793c901
+		summarizeBy: none
+		sourceColumn: _50
+
+		annotation SummarizationSetBy = Automatic
+
+	column _51
+		dataType: string
+		lineageTag: 66582d94-0d90-4882-b45f-f25eb485a014
+		summarizeBy: none
+		sourceColumn: _51
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Ventas = m
+		mode: import
+		source =
+				let
+				    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Ventas"),
+				    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+				    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (2)", each #"Transformar archivo (2)"([Content])),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+				    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo (2)"}),
+				    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo (2)", Table.ColumnNames(#"Transformar archivo (2)"(#"Archivo de ejemplo (2)"))),
+				    #"Dividir columna por delimitador" = Table.SplitColumn(Table.TransformColumnTypes(#"Columna de tabla expandida1", {{"Fecha estado actual", type text}}, "es-CO"), "Fecha estado actual", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Fecha estado actual.1", "Fecha estado actual.2"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Dividir columna por delimitador",{{"Fecha estado actual.1", type date}, {"Fecha estado actual.2", type time}}),
+				    #"Dividir columna por delimitador1" = Table.SplitColumn(Table.TransformColumnTypes(#"Tipo cambiado1", {{"Fecha ingresada", type text}}, "es-CO"), "Fecha ingresada", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Fecha ingresada.1", "Fecha ingresada.2"}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Dividir columna por delimitador1",{{"Fecha ingresada.1", type date}, {"Fecha ingresada.2", type time}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Tipo cambiado2",null,"Sin operador",Replacer.ReplaceValue,{"Nombre operadora"}),
+				    #"Poner En Mayúsculas Cada Palabra" = Table.TransformColumns(#"Valor reemplazado",{{"Nombre operadora", Text.Proper, type text}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Poner En Mayúsculas Cada Palabra", "unic", each 1),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Personalizada agregada",{{"unic", Int64.Type}}),
+				    Personalizado1 = Table.RenameColumns(#"Tipo cambiado3",{{"Fecha estado actual.2", "Hora estado actual"}, {"Fecha estado actual.1", "Fecha estado actual"}, {"Fecha ingresada.2", "Hora ingresada"}, {"Fecha ingresada.1", "Fecha ingresada"}}),
+				    #"Personalizada agregada1" = Table.AddColumn(Personalizado1, "Activo", each if [Estado actual] = "Finalizada exitosamente" then 1 else 0),
+				    #"Personalizada agregada2" = Table.AddColumn(#"Personalizada agregada1", "Mes fecha ingreso", each Date.Month([Fecha ingresada])),
+				    #"Personalizada agregada3" = Table.AddColumn(#"Personalizada agregada2", "Mes estado actual", each Date.Month([Fecha estado actual])),
+				    #"Personalizada agregada4" = Table.AddColumn(#"Personalizada agregada3", "Año Feha Ingresada", each Date.Year([Fecha ingresada])),
+				    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Personalizada agregada4",{{"Activo", Int64.Type}}),
+				    #"Personalizada agregada5" = Table.AddColumn(#"Tipo cambiado4", "pendiente", each if [Estado actual] ="En bodega agrupadas" or [Estado actual] = "En bodega pendiente de picking" or [Estado actual] = "En despacho" or [Estado actual] = "En ejecucion de activacion y portabilidad" or [Estado actual] = "En Validacion" or [Estado actual]  = "En espera de Pago" or [Estado actual]= "Enviado a regularizacion de factibilidad de portabilidad" or [Estado actual] = "Rechazado pendiente correccion" or [Estado actual] = "Enviado a recuperacion" or [Estado actual] = "Pendiente validacion call center" or [Estado actual] = "En correccion de documentacion" or [Estado actual] = "En recuperacion" or [Estado actual] = "Pendiente de validacion" or [Estado actual] = "Enviado a regularizacion de Portabilidad o Activacion" then 1 else 0),
+				    #"Personalizada agregada6" = Table.AddColumn(#"Personalizada agregada5", "rechazo", each if [Estado actual] = "Caducada" or [Estado actual] = "Prospecto" or [Estado actual] = "Cancelado" or [Estado actual] = "Cliente desiste" or [Estado actual]="Pendiente creacion Whale" or [Estado actual] ="Mermado" then 1 else 0),
+				    #"Tipo cambiado5" = Table.TransformColumnTypes(#"Personalizada agregada6",{{"pendiente", Int64.Type}, {"rechazo", Int64.Type}}),
+				    #"Personalizada agregada7" = Table.AddColumn(#"Tipo cambiado5", "CLASIFICACION", each if [Estado actual] = "Finalizada exitosamente" then "Activa" else if [Estado actual] = "En despacho" or [Estado actual] = "En bodega agrupadas" or [Estado actual] = "En bodega pendiente de picking" or [Estado actual] = "En espera de Pago" or [Estado actual] = "Pendiente validacion call center" or [Estado actual] = "Pendiente cap" or [Estado actual] = "Pendiente de validacion" or [Estado actual] = "Enviado a regularizacion de factibilidad de portabilidad" or [Estado actual] = "Enviado a regularizacion de Portabilidad o Activacion" or [Estado actual] = "En correccion de documentacion" or [Estado actual] = "Rechazado pendiente correccion" or [Estado actual] = "En Validacion" or [Estado actual] = "Enviado a recuperacion" or [Estado actual] = "En recuperacion" then "Pendiente" else if [Estado actual] = "Cancelado" or [Estado actual] = "Pendiente creacion Whale" or [Estado actual] = "Prospecto" or [Estado actual] = "Mermado" or [Estado actual] = "Caducada" or [Estado actual] = "Cliente desiste" then "Rechazo" else "Sin estado"),
+				    #"Tipo cambiado6" = Table.TransformColumnTypes(#"Personalizada agregada7",{{"CLASIFICACION", type text}, {"Mes fecha ingreso", type text}, {"Mes estado actual", type text}, {"Año Feha Ingresada", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado6",{{"unic", "Unic"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegación
+

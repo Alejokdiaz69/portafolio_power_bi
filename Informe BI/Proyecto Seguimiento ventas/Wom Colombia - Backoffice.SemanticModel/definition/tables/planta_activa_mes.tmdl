@@ -1,0 +1,109 @@
+table planta_activa_mes
+	lineageTag: 5f028c9a-ed78-4bf2-a489-066283d1602c
+
+	column TipodeDocumento
+		dataType: string
+		lineageTag: 8dfba0a6-5bf9-4fe2-9701-42c629b49d10
+		summarizeBy: none
+		sourceColumn: TipodeDocumento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'USER INCONCERT'
+		dataType: string
+		lineageTag: 69574732-1d79-4fc4-8275-d19ee0abc39f
+		summarizeBy: none
+		sourceColumn: USER INCONCERT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NOMBRE COMPLETO'
+		dataType: string
+		lineageTag: 34b10359-fab8-432b-9801-507b30084115
+		summarizeBy: none
+		sourceColumn: NOMBRE COMPLETO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SUPERVISOR yeimis '
+		dataType: string
+		lineageTag: 3d2c1f40-3381-4e66-a6cb-9a6d3c3dbeb8
+		summarizeBy: none
+		sourceColumn: "SUPERVISOR yeimis "
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTADO
+		dataType: string
+		lineageTag: 532a756a-64f1-4663-bab6-c615cc12d37c
+		summarizeBy: none
+		sourceColumn: ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CEDULA
+		dataType: string
+		lineageTag: 0ee9b447-d028-4cb7-b892-ca590079d18a
+		summarizeBy: none
+		sourceColumn: CEDULA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FECHA correcta'
+		dataType: string
+		lineageTag: fbaadfd2-5a98-4f8b-8042-bd8e93e2a673
+		summarizeBy: none
+		sourceColumn: FECHA correcta
+
+		annotation SummarizationSetBy = Automatic
+
+	column Antiguedad
+		dataType: string
+		lineageTag: 9098ca05-ce9f-4dc6-aba6-0a6e0a55a210
+		summarizeBy: none
+		sourceColumn: Antiguedad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes ingreso'
+		dataType: string
+		lineageTag: 1444c1fc-2347-4623-9283-853faf86a721
+		summarizeBy: none
+		sourceColumn: Mes ingreso
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año ingreso'
+		dataType: string
+		lineageTag: f8721181-d32d-474f-83ca-03ca57072406
+		summarizeBy: none
+		sourceColumn: Año ingreso
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave planta' = planta_activa_mes[NOMBRE COMPLETO]&planta_activa_mes[USER INCONCERT]&planta_activa_mes[Mes ingreso]&planta_activa_mes[Año ingreso]
+		lineageTag: 31e3472c-efe8-4ce5-883b-e609dbf6f27c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave planta 2' = planta_activa_mes[USER INCONCERT]&planta_activa_mes[Mes ingreso]&planta_activa_mes[Año ingreso]
+		lineageTag: 06a89159-beb4-4c76-b77d-8fb847f9ae12
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition planta_activa_mes = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Seguimiento ventas\Data\planta_activa_mes.csv"),[Delimiter=";", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Encabezados promovidos","OJT","Ojt",Replacer.ReplaceText,{"Antiguedad"})
+				in
+				    #"Valor reemplazado"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegación
+

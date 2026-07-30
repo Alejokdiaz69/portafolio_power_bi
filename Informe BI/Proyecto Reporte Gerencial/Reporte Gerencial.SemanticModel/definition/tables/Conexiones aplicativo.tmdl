@@ -1,0 +1,59 @@
+table 'Conexiones aplicativo'
+	lineageTag: 368bdfb2-e978-46e8-82c2-96e01f0c73d9
+
+	column Agente
+		dataType: string
+		lineageTag: 6a41cf2e-4bdf-4cca-8323-06678ec33aaf
+		summarizeBy: none
+		sourceColumn: Agente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bf675c29-5617-4ca9-a3f2-413bc946dfc7
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: e1e70df6-29d5-4735-9b74-6ff30ead1058
+			defaultHierarchy: LocalDateTable_97774e5c-07c1-4a03-9af3-55acfc476105.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Tiempo
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 61d0d239-830d-40a9-a164-021779fb9c72
+		summarizeBy: none
+		sourceColumn: Tiempo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition 'Conexiones aplicativo' = m
+		mode: import
+		source =
+				let
+				    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Reporte Gerencial\Data\Conexiones aplicativo"),
+				    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+				    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo", each #"Transformar archivo"([Content])),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+				    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo"}),
+				    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo", Table.ColumnNames(#"Transformar archivo"(#"Archivo de ejemplo"))),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columna de tabla expandida1",{{"Source.Name", type text}, {"Agente", type text}, {"Corte", type date}, {"Tpo. Log.", type time}, {"Tpo. Act.", type time}, {"Tpo. Pausa", type time}, {"Tpo. No ACD", type time}, {"% Pausa", Percentage.Type}, {"% Ocio", Percentage.Type}, {"% No ACD", Percentage.Type}, {"Tot. Pausa", Int64.Type}, {"Tpo. Ocio Act.", type time}, {"Tpo. Aten. Act.", type time}, {"Tpo. Aten. Act. (Abs)", type time}, {"Tpo. Conc. Act.", type time}, {"Tpo. Conc. Act. (Abs)", type time}, {"Tpo. Ocio Pausa", type time}, {"Tpo. Aten. Pausa", type time}, {"Tpo. Aten. Pausa (Abs)", type time}, {"Tpo. Conc. Pausa", type time}, {"Tpo. Conc. Pausa (Abs)", type time}, {"Tpo. Ocio No ACD", type time}, {"Tpo. Aten. No ACD", type time}, {"Tpo. Aten. No ACD (Abs)", type time}, {"Tpo. Conc. No ACD", type time}, {"Tpo. Conc. No ACD (Abs)", type time}, {"Máx Conv. Sim.", Int64.Type}}),
+				    #"Filas agrupadas" = Table.Group(#"Tipo cambiado", {"Agente", "Corte"}, {{"Conexion", each List.Sum([#"Tpo. Log."]), type nullable time}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Filas agrupadas",{{"Conexion", "Tiempo"}, {"Corte", "Fecha"}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Columnas con nombre cambiado","2","",Replacer.ReplaceText,{"Agente"})
+				in
+				    #"Valor reemplazado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

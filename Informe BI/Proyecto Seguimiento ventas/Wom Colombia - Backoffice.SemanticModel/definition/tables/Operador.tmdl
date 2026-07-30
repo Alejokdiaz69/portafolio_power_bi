@@ -1,0 +1,33 @@
+table Operador
+	excludeFromModelRefresh
+	lineageTag: 00645669-2524-4942-a073-2b05154a299a
+
+	column OPERADOR_DONANTE
+		dataType: string
+		lineageTag: cab3e3d8-7c83-4f73-83ec-2ea7222b9404
+		summarizeBy: none
+		sourceColumn: OPERADOR_DONANTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Homologacion
+		dataType: string
+		lineageTag: fc0ddd0e-5da1-433e-b96c-5ad44e50ea3e
+		summarizeBy: none
+		sourceColumn: Homologacion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Operador = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("lZBBC4JAEIX/yuCpwPwPIQWBYaB0EQ+rLTaw7sSuWj+/UVPysFKn2X187zHzsswLlTDk+Z+Z+5l3pg5tIwyL87PXQ1JUFyigVxUkwR42KVa0ZbCfAxRRxQ4sBRyVsHeYTYwHDMaNIQvxQxpxIyPtYLqiqVBzboFK/mY5NMW4hwuI8DkmJM6IFzYEJ91JY5G0tH/suIPhYgebtPVXSyuRSpRUT5lraEQdpFJJxlvN7ZbDwi76olCzrpdVOotI+K5JYmbxzfM3", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [OPERADOR_DONANTE = _t, Homologacion = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"OPERADOR_DONANTE", type text}, {"Homologacion", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+
