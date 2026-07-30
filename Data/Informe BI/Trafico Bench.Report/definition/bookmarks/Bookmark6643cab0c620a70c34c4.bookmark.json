@@ -1,0 +1,2114 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "General",
+  "name": "Bookmark6643cab0c620a70c34c4",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "64dc7692e3c89a3d1de5",
+      "8119f439a8e038abb822",
+      "7b641b76db27c9ce90ec",
+      "0fc144c10d237a5c27d4",
+      "12bd694380c81aad1ee8",
+      "4a127a0700890c177149",
+      "c40bd07309a72500b8e0",
+      "ce1306ca44c30120d0db",
+      "7e020b2c20e5a0d198da"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection",
+    "filters": {
+      "byExpr": [
+        {
+          "name": "Filter41609ee4a02b7a3bd068",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "l"
+                                }
+                              },
+                              "Property": "Mes"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "null"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "HierarchyLevel": {
+              "Expression": {
+                "Hierarchy": {
+                  "Expression": {
+                    "PropertyVariationSource": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fecha"
+                        }
+                      },
+                      "Name": "Variación",
+                      "Property": "Date"
+                    }
+                  },
+                  "Hierarchy": "Jerarquía de fechas"
+                }
+              },
+              "Level": "Mes"
+            }
+          },
+          "howCreated": 1,
+          "cachedDisplayNames": [
+            {
+              "id": {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5"
+                          }
+                        },
+                        "Property": "Mes"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "null"
+                      }
+                    }
+                  }
+                }
+              },
+              "displayName": "(En blanco)"
+            }
+          ]
+        },
+        {
+          "name": "Filter0a247b5c577b30326b5e",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Bench"
+                }
+              },
+              "Property": "Prioridad"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSection": {
+        "visualContainers": {
+          "e0403da7021be5293976": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3e2f3dd7b253c6061b8b": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "61657a20068cbd1378ab": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "15aa617d07be00706aca",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "startDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2025-01-01T00:00:00'"
+                            }
+                          }
+                        },
+                        "endDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2025-10-13T00:00:00'"
+                            }
+                          }
+                        },
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "368a6d350ec046e0a34d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "34a253add7577e285005",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Canal"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Canal"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7e020b2c20e5a0d198da": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e90371e38c3b8bcc3160",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Total Cargado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "aa562624706d3a7c008d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Recorrido"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "538984670122c0d00a3b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Contactado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bb0a4167580570c0a31c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Ventas brutas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "747d96d081b42d2d2195",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Ventas Neta"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8295eece2b9a5bc19a66",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Gestion"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a55ca25f24a4db3b5506",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0ba18db87a98ecd815c7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/bruta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "76aef9d30c0056e22659",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/Neta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5b9617a5502ce0972d05",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Int/Base"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c73ab3e80947a6b0a978",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Int/Record"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "multiRowCard",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Total Cargado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "4ff59591196e88776900": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bd46e68fb462950218e8",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "4569dc4aac2408b75ec2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c5420b0900377a333372",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/Neta"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/Neta"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "3807099a479540c151bb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "683e2650cde3c9316dca",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/bruta"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/bruta"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "e8e329cfe66b54823930": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ae649228aab3072ad1b5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Campaña"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Campaña"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "ce1306ca44c30120d0db": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "7cca596108c9125d0074",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Total Cargado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a177a46c9201ea1100d7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Recorrido"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7c16c53bdda79cdee15c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "49eddfec64ab13c4266e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Gestion"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3b77af09d308eb1bdd61",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/bruta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e35313d426d3e7a10eaa",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Int/Base"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8303ee63c9e9ae2a51a8",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Int/Record"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c42ac5bbee764b870bb8",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Ventas brutas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "62ef1244cc7016396a6d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Ventas Neta"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "abac86a0eac44080c07a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Contactado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4cf62d132dea50cae8d5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Campaña"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a4f0d690c6eb6bebe280",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Cargado/Bruta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "749713700dbad278636e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Recorri/Bruta"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "c40bd07309a72500b8e0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ebf61d2b734d0897d03c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Total Cargado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "861a8d5fa1b98c390c65",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Recorrido"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2b2959ee5a7a4463d53e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Contactado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "27585c63cbb865ebb705",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Ventas brutas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1ed2f8a6002d1a40a778",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Ventas Neta"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "91d62f400208bae000c4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Gestion"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ee6fcfc180c547e4310e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f74ddeb0688d1571ed19",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/bruta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0ad3171452a53bdbb0a0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/Neta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "68dd5f44aeaadb15b0c2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Int/Base"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c9ac89625b051918c04e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Int/Record"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "multiRowCard",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Total Cargado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "4a127a0700890c177149": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5699bf24e4d83e02804d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Campaña"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1d67b1d0969c299140d5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a4035346044cd95bd028",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "806a8b00cd220360be97",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/bruta"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Campaña"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "12bd694380c81aad1ee8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0e0d5e9f0d1a74856060",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f564ce4c84b30d4a44e0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/bruta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "decb2cf0ec0612a881a0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/Neta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fb3459b6a08b1e01074a",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "545a381e07d529a0d596",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "0fc144c10d237a5c27d4": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "842db27b352d30777d28",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ec6389deeaed970228e4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "af8b3d51e84daa4674a8",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Int/Record"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "multiRowCard",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "5ad453edae2d001cc0d0": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          },
+          "0f8ee1967e86ba73c1e3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f8ac0f170062d67ae304",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Año portada"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Año portada"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7b641b76db27c9ce90ec": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6de2ec51450032e0cc25",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Total Cargado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ba3af80b22803c1bd490",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Recorrido"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7b83e282a5755e55c493",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d8e4adb3002c8979cab3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Gestion"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5a479b11b2db4109b588",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/bruta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a891dcc516ad498c670e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Int/Base"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b054ac5406a230579a10",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Int/Record"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a33dd76cc3a49028e10b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Ventas brutas"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5c8851df980c2c15c2c2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Ventas Neta"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "05b5c0210120ee068cb7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Portada"
+                            }
+                          },
+                          "Property": "Contactado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5fec2f30802bbc827041",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Recorri/Bruta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a1080e17ce40b52ecbec",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Cargado/Bruta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e7ab183d01ac3c0970ac",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "62f4d2b8d76aa6205927",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "64dc7692e3c89a3d1de5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4e0d9ab172578b4b00b4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9938fde008dd376cddc2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Int/Record"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d9f299af18c913b3dc16",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "90bfe35572ce037880d7",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "8119f439a8e038abb822": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a723331e564043073612",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "%Contact"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b8f69cb3cde6b3208277",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Efect/bruta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a7658da9377d2b08ea95",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Portada"
+                        }
+                      },
+                      "Property": "Recorri/Bruta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "481ed9e7ce13c880b066",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4855fbbc970131d6b724",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Año"
+                    }
+                  },
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fecha"
+                                }
+                              },
+                              "Name": "Variación",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Jerarquía de fechas"
+                        }
+                      },
+                      "Level": "Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

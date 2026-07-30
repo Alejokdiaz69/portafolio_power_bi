@@ -1,0 +1,62 @@
+table Campaña/Canal
+	lineageTag: d1c8401c-e53f-4624-b0ec-142b7864ceb3
+
+	column Campaña
+		dataType: string
+		lineageTag: ff389a52-3edd-40bc-86f3-4b1a45036b44
+		summarizeBy: none
+		sourceColumn: Campaña
+
+		annotation SummarizationSetBy = Automatic
+
+	column Canal
+		dataType: string
+		lineageTag: c07e592f-4e3e-4280-a71a-d5d66e2c6b0c
+		summarizeBy: none
+		sourceColumn: Canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave campañas'
+		dataType: string
+		lineageTag: b3bebb2a-ef1d-4a27-add5-ac23b768520a
+		summarizeBy: none
+		sourceColumn: Llave campañas
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Campaña/Canal = m
+		mode: import
+		source =
+				let
+				    Origen = Folder.Files("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Data\Bench"),
+				    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+				    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (3)", each #"Transformar archivo (3)"([Content])),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+				    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo (3)"}),
+				    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo (3)", Table.ColumnNames(#"Transformar archivo (3)"(#"Archivo de ejemplo (3)"))),
+				    #"Dividir columna por delimitador" = Table.SplitColumn(#"Columna de tabla expandida1", "Source.Name", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Source.Name.1", "Source.Name.2", "Source.Name.3", "Source.Name.4", "Source.Name.5", "Source.Name.6", "Source.Name.7"}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Dividir columna por delimitador",{{"Source.Name.1", type date}, {"Source.Name.2", type text}, {"Source.Name.3", type text}, {"Source.Name.4", type text}, {"Source.Name.5", type text}, {"Source.Name.6", type text}, {"Source.Name.7", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Source.Name.2", "Source.Name.3", "Source.Name.4", "Source.Name.5", "Source.Name.6", "Source.Name.7"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas",{{"Source.Name.1", "Fecha de carga"}}),
+				    #"Personalizada agregada2" = Table.AddColumn(#"Columnas con nombre cambiado", "Dia bench", each Date.Day([Fecha de carga])),
+				    #"Personalizada agregada" = Table.AddColumn(#"Personalizada agregada2", "Mes bench", each Date.Month ([Fecha de carga])),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Personalizada agregada", "Año bench", each Date.Year([Fecha de carga])),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"Año bench", type text}, {"Mes bench", type text}, {"Dia bench", type text}, {"Vueltas", type text}, {"Efec. Bruta", Percentage.Type}, {"Efect Neta", Percentage.Type}}),
+				    #"Consulta anexada" = Table.Combine({#"Tipo cambiado1", Bench}),
+				    #"Errores reemplazados2" = Table.ReplaceErrorValues(#"Consulta anexada", {{"Efect Neta", 0}}),
+				    #"Errores reemplazados1" = Table.ReplaceErrorValues(#"Errores reemplazados2", {{"Efec. Bruta", 0}}),
+				    #"Errores reemplazados" = Table.ReplaceErrorValues(#"Errores reemplazados1", {{"Vueltas", 0}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Errores reemplazados",null,"0",Replacer.ReplaceValue,{"Vueltas"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","-","0",Replacer.ReplaceText,{"Vueltas"}),
+				    #"Columnas quitadas2" = Table.RemoveColumns(#"Valor reemplazado1",{"Fecha de carga", "% Recorrido", "% Contactabilidad", "Efec. Bruta", "Efect Neta", "Vueltas", "Dia bench", "Mes bench", "Año bench"}),
+				    #"Texto en mayúsculas" = Table.TransformColumns(#"Columnas quitadas2",{{"Campaña", Text.Upper, type text}, {"Canal", Text.Upper, type text}}),
+				    #"Personalizada agregada3" = Table.AddColumn(#"Texto en mayúsculas", "Llave campañas", each [Campaña]&[Canal]),
+				    #"Duplicados quitados" = Table.Distinct(#"Personalizada agregada3", {"Llave campañas"})
+				in
+				    #"Duplicados quitados"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

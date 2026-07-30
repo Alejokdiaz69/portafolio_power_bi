@@ -1,0 +1,63 @@
+relationship 202cc0a1-ad58-4fc2-adef-8bc7e811110a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fecha.Date
+	toColumn: LocalDateTable_8be2d559-8221-4867-8ac2-22b4b22b07c5.Date
+
+relationship c24de93d-57a1-4b0b-b5d1-feb5a5575abd
+	fromColumn: Bench.Fecha
+	toColumn: Fecha.Date
+
+relationship d298e5d7-72a4-4e8b-a350-48b403a86382
+	fromColumn: Portada.Campaña
+	toColumn: Prioridad.Campaña
+
+relationship 28bd3e9c-9b05-4a7c-b9d1-0140c7ddf1d4
+	fromColumn: 'Portada (2)'.Campaña
+	toColumn: Prioridad.Campaña
+
+relationship 8f05c086-dd78-43ba-a6a1-4eecba345abf
+	fromColumn: 'Portada (2)'.'Fecha de carga'
+	toColumn: Fecha.Date
+
+relationship 36e4f5bf-e0b2-4792-a0c6-74cd116d9e03
+	fromColumn: 'Bench (2)'.'Fecha de carga'
+	toColumn: Fecha.Date
+
+relationship 0445747b-2f36-4db7-8612-a6283f41e1d6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bench.'Fecha de carga'
+	toColumn: LocalDateTable_6807fec2-6172-4b2c-86f5-73f95c393831.Date
+
+relationship 2f01b8ec-2ce2-4616-ae6c-58385ce5da30
+	fromColumn: Portada.'Llave campaña'
+	toColumn: Campaña/Canal.'Llave campañas'
+
+relationship 9b688c04-64d7-419e-acf3-1cfbc71309cd
+	fromColumn: 'Portada (2)'.'llave campaña'
+	toColumn: Campaña/Canal.'Llave campañas'
+
+relationship 1875273f-7568-4fb7-b981-0f4909a71584
+	fromColumn: 'Bench (2)'.'llave campaña'
+	toColumn: Campaña/Canal.'Llave campañas'
+
+relationship d2997f22-b634-4e8e-a2b1-02b38f076032
+	fromColumn: Bench.'llave campaña'
+	toColumn: Campaña/Canal.'Llave campañas'
+
+relationship c41c1431-493b-43f5-9f20-2c32788e64ee
+	fromColumn: Bench.Campaña
+	toColumn: Prioridad.Campaña
+
+relationship 52f538c5-3baa-453a-905f-146f7a08b7d0
+	fromColumn: 'Bench (2)'.Campaña
+	toColumn: Prioridad.Campaña
+
+relationship e390fe56-a01e-4415-9d16-a6b7ce5c773f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Portada.Fecha
+	toColumn: LocalDateTable_f4a88612-f42d-497f-b3c3-dce8b326e5d0.Date
+
+relationship 9a1ecbbf-e361-4da0-8f21-9acb77589d0b
+	fromColumn: Portada.'Fecha de carga'
+	toColumn: Fecha.Date
+

@@ -1,3 +1,4 @@
 **/.pbi/localSettings.json
-**/.pbi/cache.abf*.xlsx
+**/.pbi/cache.abf
+*.xlsx
 *.csv
