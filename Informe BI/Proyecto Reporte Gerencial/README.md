@@ -53,18 +53,17 @@ Monitoreo de la facturación de logueo y tiempos de conexión de la plantilla.
 Profundización en el indicador principal de eficiencia de ventas, evaluando el SPH Bruto y Neto a través de diferentes dimensiones temporales y operativas.
 
 *   **SPH Mensual:** Tendencia del SPH a lo largo de los meses.
-    ![SPH Mes](Img/Sph%20-%20Mes%20.png)
+    ![SPH Mes](Img/Sph%20-%20Mes.png)
 *   **SPH Semanal:** Variación del rendimiento por semanas del mes.
     ![SPH Semana](Img/Sph%20-%20Semana.png)
 *   **SPH Diario:** Control táctico diario de las ventas por hora trabajada.
-    ![SPH Día](Img/Sph%20-%20Dia%20.png)
+    ![SPH Día](Img/Sph%20-%20Dia.png)
 *   **SPH por Supervisor:** Consolidado del rendimiento de SPH agrupado por líder.
     ![SPH Supervisor](Img/Sph%20-%20Supervisor%20.png)
 *   **SPH por Agente:** Consolidado del rendimiento de SPH por cada asesor.
     ![SPH Agente](Img/Sph%20-%20Agente.png)
 *   **SPH Detallado:** Matriz de calor y desglose pormenorizado para identificar consistencia en el rendimiento individual.
-    ![SPH Detallado](Img/Sph%20-%20Detallado%20.png)
-
+    ![SPH Detallado](Img/Sph%20-%20Detallado.png)
 ### Módulo 6: Ranking y Cuartiles de Rendimiento
 Clasificación del personal operativo en cuartiles (Q1 a Q4) basados en su desempeño, utilizando formato condicional para identificar rápidamente al personal de alto rendimiento y a quienes requieren planes de acción.
 
