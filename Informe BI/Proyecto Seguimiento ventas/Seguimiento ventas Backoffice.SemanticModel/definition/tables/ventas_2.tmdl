@@ -1,0 +1,613 @@
+table ventas_2
+	lineageTag: 59085bf7-b3a5-4798-8f23-855ef5332b4a
+
+	measure %Activo_ventas =
+			
+			DIVIDE(SUM(ventas_2[venta_completada]), SUM(ventas_2[Unic]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: cf896069-1654-4f2f-99ba-c99b8d3d9eb2
+
+	measure %Transito =
+			
+			DIVIDE(SUM(ventas_2[Ventas en transito]), SUM(ventas_2[Unic]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 93fc1b33-f413-453d-bf1d-5a4428e003de
+
+	measure %Rechazo_ventas =
+			
+			DIVIDE(SUM(ventas_2[Rechazo]), SUM(ventas_2[Unic]))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 21f20c31-58b6-4358-ba0b-1e0c9080a914
+
+	column PERIODO_PROCESO_CODIGO
+		dataType: string
+		lineageTag: 1ac95466-10b7-4e11-b4d7-87a1b47a0164
+		summarizeBy: none
+		sourceColumn: PERIODO_PROCESO_CODIGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SERVICIO
+		dataType: string
+		lineageTag: a463e8c1-acfb-4a10-82e2-a7977b5a0483
+		summarizeBy: none
+		sourceColumn: SERVICIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_OPERACION
+		dataType: string
+		lineageTag: 863075cd-a39c-4317-8fb0-199673f8893e
+		summarizeBy: none
+		sourceColumn: TIPO_OPERACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBESTADO_ORDEN
+		dataType: string
+		lineageTag: 746ed042-bdf0-455b-9dfb-6326610c4b59
+		summarizeBy: none
+		sourceColumn: SUBESTADO_ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_ITEM_ID
+		dataType: string
+		lineageTag: bc00a173-5a19-4cea-944b-ad4903e1b629
+		summarizeBy: none
+		sourceColumn: ORDER_ITEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUST_ORDER_ID
+		dataType: string
+		lineageTag: 7742358d-92cd-40ed-b0a1-f67f42b31e9e
+		summarizeBy: none
+		sourceColumn: CUST_ORDER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBSCRIBER_ID
+		dataType: string
+		lineageTag: 4908fc59-4530-4fef-90fd-ec352e8cc1ae
+		summarizeBy: none
+		sourceColumn: SUBSCRIBER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINEA
+		dataType: string
+		lineageTag: 8792e745-ceae-473e-b6c7-200244178680
+		summarizeBy: none
+		sourceColumn: LINEA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCT_ID
+		dataType: string
+		lineageTag: 236909b7-5512-49e3-be5e-6ee3bc3b12d7
+		summarizeBy: none
+		sourceColumn: ACCT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRE_OFERTA
+		dataType: string
+		lineageTag: 285d28b2-970f-4553-b98c-18e0328591a0
+		summarizeBy: none
+		sourceColumn: NOMBRE_OFERTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CODIGO_OFERTA
+		dataType: string
+		lineageTag: 05f751ac-027d-4b35-a620-bdf97f2a3874
+		summarizeBy: none
+		sourceColumn: CODIGO_OFERTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTADO_ORDEN
+		dataType: string
+		lineageTag: 55d7f151-8ea5-4571-8e0b-65439d827804
+		summarizeBy: none
+		sourceColumn: ESTADO_ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column CANTIDAD_INTENTOS_PORTACION
+		dataType: string
+		lineageTag: 7c2348d8-f7fc-4680-85af-bec9d43168ab
+		summarizeBy: none
+		sourceColumn: CANTIDAD_INTENTOS_PORTACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPCION_EVENTO_ORDEN
+		dataType: string
+		lineageTag: a3af233c-37ce-4efb-ade1-ae62bdb4036b
+		summarizeBy: none
+		sourceColumn: DESCRIPCION_EVENTO_ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ARBOL_CANAL_NOMBRE
+		dataType: string
+		lineageTag: 5d3d7d30-260e-40db-9a53-5128d7227c19
+		summarizeBy: none
+		sourceColumn: ARBOL_CANAL_NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ARBOL_ALMACEN_NOMBRE
+		dataType: string
+		lineageTag: 058acc5f-e5de-4f64-baa4-05ce0249579d
+		summarizeBy: none
+		sourceColumn: ARBOL_ALMACEN_NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ARBOL_USUARIO
+		dataType: string
+		lineageTag: 7ef42fc8-1dfc-4d65-be79-f9a80a8eb265
+		summarizeBy: none
+		sourceColumn: ARBOL_USUARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ARBOL_DOCUMENTO_CONSULTOR
+		dataType: string
+		lineageTag: 6322eee9-0b2c-4309-b4f1-a88fc4db53dd
+		summarizeBy: none
+		sourceColumn: ARBOL_DOCUMENTO_CONSULTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ARBOL_NOMBRE_CONSULTOR
+		dataType: string
+		lineageTag: a55ec3c6-430f-4ab0-a7ec-d9d09bc0a5f2
+		summarizeBy: none
+		sourceColumn: ARBOL_NOMBRE_CONSULTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPERADOR_DONANTE
+		dataType: string
+		lineageTag: 495b8fd3-4d97-4d12-82cb-c8ac65f0c9dc
+		summarizeBy: none
+		sourceColumn: OPERADOR_DONANTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMENTARIO_RECHAZO
+		dataType: string
+		lineageTag: a6de6dd7-936d-4790-abf9-9adb9890181c
+		summarizeBy: none
+		sourceColumn: COMENTARIO_RECHAZO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MOTIVO1
+		dataType: string
+		lineageTag: 9c89c01e-b691-4eef-9896-344292bc5fda
+		summarizeBy: none
+		sourceColumn: MOTIVO1
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_CREACION_ORDEN
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 0a250130-5fd7-480b-9dc1-ae2ba5572a1f
+		summarizeBy: none
+		sourceColumn: FECHA_CREACION_ORDEN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FECHA_ENTREGA
+		dataType: string
+		lineageTag: 3093c265-6ad5-4aea-8863-02f423b8961c
+		summarizeBy: none
+		sourceColumn: FECHA_ENTREGA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_CREACION_PORTACION
+		dataType: string
+		lineageTag: 90d35dd3-ea51-4546-b632-3342b736cc4f
+		summarizeBy: none
+		sourceColumn: FECHA_CREACION_PORTACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_EFECTIVA_PORTACION
+		dataType: string
+		lineageTag: df69bdb3-b026-45e7-afda-1fe3716ce96c
+		summarizeBy: none
+		sourceColumn: FECHA_EFECTIVA_PORTACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPLETED_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d95704a0-15fa-475a-a94e-19783b37bf54
+		summarizeBy: none
+		sourceColumn: COMPLETED_DATE
+
+		variation Variación
+			isDefault
+			relationship: 3cc97166-126f-4ac9-ac80-d50278c8ff47
+			defaultHierarchy: LocalDateTable_eb94725c-1725-462b-888e-101b1f08d215.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ALTERNATIVA
+		dataType: string
+		lineageTag: e78a7aa4-07a1-4c6c-83ca-9d73a94ba65f
+		summarizeBy: none
+		sourceColumn: ALTERNATIVA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTADO_PAGO
+		dataType: string
+		lineageTag: 27642a6b-746a-429c-a6f4-53429227ead9
+		summarizeBy: none
+		sourceColumn: ESTADO_PAGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_PLAN
+		dataType: string
+		lineageTag: 9f40d415-1fbe-42bc-b59a-8a1620fc3791
+		summarizeBy: none
+		sourceColumn: TIPO_PLAN
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año ventas'
+		dataType: string
+		lineageTag: 45e1fb5a-039a-4dd3-8d8f-eea0af9c5d81
+		summarizeBy: none
+		sourceColumn: Año ventas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes ventas'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ed93b87-fdeb-47b4-bf7d-0ea330e1f1a8
+		summarizeBy: sum
+		sourceColumn: Mes ventas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave ventas 2' = ventas_2[ARBOL_USUARIO]&ventas_2[Mes ventas]&ventas_2[Año ventas]
+		lineageTag: 960d3f6e-55df-49fe-81c4-0645a389465f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre completo' = LOOKUPVALUE(planta_activa_mes[NOMBRE COMPLETO],planta_activa_mes[Llave planta 2],ventas_2[Llave ventas 2])
+		lineageTag: d6cee165-9acc-477e-80ca-c12ca5b7e244
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave ventas' = ventas_2[Nombre completo]&ventas_2[ARBOL_USUARIO]&ventas_2[Mes ventas]&ventas_2[Año ventas]
+		lineageTag: f178ffb1-43cc-408b-baf0-d7d5996bb5c0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANS = LOOKUPVALUE('ANS de Entrega'[Días],'ANS de Entrega'[Tipo de transito],Ventas_2[Tipo de Transito])
+		formatString: 0
+		lineageTag: 137e1cae-c3d7-480d-b52d-a743004879e1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de Transito' =
+			
+			IF(IF(
+			    LOOKUPVALUE(WMS[DESTINO],WMS[Pedido_Factura],Ventas_2[cust_order_id])="",
+			    Ventas_2[ALTERNATIVA],
+			    LOOKUPVALUE(WMS[DESTINO],WMS[Pedido_Factura],Ventas_2[cust_order_id]))="","Sin Tipo de Transito",IF(
+			    LOOKUPVALUE(WMS[DESTINO],WMS[Pedido_Factura],Ventas_2[cust_order_id])="",
+			    Ventas_2[ALTERNATIVA],
+			    LOOKUPVALUE(WMS[DESTINO],WMS[Pedido_Factura],Ventas_2[cust_order_id])))
+		lineageTag: 0bdd1bc1-f6b0-427d-a316-a0f09838b7a5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estado de Orden' = IF(IF(LOOKUPVALUE(WMS[Estado2],WMS[Pedido_Factura],Ventas_2[cust_order_id])="",Ventas_2[Tipo de Transito],LOOKUPVALUE(WMS[Estado2],WMS[Pedido_Factura],Ventas_2[cust_order_id]))="","Sin Estado de Orden",IF(LOOKUPVALUE(WMS[Estado2],WMS[Pedido_Factura],Ventas_2[cust_order_id])="",Ventas_2[Tipo de Transito],LOOKUPVALUE(WMS[Estado2],WMS[Pedido_Factura],Ventas_2[cust_order_id])))
+		lineageTag: fcf58fcb-7ac0-40d2-9df9-4c94bc8d2aad
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subestado = IF(LOOKUPVALUE(WMS[Subestado],WMS[Pedido_Factura],ventas_2[cust_order_id])="","Sin Subestado",LOOKUPVALUE(WMS[Subestado],WMS[Pedido_Factura],ventas_2[cust_order_id]))
+		lineageTag: e8e4378f-5a32-463b-b798-6298737dc8a3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiasCalculados =
+			
+			VAR FechaCreacion = [fecha_creacion_orden]
+			VAR FechaCompletada = [completed_date].[Date]
+			VAR Hoy = TODAY()
+			VAR PrimerDiaMesActual = DATE(YEAR(Hoy), MONTH(Hoy), 1)
+			VAR PrimerDiaCreacion = DATE(YEAR(FechaCreacion), MONTH(FechaCreacion), 1)
+			VAR Dias =
+			    IF(
+			        NOT(ISBLANK(FechaCreacion)) && NOT(ISBLANK(FechaCompletada)),
+			        0,
+			        IF(
+			            FechaCreacion < (PrimerDiaMesActual - 60),
+			            DATEDIFF(FechaCreacion, PrimerDiaCreacion + 60, DAY),
+			            DATEDIFF(FechaCreacion, PrimerDiaMesActual, DAY)
+			        )
+			    )
+			RETURN
+			MAX(Dias, 0)
+		formatString: 0
+		lineageTag: d334487e-e50f-4e25-bac8-688f5a79e03a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Promesa de entrega' = ```
+			
+			IFERROR(
+			    IF(
+			    Ventas_2[ANS]<Ventas_2[DiasCalculados],
+			    "Excede tiempo promesa",
+			    "Cumple ANS de entrega"),
+			    Ventas_2[ALTERNATIVA])
+			    
+			```
+		lineageTag: c2851a5f-5b9e-40ca-9a8b-eb414970f567
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de rechazo' =
+			
+			IF(
+			    OR(Ventas_2[estado_orden]="Reject",
+			    OR(Ventas_2[estado_orden]="ABD Reject",
+			    Ventas_2[estado_orden]="Send out"))
+			    ,IF(
+			    IF(
+			    OR(Ventas_2[estado_orden]="Reject",Ventas_2[estado_orden]="ABD Reject"),
+			    LOOKUPVALUE(Rechazos[TIPIFICACION_PRINCIPAL],Rechazos[PORT_NUMBER],Ventas_2[linea]),
+			    Ventas_2[estado_orden])="",
+			    "Rechazo no especificado",
+			    IF(
+			    OR(Ventas_2[estado_orden]="Reject",Ventas_2[estado_orden]="ABD Reject"),
+			    LOOKUPVALUE(Rechazos[TIPIFICACION_PRINCIPAL],Rechazos[PORT_NUMBER],Ventas_2[linea]),
+			    Ventas_2[estado_orden])),
+			    "")
+		lineageTag: 49a0b0cd-c32c-46c7-b790-6369845b2fe0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes estado actual' = FORMAT(Ventas_2[completed_date],"M")
+		lineageTag: d7674efb-a72b-494b-beca-caec61db42bb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes fecha ingreso' = FORMAT(Ventas_2[fecha_creacion_orden],"M")
+		lineageTag: 0e3debee-4a2e-4afd-9a96-18a915900680
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Arrastre =
+			IF(
+			    AND(Ventas_2[venta_completada]=1,Ventas_2[Mes estado actual]<>ventas_2[Mes fecha ingreso]),
+			    1,0)
+		formatString: 0
+		lineageTag: b7b77392-a049-4675-aea0-320a2878b84a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column venta_completada = IF(ventas_2[SUBESTADO_ORDEN]="Completion",1,0)
+		formatString: 0
+		lineageTag: 3472ab41-660c-4784-bc12-1dab388e9020
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activos mismo mes' =
+			IF(
+			    AND(Ventas_2[venta_completada]=1,Ventas_2[Mes estado actual]=Ventas_2[Mes fecha ingreso]),
+			    1,0)
+		formatString: 0
+		lineageTag: 1b7c186f-3c24-419a-bc50-8917349273d0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Antiguedad = LOOKUPVALUE(planta_activa_mes[Antiguedad],planta_activa_mes[Llave planta],Ventas_2[Llave ventas])
+		lineageTag: 894c0361-69da-44d1-b21e-207290d870e1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rechazo =
+			
+			IF(
+			Ventas_2[Tipo de rechazo]<>"",
+			1,0)
+		formatString: 0
+		lineageTag: 40a2f3fb-7540-40ae-8bbc-ee5f34d2a796
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Venta pendiente' =
+			
+			IF(
+			    OR(Ventas_2[subestado_orden]="Esperando respuesta de ABD",
+			    OR(Ventas_2[subestado_orden]="Trans With OIC",Ventas_2[subestado_orden]="Espere")),
+			    1,0)
+		formatString: 0
+		lineageTag: e95b2b5e-58b7-4da2-98d3-8c121102b41b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Clasificacion = ```
+			
+			
+			    IF(
+			    OR(Ventas_2[subestado_orden]="Esperando respuesta de ABD",
+			    OR(Ventas_2[subestado_orden]="Trans With OIC",Ventas_2[subestado_orden]="Espere")),
+			    "Pendiente",
+			    IF(Ventas_2[subestado_orden]="Completion",
+			    "Activa",
+			    IF(Ventas_2[subestado_orden]="Cancelado",
+			    "Cancelada","")))
+			```
+		lineageTag: 01015213-19b2-4d1b-b956-2a71872235ea
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Team Leader' = LOOKUPVALUE(planta_activa_mes[SUPERVISOR yeimis ],planta_activa_mes[Llave planta 2],ventas_2[Llave ventas 2])
+		lineageTag: fc05e6cd-33e6-42a0-9a44-b93cb12c42eb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unic = 1
+		formatString: #,0
+		lineageTag: 40372915-2026-4dc0-9631-54014d635c00
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column venta_cancelada = IF(ventas_2[SUBESTADO_ORDEN]="Cancelado",1,0)
+		formatString: 0
+		lineageTag: fa513ff7-f59d-4b06-8758-10d4a96af4e1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ciudad destino' = IF(LOOKUPVALUE(WMS[Ciudad_Destino],WMS[Pedido_Factura],Ventas_2[cust_order_id])="","SIN DATO",LOOKUPVALUE(WMS[Ciudad_Destino],WMS[Pedido_Factura],Ventas_2[cust_order_id]))
+		lineageTag: f0e7580a-4c54-49a1-b4b9-ce6ca74b3bdf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Departamento destino' = IF(LOOKUPVALUE(WMS[Departamento],WMS[Pedido_Factura],Ventas_2[cust_order_id])="","SIN DATO",LOOKUPVALUE(WMS[Departamento],WMS[Pedido_Factura],Ventas_2[cust_order_id]))
+		lineageTag: 8c42079a-38d1-4f1c-9e21-8040ef54e046
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ventas en transito' = IF(ventas_2[COMPLETED_DATE]>0,0,1)
+		formatString: #,0
+		lineageTag: a9f7522c-5a66-44e4-b7c0-a62a53e8cad7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Procedencia = IF(LOOKUPVALUE(Procedencia[Cumple política],Procedencia[Orden],ventas_2[LINEA])="","Procede","No Procede")
+		lineageTag: b9893c26-e1a3-416c-b396-4a34d5007e0c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Campaña = ```
+			
+			IF( 
+			    OR(ventas_2[TIPO_OPERACION]="New connection",ventas_2[TIPO_OPERACION]="Portin"),"Portabilidad",
+			    "Migracion")
+			```
+		lineageTag: 9ebee788-8111-48d5-ae47-d0510cb7ec19
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transportador = IF(LOOKUPVALUE(WMS[TRANSPORTADOR],WMS[Pedido_Factura],Ventas_2[cust_order_id])="","SIN DATO",LOOKUPVALUE(WMS[TRANSPORTADOR],WMS[Pedido_Factura],Ventas_2[cust_order_id]))
+		lineageTag: 4008728c-d10a-43d7-bb8f-1b573e6857f9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Llave ventas 3' = ventas_2[ARBOL_USUARIO]&FORMAT(ventas_2[FECHA_CREACION_ORDEN],"DD")&ventas_2[Mes ventas]&ventas_2[Año ventas]
+		lineageTag: efa3cd6c-d699-4d17-a64f-26349b2d008e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Clasificación de rechazo' =
+			
+			IF(
+			    OR(Ventas_2[estado_orden]="Reject",
+			    OR(Ventas_2[estado_orden]="ABD Reject",
+			    Ventas_2[estado_orden]="Send out"))
+			    ,IF(
+			    IF(
+			    OR(Ventas_2[estado_orden]="Reject",Ventas_2[estado_orden]="ABD Reject"),
+			    LOOKUPVALUE(Rechazos[CLASIFICACION_PRINCIPAL],Rechazos[PORT_NUMBER],Ventas_2[linea]),
+			    Ventas_2[estado_orden])="",
+			    "Rechazo no especificado",
+			    IF(
+			    OR(Ventas_2[estado_orden]="Reject",Ventas_2[estado_orden]="ABD Reject"),
+			    LOOKUPVALUE(Rechazos[CLASIFICACION_PRINCIPAL],Rechazos[PORT_NUMBER],Ventas_2[linea]),
+			    Ventas_2[estado_orden])),
+			    "")
+		lineageTag: d7cc40da-7169-463a-9db9-fd5d12fc1ea6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Columna = LOOKUPVALUE(Planes[Homologacion],Planes[Plan],ventas_2[NOMBRE_OFERTA])
+		lineageTag: a92799f0-da7f-4ccc-bfa6-fcec187c9efe
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Columna 2 2' = LOOKUPVALUE(WMS[CODIGO_ZONA],WMS[telefono],ventas_2[LINEA])
+		formatString: 0
+		lineageTag: 9eaaefd6-f89b-49dc-a949-9b5794451491
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ventas_2 = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\alejo\OneDrive\Documentos\Conocimiento\Power BI\Power bi Bench\Informe BI\Proyecto Seguimiento ventas\Data\ventas.csv"),[Delimiter=";", Columns=30, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Columna duplicada" = Table.DuplicateColumn(#"Encabezados promovidos", "PERIODO_PROCESO_CODIGO", "PERIODO_PROCESO_CODIGO - Copia"),
+				    #"Dividir columna por posición" = Table.SplitColumn(Table.TransformColumnTypes(#"Columna duplicada", {{"PERIODO_PROCESO_CODIGO - Copia", type text}}, "es-CO"), "PERIODO_PROCESO_CODIGO - Copia", Splitter.SplitTextByRepeatedLengths(4), {"PERIODO_PROCESO_CODIGO - Copia.1", "PERIODO_PROCESO_CODIGO - Copia.2"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Dividir columna por posición",{{"PERIODO_PROCESO_CODIGO - Copia.1", type text}, {"PERIODO_PROCESO_CODIGO - Copia.2", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado1",{{"PERIODO_PROCESO_CODIGO - Copia.1", "Año ventas"}, {"PERIODO_PROCESO_CODIGO - Copia.2", "Mes ventas"}}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"Mes ventas", Int64.Type}}),
+				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado2", each ([ARBOL_USUARIO] <> "gary.pardo")),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Filas filtradas","","Sin Operador",Replacer.ReplaceValue,{"OPERADOR_DONANTE"}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Valor reemplazado",{{"COMPLETED_DATE", type date}, {"FECHA_CREACION_ORDEN", type date}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegación
+

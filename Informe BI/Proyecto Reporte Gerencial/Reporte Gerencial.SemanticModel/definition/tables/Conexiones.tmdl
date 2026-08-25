@@ -36,7 +36,7 @@ table Conexiones
 	measure Destino = ```
 			1 
 			```
-		formatString: 0
+		formatString: 0\ %;-0\ %;0\ %
 		lineageTag: 59aa6af3-bbca-48cb-95fb-1e70abedc0ea
 
 	column Agente

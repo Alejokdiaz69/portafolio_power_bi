@@ -111,16 +111,6 @@ cultureInfo es-ES
 			          "antigüedad": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Antiguedad": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -153,16 +143,6 @@ cultureInfo es-ES
 			          "jefe directo": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Supervisor": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -178,16 +158,6 @@ cultureInfo es-ES
 			        {
 			          "jefe directo": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Supervisor": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -220,16 +190,6 @@ cultureInfo es-ES
 			        {
 			          "jefe directo": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Supervisor": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]

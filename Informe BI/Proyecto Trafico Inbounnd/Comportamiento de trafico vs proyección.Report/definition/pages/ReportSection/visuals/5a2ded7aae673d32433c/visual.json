@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "5a2ded7aae673d32433c",
   "position": {
     "x": 251.72788276416378,
@@ -70,11 +70,11 @@
                       "Hierarchy": "Jerarquía de fechas"
                     }
                   },
-                  "Level": "Año"
+                  "Level": "Mes"
                 }
               },
-              "queryRef": "Fecha.Date.Variación.Jerarquía de fechas.Año",
-              "nativeQueryRef": "Date Año"
+              "queryRef": "Fecha.Date.Variación.Jerarquía de fechas.Mes",
+              "nativeQueryRef": "Date Mes"
             }
           ]
         }

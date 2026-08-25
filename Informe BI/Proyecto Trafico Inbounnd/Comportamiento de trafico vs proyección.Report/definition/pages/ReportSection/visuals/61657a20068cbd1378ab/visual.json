@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "61657a20068cbd1378ab",
   "position": {
     "x": 24,
@@ -66,7 +66,7 @@
             "endDate": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2026-06-30T00:00:00'"
+                  "Value": "datetime'2026-06-26T00:00:00'"
                 }
               }
             },
@@ -132,7 +132,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "datetime'2026-07-01T00:00:00'"
+                                "Value": "datetime'2026-06-27T00:00:00'"
                               }
                             }
                           }

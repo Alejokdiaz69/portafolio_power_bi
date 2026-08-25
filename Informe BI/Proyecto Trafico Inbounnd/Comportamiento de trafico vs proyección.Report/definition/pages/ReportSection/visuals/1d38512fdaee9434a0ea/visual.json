@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "1d38512fdaee9434a0ea",
   "position": {
     "x": 22.416302765647742,
@@ -70,11 +70,11 @@
                       "Hierarchy": "Jerarquía de fechas"
                     }
                   },
-                  "Level": "Año"
+                  "Level": "Día"
                 }
               },
-              "queryRef": "Fecha.Date.Variación.Jerarquía de fechas.Año",
-              "nativeQueryRef": "Date Año"
+              "queryRef": "Fecha.Date.Variación.Jerarquía de fechas.Día",
+              "nativeQueryRef": "Date Día"
             }
           ]
         }
@@ -230,31 +230,6 @@
               }
             },
             "Property": "Nivel de servicio"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "102266de097c02d9a757",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Fecha"
-                      }
-                    },
-                    "Name": "Variación",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Jerarquía de fechas"
-              }
-            },
-            "Level": "Año"
           }
         },
         "type": "Advanced"

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "725904a009900b55bb64",
   "position": {
     "x": 24.310520939734424,
@@ -53,28 +53,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Fecha"
-                            }
-                          },
-                          "Name": "Variación",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Jerarquía de fechas"
+                    "SourceRef": {
+                      "Entity": "Fecha"
                     }
                   },
-                  "Level": "Año"
+                  "Property": "Semana del Mes"
                 }
               },
-              "queryRef": "Fecha.Date.Variación.Jerarquía de fechas.Año",
-              "nativeQueryRef": "Date Año"
+              "queryRef": "Fecha.Semana del Mes",
+              "nativeQueryRef": "Semana del Mes"
             }
           ]
         }
@@ -215,31 +204,6 @@
               }
             },
             "Property": "Nivel de servicio"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b99c5dd5300c733445ee",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Fecha"
-                      }
-                    },
-                    "Name": "Variación",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Jerarquía de fechas"
-              }
-            },
-            "Level": "Año"
           }
         },
         "type": "Advanced"

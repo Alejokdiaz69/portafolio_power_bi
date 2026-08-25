@@ -446,7 +446,7 @@ table Ventas
 
 	column 'Valor plan'
 		dataType: int64
-		formatString: 0
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 86ef3d0c-5258-4a75-9efd-807a08c24b1b
 		summarizeBy: sum
 		sourceColumn: Valor plan

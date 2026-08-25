@@ -217,9 +217,8 @@ table 'Trafico vs proyeccion'
 			    [Nivel de servicio],
 			    DATEADD('Fecha'[Date], -7, DAY)
 			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		lineageTag: 8e331a73-dce8-4ada-96f0-65e829e1d798
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Nivel de Atencion Semana Anterior' =
 			

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "1740384db02c4c7cf525",
   "position": {
     "x": 20,
     "y": 290,
-    "z": 14000,
+    "z": 12000,
     "height": 696,
     "width": 488,
-    "tabOrder": 16000
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "tableEx",
@@ -84,7 +84,7 @@
                         "Entity": "ventas_2"
                       }
                     },
-                    "Property": "Unic"
+                    "Property": "Planes vendidos"
                   }
                 },
                 "Function": 0
@@ -2446,6 +2446,5 @@
         }
       }
     ]
-  },
-  "isHidden": true
+  }
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "9261387ffdd2650cf2a4",
   "position": {
     "x": 520,
     "y": 290,
-    "z": 13000,
+    "z": 11000,
     "height": 696,
     "width": 862,
-    "tabOrder": 15000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -74,6 +74,28 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "ventas_2"
+                      }
+                    },
+                    "Property": "Valor con descuento"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {
@@ -2035,6 +2057,5 @@
         }
       }
     ]
-  },
-  "isHidden": true
+  }
 }

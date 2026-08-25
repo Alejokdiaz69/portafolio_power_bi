@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Seguimiento ventas Backoffice"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "80ca5d60-238a-444e-8d01-c76890726f5b"
+  }
+}

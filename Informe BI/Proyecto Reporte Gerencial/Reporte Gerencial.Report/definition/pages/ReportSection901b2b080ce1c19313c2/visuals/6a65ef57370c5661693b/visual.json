@@ -1,10 +1,10 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "6a65ef57370c5661693b",
   "position": {
     "x": 0,
     "y": 57.086614173228348,
-    "z": 20000,
+    "z": 15000,
     "height": 104.33070866141732,
     "width": 496.06299212598424,
     "tabOrder": 14000
@@ -59,7 +59,7 @@
             "startDate": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2025-01-01T00:00:00'"
+                  "Value": "datetime'2025-12-01T00:00:00'"
                 }
               }
             },
@@ -119,7 +119,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "datetime'2025-01-01T00:00:00'"
+                                "Value": "datetime'2025-12-01T00:00:00'"
                               }
                             }
                           }

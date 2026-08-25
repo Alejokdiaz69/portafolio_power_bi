@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Seguimiento ventas Backoffice"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "53e14d4f-5a6e-43e0-99d4-89f585e94dd6"
+  }
+}

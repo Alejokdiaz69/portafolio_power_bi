@@ -1,0 +1,227 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "4c80c93ecec74649be01",
+  "position": {
+    "x": 0,
+    "y": 39,
+    "z": 0,
+    "height": 201,
+    "width": 320,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "Ventas cantadas"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Tabla cruce.Ventas cantadas)",
+              "nativeQueryRef": "Ventas cantadas",
+              "displayName": "Ventas cantadas"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "Ventas mismo mes"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Tabla cruce.Ventas mismo mes)",
+              "nativeQueryRef": "Ventas MM",
+              "displayName": "Ventas MM"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Tabla cruce"
+                        }
+                      },
+                      "Property": "Ventas"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Tabla cruce.Ventas)",
+              "nativeQueryRef": "Ventas Act",
+              "displayName": "Ventas Act"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fecha"
+                    }
+                  },
+                  "Property": "Medida"
+                }
+              },
+              "queryRef": "Fecha.Medida",
+              "nativeQueryRef": "Backlog + MM",
+              "displayName": "Backlog + MM"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Arrastre"
+                        }
+                      },
+                      "Property": "Arrastre"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Arrastre.Arrastre)",
+              "nativeQueryRef": "Backlog",
+              "displayName": "Backlog"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tabla cruce"
+                    }
+                  },
+                  "Property": "% Backlog"
+                }
+              },
+              "queryRef": "Tabla cruce.% Conv Arrastre",
+              "nativeQueryRef": "% Backlog + MM",
+              "displayName": "% Backlog + MM"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tabla cruce"
+                    }
+                  },
+                  "Property": "% Venta MM"
+                }
+              },
+              "queryRef": "Tabla cruce.%Conv N",
+              "nativeQueryRef": "%Conv N"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tabla cruce"
+                    }
+                  },
+                  "Property": "% Ventas Act"
+                }
+              },
+              "queryRef": "Tabla cruce.%Conv N-1",
+              "nativeQueryRef": "%Conv N-1"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Tabla cruce"
+                      }
+                    },
+                    "Property": "Ventas cantadas"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
